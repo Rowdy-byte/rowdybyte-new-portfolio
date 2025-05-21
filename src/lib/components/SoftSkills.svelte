@@ -1,5 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import Tubes from './Tubes.svelte';
 
 	const softSkillsTags = [
 		'adoptability',
@@ -16,14 +17,9 @@
 
 	let badgeRefs: HTMLElement[] = $state([]);
 	let sectionRef: HTMLElement;
-	let tubeRefs: HTMLElement[] = $state([]);
 
 	function setBadgeRef(node: HTMLElement, index: number) {
 		badgeRefs[index] = node;
-		return {};
-	}
-	function setTubeRef(node: HTMLElement, index: number) {
-		tubeRefs[index] = node;
 		return {};
 	}
 
@@ -74,23 +70,7 @@
 	});
 </script>
 
-<!-- Colored tubeings above the content (vertical, 10 tubes, thinner, 3x longer, skewed, responsive, no glow) -->
-<div
-	class="mx-auto mb-8 flex w-full max-w-full flex-row items-center justify-center gap-1 px-1 sm:max-w-3xl sm:gap-2 sm:px-2"
-	style="height: 180px;"
->
-	<div
-		class="flex h-full w-full max-w-xs skew-x-[-18deg] justify-center gap-1 sm:max-w-3xl sm:gap-2"
-	>
-		{#each [['from-pink-500', 'to-yellow-400', 'shadow-pink-400'], ['from-blue-400', 'to-green-400', 'shadow-blue-400'], ['from-purple-500', 'to-pink-400', 'shadow-purple-400'], ['from-yellow-400', 'to-red-400', 'shadow-yellow-400'], ['from-green-400', 'to-blue-500', 'shadow-green-400'], ['from-red-400', 'to-orange-400', 'shadow-red-400'], ['from-indigo-400', 'to-purple-500', 'shadow-indigo-400'], ['from-teal-400', 'to-cyan-400', 'shadow-teal-400'], ['from-pink-300', 'to-fuchsia-500', 'shadow-pink-300'], ['from-yellow-300', 'to-lime-400', 'shadow-yellow-300']] as colors, i}
-			<div
-				use:setTubeRef={i}
-				class={`w-0.5 flex-1 rounded-full bg-gradient-to-b ${colors[0]} ${colors[1]} transition-shadow duration-300 sm:w-1`}
-				class:hover={`shadow-[0_0_32px_8px] ${colors[2]}`}
-			></div>
-		{/each}
-	</div>
-</div>
+<Tubes />
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section

@@ -27,11 +27,7 @@
 	let hasAnimated = false;
 
 	function animateBadges() {
-		if (
-			!hasAnimated &&
-			badgeRefs.length === hardSkillTags.length &&
-			badgeRefs.every(Boolean)
-		) {
+		if (!hasAnimated && badgeRefs.length === hardSkillTags.length && badgeRefs.every(Boolean)) {
 			hasAnimated = true;
 			gsap.fromTo(
 				badgeRefs,
@@ -75,7 +71,7 @@
 	});
 </script>
 
-<div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
+<main class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
@@ -92,4 +88,4 @@
 			{/each}
 		</div>
 	</section>
-</div>
+</main>
