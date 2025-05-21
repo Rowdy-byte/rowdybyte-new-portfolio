@@ -1,2 +1,9 @@
-<h1 class="text-5xl font-bold">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import HardSkills from '$lib/components/HardSkills.svelte';
+	import Intro from '$lib/components/Intro.svelte';
+	import SoftSkills from '$lib/components/SoftSkills.svelte';
+</script>
+
+<Intro />
+<HardSkills />
+<SoftSkills />
