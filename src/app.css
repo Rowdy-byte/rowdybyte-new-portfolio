@@ -1,0 +1,21 @@
+@font-face {
+	font-family: GT Walsheim Pro;
+	src:
+		local('GT Walsheim Pro Regular'),
+		local('GTWalsheimProRegular'),
+		url('/fonts/GTWalsheimPro-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@plugin "daisyui" {
+	themes: nord --default, dark --prefersdark, nord;
+}
+
+* {
+	font-family: 'GT Walsheim Pro';
+}
