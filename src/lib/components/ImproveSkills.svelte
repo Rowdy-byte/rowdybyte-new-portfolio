@@ -1,19 +1,12 @@
 <script lang="ts">
 	import gsap from 'gsap';
 
-	const hardSkillTags = [
-		'javascript',
-		'typescript',
-		'scss',
-		'html',
-		'css',
-		'tailwind',
-		'svelte',
-		'sveltekit',
-		'zod',
-		'prisma',
-		'mdsvex',
-		'github'
+	const improveSkills = [
+		'receiving feedback',
+		'giving feedback',
+		'teamwork',
+		'being more consistent',
+		'gaining more professional experience'
 	];
 
 	let badgeRefs: HTMLElement[] = $state([]);
@@ -27,7 +20,7 @@
 	let hasAnimated = false;
 
 	function animateBadges() {
-		if (!hasAnimated && badgeRefs.length === hardSkillTags.length && badgeRefs.every(Boolean)) {
+		if (!hasAnimated && badgeRefs.length === improveSkills.length && badgeRefs.every(Boolean)) {
 			hasAnimated = true;
 			gsap.fromTo(
 				badgeRefs,
@@ -71,14 +64,14 @@
 	});
 </script>
 
-<main class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
+<div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
-		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Hard Skills</h2>
+		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Improvements</h2>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
-			{#each hardSkillTags as skill, i}
+			{#each improveSkills as skill, i}
 				<span
 					use:setBadgeRef={i}
 					class="rounded-full bg-gray-500 px-4 py-2 text-center text-sm font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
@@ -88,4 +81,4 @@
 			{/each}
 		</div>
 	</section>
-</main>
+</div>

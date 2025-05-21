@@ -70,14 +70,17 @@
 				class="intro-container card-front absolute h-full w-full overflow-hidden rounded-lg bg-gray-500/20 shadow-lg backdrop-blur-sm backface-hidden lg:flex lg:h-auto"
 			>
 				<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
-					<h1 class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Welcome!</h1>
+					<h1 class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-7xl">Welcome!</h1>
 					<p class="text-base leading-relaxed text-gray-100 sm:text-lg">
 						My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about
 						building modern, performant apps with SvelteKit. I enjoy solving real-world problems
 						with code, data visualization, always learning, always improving, and aiming to work
 						remotely.
 					</p>
-					<button class="contact-button mt-8 rounded-full bg-gray-500 px-12 py-4 text-white">
+					<p class="mt-8 text-2xl italic">-Rowdy</p>
+					<button
+						class="contact-button mt-8 rounded-full bg-gray-500 px-12 py-4 text-white hover:cursor-pointer"
+					>
 						Contact Me
 					</button>
 				</div>

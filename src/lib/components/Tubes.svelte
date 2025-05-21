@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import gsap from 'gsap';
 
 	export let tubeGlowColors: string[] = [
@@ -15,7 +15,9 @@
 		'#fde68a' // yellow-300
 	];
 
-	let tubeRefs: (HTMLElement | null)[] = Array(10).fill(null);
+	let tubeRefs: HTMLElement[] = [];
+	let containerRef: HTMLElement;
+	let hasGlowed = false;
 
 	const tubeGradients = [
 		['from-pink-500', 'to-yellow-400'],
@@ -30,11 +32,35 @@
 		['from-yellow-300', 'to-lime-400']
 	];
 
+	function glowTubesOnce() {
+		if (hasGlowed || tubeRefs.length !== 10 || !tubeRefs.every(Boolean)) return;
+		hasGlowed = true;
+		tubeRefs.forEach((el, i) => {
+			const glow = tubeGlowColors[i % tubeGlowColors.length];
+			gsap.fromTo(
+				el,
+				{ boxShadow: 'none' },
+				{
+					boxShadow: `0 0 32px 8px ${glow}`,
+					duration: 0.5,
+					ease: 'power2.out',
+					delay: i * 0.07,
+					onComplete: () => {
+						gsap.to(el, {
+							boxShadow: 'none',
+							duration: 0.5,
+							ease: 'power2.in'
+						});
+					}
+				}
+			);
+		});
+	}
+
 	onMount(() => {
+		// Hover glow
 		if (tubeRefs.length === 10 && tubeRefs.every(Boolean)) {
 			tubeRefs.forEach((el, i) => {
-				if (!el) return;
-
 				const glow = tubeGlowColors[i % tubeGlowColors.length];
 				let tween: gsap.core.Tween | null = null;
 				const onEnter = () => {
@@ -55,17 +81,35 @@
 				el.addEventListener('mouseenter', onEnter);
 				el.addEventListener('mouseleave', onLeave);
 				// Cleanup
-				return () => {
+				onDestroy(() => {
 					el.removeEventListener('mouseenter', onEnter);
 					el.removeEventListener('mouseleave', onLeave);
-				};
+				});
 			});
 		}
+
+		// IntersectionObserver for scroll-in-view glow
+		let observer: IntersectionObserver | null = null;
+		if (containerRef) {
+			observer = new IntersectionObserver(
+				(entries) => {
+					if (entries[0].isIntersecting) {
+						glowTubesOnce();
+					}
+				},
+				{ threshold: 0.2 }
+			);
+			observer.observe(containerRef);
+		}
+		onDestroy(() => {
+			observer && observer.disconnect();
+		});
 	});
 </script>
 
 <!-- Tubes visual -->
 <div
+	bind:this={containerRef}
 	class="mx-auto mb-8 flex w-full max-w-full flex-row items-center justify-center gap-1 px-1 sm:max-w-3xl sm:gap-2 sm:px-2"
 	style="height: 180px;"
 >

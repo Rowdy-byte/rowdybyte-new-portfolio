@@ -77,7 +77,7 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
-		<h2 class="mb-8 text-center text-4xl font-bold sm:text-5xl">Soft Skills</h2>
+		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Soft Skills</h2>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
 			{#each softSkillsTags as skill, i}
 				<span
