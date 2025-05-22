@@ -62,12 +62,12 @@
 	});
 </script>
 
-<section id="intro" class="flex min-h-screen w-full items-center justify-center px-2">
+<section id="intro" class="flex h-screen w-full items-center justify-center">
 	<div
 		class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
 	>
 		<div
-			class="intro-container card-front absolute h-full w-full overflow-hidden rounded-lg bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
+			class="intro-container card-front absolute h-full w-full overflow-hidden bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
 		>
 			<Aurora />
 			<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">

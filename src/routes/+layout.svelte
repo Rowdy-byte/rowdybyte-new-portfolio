@@ -6,6 +6,6 @@
 </script>
 
 <SideNav />
-<main class="p-4">
+<main class="">
 	{@render children()}
 </main>
