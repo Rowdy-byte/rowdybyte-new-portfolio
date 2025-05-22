@@ -27,14 +27,14 @@
 	};
 </script>
 
-<h1 class="text-center text-2xl">Follow me on socials</h1>
+<h1 class="mb-8 text-center text-2xl">Follow me on socials</h1>
 <div class="flex flex-row flex-wrap justify-center gap-6 py-8 sm:gap-8">
 	{#each socials as social}
 		<a
 			href={social.url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gradient-to-br sm:h-40 sm:w-40 {social.gradient} p-1 transition-transform duration-200 hover:scale-105"
+			class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gray-500/20 p-1 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
 		>
 			<div class="flex h-full w-full flex-col items-center justify-center rounded-full">
 				<span class="mb-2" aria-label={social.name}>

@@ -61,32 +61,29 @@
 	});
 </script>
 
-<section class="flex min-h-screen w-full items-center justify-center p-4">
-	<div class="card-container perspective mx-auto w-full max-w-5xl">
+<section class="mx-auto flex min-h-screen max-w-5xl items-center justify-center px-2 py-8">
+	<div
+		class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
+	>
 		<div
-			class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
+			class="intro-container card-front absolute h-full w-full overflow-hidden rounded-lg bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
 		>
-			<div
-				class="intro-container card-front absolute h-full w-full overflow-hidden rounded-lg bg-gray-500/20 shadow-lg backdrop-blur-sm backface-hidden lg:flex lg:h-auto"
-			>
-				<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
-					<h1 class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-7xl">Welcome!</h1>
-					<p class="text-base leading-relaxed text-gray-100 sm:text-lg">
-						My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about
-						building modern, performant apps with SvelteKit. I enjoy solving real-world problems
-						with code, data visualization, always learning, always improving, and aiming to work
-						remotely.
-					</p>
-					<p class="mt-8 text-2xl italic">-Rowdy</p>
-					<button
-						class="contact-button mt-8 rounded-full bg-gray-500 px-12 py-4 text-white hover:cursor-pointer"
-					>
-						Contact Me
-					</button>
-				</div>
-				<div class="flex items-end justify-center rounded-full lg:w-2/5 lg:pt-8">
-					<img class="max-w-sm" src="/rowdy-bg-rm-six.png" alt="Rowdy's profile" />
-				</div>
+			<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
+				<h1 class="mb-4 text-4xl font-bold tracking-tight sm:text-7xl">Welcome!</h1>
+				<p class="text-base leading-relaxed sm:text-lg">
+					My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
+					modern, performant apps with SvelteKit. I enjoy solving real-world problems with code,
+					data visualization, always learning, always improving, and aiming to work remotely.
+				</p>
+				<p class="mt-8 font-light italic">-Rowdy</p>
+				<button
+					class="contact-button mt-8 rounded-full bg-[#a6accd22] px-12 py-4 text-white hover:cursor-pointer"
+				>
+					Contact Me
+				</button>
+			</div>
+			<div class="flex items-end justify-center rounded-full lg:w-2/5 lg:pt-8">
+				<img class="profile-image max-w-sm" src="/rowdy-bg-rm-six.png" alt="Rowdy's profile" />
 			</div>
 		</div>
 	</div>

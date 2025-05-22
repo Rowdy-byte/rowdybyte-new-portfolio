@@ -1,5 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import Bubbles from './Bubbles.svelte';
 
 	const improveSkills = [
 		'receiving feedback',
@@ -64,6 +65,8 @@
 	});
 </script>
 
+<Bubbles />
+
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section
 		bind:this={sectionRef}
@@ -74,7 +77,7 @@
 			{#each improveSkills as skill, i}
 				<span
 					use:setBadgeRef={i}
-					class="rounded-full bg-gray-500 px-4 py-2 text-center text-sm font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-full bg-gray-500/20 px-4 py-2 text-center text-sm font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>

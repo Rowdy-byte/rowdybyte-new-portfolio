@@ -2,6 +2,7 @@
 	import HardSkills from '$lib/components/HardSkills.svelte';
 	import ImproveSkills from '$lib/components/ImproveSkills.svelte';
 	import Intro from '$lib/components/Intro.svelte';
+	import Projects from '$lib/components/Projects.svelte';
 	import Socials from '$lib/components/Socials.svelte';
 	import SoftSkills from '$lib/components/SoftSkills.svelte';
 </script>
@@ -11,3 +12,4 @@
 <HardSkills />
 <SoftSkills />
 <ImproveSkills />
+<Projects />

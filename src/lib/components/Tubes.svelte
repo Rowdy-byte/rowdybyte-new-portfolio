@@ -110,7 +110,7 @@
 <!-- Tubes visual -->
 <div
 	bind:this={containerRef}
-	class="mx-auto mb-8 flex w-full max-w-full flex-row items-center justify-center gap-1 px-1 sm:max-w-3xl sm:gap-2 sm:px-2"
+	class="mx-auto mb-8 flex max-w-5xl flex-row items-center justify-center gap-1 px-1 sm:max-w-3xl sm:gap-2 sm:px-2"
 	style="height: 180px;"
 >
 	<div
