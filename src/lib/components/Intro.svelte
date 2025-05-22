@@ -62,7 +62,7 @@
 	});
 </script>
 
-<section id="intro" class="flex h-screen w-full items-center justify-center">
+<section id="intro" class="flex h-screen w-full">
 	<div
 		class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
 	>

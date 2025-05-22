@@ -1,11 +1,13 @@
 <script lang="ts">
+	import NavBar from '$lib/components/NavBar.svelte';
 	import SideNav from '$lib/components/SideNav.svelte';
 	import '../app.css';
 
 	let { children } = $props();
 </script>
 
+<NavBar />
 <SideNav />
-<main class="">
+<main class="relative">
 	{@render children()}
 </main>
