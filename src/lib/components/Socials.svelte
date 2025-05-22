@@ -37,36 +37,43 @@
 			(entries) => {
 				if (entries[0].isIntersecting && !hasAnimated) {
 					hasAnimated = true;
+					const visibleCards = cardRefs.filter(Boolean);
 					gsap.fromTo(
-						cardRefs,
+						visibleCards,
 						{ opacity: 0, y: 40, scale: 0.85 },
 						{ opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.15, ease: 'back.out(1.7)' }
 					);
 					observer.disconnect();
 				}
 			},
-			{ threshold: 0.2 }
+			{ threshold: 0.3 }
 		);
 		if (sectionRef) observer.observe(sectionRef);
 	});
 </script>
 
-<h1 id="socials" class="mb-8 text-center text-2xl">Follow me on socials</h1>
-<div bind:this={sectionRef} class="flex flex-row flex-wrap justify-center gap-6 py-8 sm:gap-8">
-	{#each socials as social, i}
-		<a
-			bind:this={cardRefs[i]}
-			href={social.url}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gray-500/20 p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
-		>
-			<div class="flex h-full w-full flex-col items-center justify-center rounded-full">
-				<span class="mb-2" aria-label={social.name}>
-					{@html icons[social.icon]}
-				</span>
-				<span class="text-lg font-semibold capitalize drop-shadow sm:text-xl">{social.name}</span>
-			</div>
-		</a>
-	{/each}
+<div
+	bind:this={sectionRef}
+	class="flex min-h-screen w-full flex-col items-center justify-center gap-6 py-8 sm:gap-8"
+	style="min-height: 100vh;"
+>
+	<h1 id="socials" class="mb-14 text-center text-4xl font-bold sm:text-7xl">Socials</h1>
+	<div class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
+		{#each socials as social, i}
+			<a
+				bind:this={cardRefs[i]}
+				href={social.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gray-500/20 p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
+			>
+				<div class="flex h-full w-full flex-col items-center justify-center rounded-full">
+					<span class="mb-2" aria-label={social.name}>
+						{@html icons[social.icon]}
+					</span>
+					<span class="text-lg font-semibold capitalize drop-shadow sm:text-xl">{social.name}</span>
+				</div>
+			</a>
+		{/each}
+	</div>
 </div>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Home, Globe, Laptop, Brain, TrendingUp, Folder, Mail } from 'lucide-svelte';
+	import { NotebookPen, Globe, Laptop, Brain, TrendingUp, Folder, Mail } from 'lucide-svelte';
 	import { onMount, tick } from 'svelte';
 	import gsap from 'gsap';
 
 	const navLinks = [
-		{ label: 'Intro', href: '#intro', icon: Home },
+		{ label: 'Blog', href: '/blog', icon: NotebookPen },
 		{ label: 'Socials', href: '#socials', icon: Globe },
 		{ label: 'Hard Skills', href: '#hardskills', icon: Laptop },
 		{ label: 'Soft Skills', href: '#softskills', icon: Brain },
@@ -87,7 +87,7 @@
 
 <nav
 	bind:this={navRef}
-	class="fixed top-0 left-0 z-50 flex flex-col gap-4 border-b border-gray-400/20 bg-[#1d232a] p-4 shadow-xl"
+	class="fixed top-0 left-0 z-[70] flex flex-col gap-4 border-b border-gray-400/20 bg-[#1d232a] p-4 shadow-xl"
 	style="display: flex; width: 100vw; left: 0;"
 >
 	<!-- Close button -->
@@ -111,11 +111,11 @@
 		<a
 			href={link.href}
 			on:click={(e) => scrollToSection(e, link.href)}
-			class="flex flex-col items-center justify-center rounded-xl px-3 py-2 text-white/80 transition-all duration-200 hover:bg-white/10 hover:text-[#1d232a]"
+			class="flex items-center justify-center rounded-xl px-3 py-2 text-white/80 transition-all duration-200 hover:bg-gray-200 hover:text-[#1d232a]"
 			title={link.label}
 		>
-			<svelte:component this={link.icon} size={22} class="mb-1" aria-hidden="true" />
-			<span class="text-xs font-semibold tracking-wide">{link.label}</span>
+			<svelte:component this={link.icon} size={30} class="mb-1" aria-hidden="true" />
+			<span class="text-md pl-2 font-semibold tracking-wide">{link.label}</span>
 		</a>
 	{/each}
 </nav>
