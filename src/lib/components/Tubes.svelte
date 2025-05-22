@@ -103,6 +103,19 @@
 					el.removeEventListener('mouseleave', onLeave);
 				});
 			});
+
+			// Equalizer animation
+			gsap.to(tubeRefs, {
+				height: (i) => `${90 + Math.random() * 90}px`,
+				duration: 0.7,
+				ease: 'sine.inOut',
+				yoyo: true,
+				repeat: -1,
+				stagger: {
+					amount: 0.5,
+					from: 'center'
+				}
+			});
 		}
 
 		// IntersectionObserver for scroll-in-view glow
@@ -133,24 +146,12 @@
 	class="mx-auto mb-8 flex max-w-3xl flex-row items-center justify-center gap-1 px-1 sm:gap-2 sm:px-2"
 	style="height: 180px;"
 >
-	<div class="flex h-full w-full skew-x-[-18deg] justify-center gap-1 sm:gap-2">
+	<div class="flex h-full w-full justify-center gap-1 sm:gap-2">
 		{#each tubeGradients as colors, i}
-			<!-- Tapered tube heights: middle is longest, sides are shortest -->
 			<div
 				bind:this={tubeRefs[i]}
 				class={`w-0.5 flex-1 rounded-full bg-gradient-to-b ${colors[0]} ${colors[1]} transition-shadow duration-300 sm:w-1`}
-				style="height: {[
-					'70px', // 0 (leftmost)
-					'90px', // 1
-					'110px', // 2
-					'130px', // 3
-					'150px', // 4
-					'180px', // 5 (center, longest)
-					'150px', // 6
-					'130px', // 7
-					'110px', // 8
-					'90px' // 9 (rightmost)
-				][i]}; align-self: flex-end;"
+				style="height: 90px; align-self: flex-end;"
 			></div>
 		{/each}
 	</div>
