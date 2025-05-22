@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import gsap from 'gsap';
+
 	let name = '';
 	let email = '';
 	let message = '';
@@ -9,10 +12,45 @@
 		submitted = true;
 		// Here you would handle sending the form data
 	}
+
+	let sectionRef: HTMLElement;
+	let formRef: HTMLFormElement;
+
+	onMount(() => {
+		// GSAP scroll animation
+		const tl = gsap.timeline({ paused: true });
+		tl.from(sectionRef, { opacity: 0, y: 60, duration: 0.7, ease: 'power2.out' });
+		tl.from(
+			sectionRef.querySelector('h2'),
+			{ opacity: 0, y: -30, duration: 0.5, ease: 'power2.out' },
+			'-=0.4'
+		);
+		tl.from(
+			sectionRef.querySelectorAll('form > div, form > button'),
+			{ opacity: 0, y: 30, stagger: 0.08, duration: 0.5, ease: 'power2.out' },
+			'-=0.3'
+		);
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries[0].isIntersecting) {
+					tl.play();
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.2 }
+		);
+		if (sectionRef) observer.observe(sectionRef);
+		return () => observer.disconnect();
+	});
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center py-8">
-	<section id="contact" class="flex w-full max-w-4xl flex-col items-center justify-center">
+	<section
+		id="contact"
+		bind:this={sectionRef}
+		class="flex w-full max-w-4xl flex-col items-center justify-center"
+	>
 		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Contact</h2>
 		<p class="mb-14 max-w-2xl text-lg">
 			<span class="text-2xl font-bold text-[#f59e0b]">Let's get in touch!</span> Have a question, an
@@ -20,6 +58,7 @@
 			as soon as possible!
 		</p>
 		<form
+			bind:this={formRef}
 			class="flex w-full max-w-4xl flex-col gap-6 rounded-2xl bg-gray-500/20 p-8 shadow-lg"
 			on:submit|preventDefault={handleSubmit}
 			autocomplete="off"
