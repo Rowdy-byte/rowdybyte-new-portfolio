@@ -117,9 +117,22 @@
 		class="flex h-full w-full max-w-xs skew-x-[-18deg] justify-center gap-1 sm:max-w-3xl sm:gap-2"
 	>
 		{#each tubeGradients as colors, i}
+			<!-- Tapered tube heights: middle is longest, sides are shortest -->
 			<div
 				bind:this={tubeRefs[i]}
 				class={`w-0.5 flex-1 rounded-full bg-gradient-to-b ${colors[0]} ${colors[1]} transition-shadow duration-300 sm:w-1`}
+				style="height: {[
+					'70px', // 0 (leftmost)
+					'90px', // 1
+					'110px', // 2
+					'130px', // 3
+					'150px', // 4
+					'180px', // 5 (center, longest)
+					'150px', // 6
+					'130px', // 7
+					'110px', // 8
+					'90px' // 9 (rightmost)
+				][i]}; align-self: flex-end;"
 			></div>
 		{/each}
 	</div>

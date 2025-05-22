@@ -77,7 +77,7 @@
 				</p>
 				<p class="mt-8 font-light italic">-Rowdy</p>
 				<button
-					class="contact-button mt-8 rounded-full bg-[#a6accd22] px-12 py-4 text-white hover:cursor-pointer"
+					class="contact-button mt-8 rounded-full bg-[#a6accd22] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
 				>
 					Contact Me
 				</button>
