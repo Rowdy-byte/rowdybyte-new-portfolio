@@ -26,6 +26,63 @@
 
 	let hasAnimated = false;
 
+	// Color palette for tag highlights
+	const highlightColors = [
+		'#f59e0b', // amber-500
+		'#38bdf8', // sky-400
+		'#a21caf', // purple-500
+		'#f472b6', // pink-400
+		'#4ade80', // green-400
+		'#f87171', // red-400
+		'#818cf8', // indigo-400
+		'#fde68a', // yellow-300
+		'#f9a8d4', // pink-300
+		'#facc15', // yellow-400
+		'#2dd4bf', // teal-400
+		'#eab308' // yellow-500
+	];
+
+	function highlightTagsLoop() {
+		if (!badgeRefs.length) return;
+		let i = 0;
+		function highlightNext() {
+			const tag = badgeRefs[i % badgeRefs.length];
+			const color = highlightColors[i % highlightColors.length];
+			gsap.fromTo(
+				tag,
+				{
+					borderColor: 'rgba(255,255,255,0.18)',
+					color: '#fff',
+					backgroundColor: 'rgba(166,172,205,0.13)',
+					boxShadow: 'none',
+					opacity: 1
+				},
+				{
+					borderColor: color,
+					color: color,
+					backgroundColor: 'rgba(166,172,205,0.13)',
+					boxShadow: `0 0 0 2px ${color}44`,
+					duration: 0.7,
+					ease: 'power1.inOut',
+					onComplete: () => {
+						gsap.to(tag, {
+							borderColor: 'rgba(255,255,255,0.18)',
+							color: '#fff',
+							boxShadow: 'none',
+							duration: 1.2,
+							ease: 'power1.inOut',
+							onComplete: () => {
+								i = (i + 1) % badgeRefs.length;
+								highlightNext();
+							}
+						});
+					}
+				}
+			);
+		}
+		highlightNext();
+	}
+
 	function animateBadges() {
 		if (!hasAnimated && badgeRefs.length === hardSkillTags.length && badgeRefs.every(Boolean)) {
 			hasAnimated = true;
@@ -50,6 +107,7 @@
 								delay: i * 0.07
 							});
 						});
+						highlightTagsLoop();
 					}
 				}
 			);
