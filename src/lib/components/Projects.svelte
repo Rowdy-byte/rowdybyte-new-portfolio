@@ -39,7 +39,7 @@
 </script>
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
-	<section class="flex w-full max-w-5xl flex-col items-center justify-center">
+	<section id="projects" class="flex w-full max-w-3xl flex-col items-center justify-center">
 		<h2 bind:this={card1} class="mb-14 text-center text-4xl font-bold sm:text-7xl">Projects</h2>
 
 		<div class="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">

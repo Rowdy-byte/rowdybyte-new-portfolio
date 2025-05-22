@@ -1,5 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import Aurora from './Aurora.svelte';
 
 	$effect(() => {
 		// Create a timeline for sequence animation
@@ -61,13 +62,14 @@
 	});
 </script>
 
-<section class="mx-auto flex min-h-screen max-w-5xl items-center justify-center px-2 py-8">
+<section id="intro" class="flex min-h-screen w-full items-center justify-center px-2">
 	<div
 		class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
 	>
 		<div
 			class="intro-container card-front absolute h-full w-full overflow-hidden rounded-lg bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
 		>
+			<Aurora />
 			<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
 				<h1 class="mb-4 text-4xl font-bold tracking-tight sm:text-7xl">Welcome!</h1>
 				<p class="text-base leading-relaxed sm:text-lg">
@@ -77,7 +79,7 @@
 				</p>
 				<p class="mt-8 font-light italic">-Rowdy</p>
 				<button
-					class="contact-button mt-8 rounded-full bg-[#a6accd22] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
+					class="contact-button mt-8 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
 				>
 					Contact Me
 				</button>

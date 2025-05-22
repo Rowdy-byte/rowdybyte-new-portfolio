@@ -74,6 +74,7 @@
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section
+		id="softskills"
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>

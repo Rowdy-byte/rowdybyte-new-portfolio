@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center py-8">
-	<section class="flex w-full max-w-5xl flex-col items-center justify-center">
+	<section id="contact" class="flex w-full max-w-5xl flex-col items-center justify-center">
 		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Contact</h2>
 		<form
 			class="flex w-full max-w-5xl flex-col gap-6 rounded-2xl bg-gray-500/20 p-8 shadow-lg"

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Aurora from '$lib/components/Aurora.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import HardSkills from '$lib/components/HardSkills.svelte';
 	import ImproveSkills from '$lib/components/ImproveSkills.svelte';
@@ -15,3 +16,4 @@
 <ImproveSkills />
 <Projects />
 <Contact />
+<!-- <Aurora /> -->

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import gsap from 'gsap';
 
-	export let tubeGlowColors: string[] = [
+	export const tubeGlowColors: string[] = [
 		'#ec4899', // pink-500
 		'#38bdf8', // blue-400
 		'#a21caf', // purple-500
@@ -18,6 +18,7 @@
 	let tubeRefs: HTMLElement[] = [];
 	let containerRef: HTMLElement;
 	let hasGlowed = false;
+	let listeners: Array<() => void> = [];
 
 	const tubeGradients = [
 		['from-pink-500', 'to-yellow-400'],
@@ -32,11 +33,25 @@
 		['from-yellow-300', 'to-lime-400']
 	];
 
+	const colorMap: Record<string, string> = {
+		'from-pink-500': '#ec4899',
+		'from-blue-400': '#38bdf8',
+		'from-purple-500': '#a21caf',
+		'from-yellow-400': '#facc15',
+		'from-green-400': '#4ade80',
+		'from-red-400': '#f87171',
+		'from-indigo-400': '#818cf8',
+		'from-teal-400': '#2dd4bf',
+		'from-pink-300': '#f9a8d4',
+		'from-yellow-300': '#fde68a'
+	};
+
 	function glowTubesOnce() {
 		if (hasGlowed || tubeRefs.length !== 10 || !tubeRefs.every(Boolean)) return;
 		hasGlowed = true;
 		tubeRefs.forEach((el, i) => {
-			const glow = tubeGlowColors[i % tubeGlowColors.length];
+			const fromClass = tubeGradients[i][0];
+			const glow = colorMap[fromClass] || '#fff';
 			gsap.fromTo(
 				el,
 				{ boxShadow: 'none' },
@@ -57,11 +72,14 @@
 		});
 	}
 
-	onMount(() => {
-		// Hover glow
+	onMount(async () => {
+		await tick();
+		listeners.forEach((off) => off());
+		listeners = [];
 		if (tubeRefs.length === 10 && tubeRefs.every(Boolean)) {
 			tubeRefs.forEach((el, i) => {
-				const glow = tubeGlowColors[i % tubeGlowColors.length];
+				const fromClass = tubeGradients[i][0];
+				const glow = colorMap[fromClass] || '#fff';
 				let tween: gsap.core.Tween | null = null;
 				const onEnter = () => {
 					tween = gsap.to(el, {
@@ -80,8 +98,7 @@
 				};
 				el.addEventListener('mouseenter', onEnter);
 				el.addEventListener('mouseleave', onLeave);
-				// Cleanup
-				onDestroy(() => {
+				listeners.push(() => {
 					el.removeEventListener('mouseenter', onEnter);
 					el.removeEventListener('mouseleave', onLeave);
 				});
@@ -100,22 +117,23 @@
 				{ threshold: 0.2 }
 			);
 			observer.observe(containerRef);
+			listeners.push(() => observer && observer.disconnect());
 		}
-		onDestroy(() => {
-			observer && observer.disconnect();
-		});
+	});
+
+	onDestroy(() => {
+		listeners.forEach((off) => off());
+		listeners = [];
 	});
 </script>
 
 <!-- Tubes visual -->
 <div
 	bind:this={containerRef}
-	class="mx-auto mb-8 flex max-w-5xl flex-row items-center justify-center gap-1 px-1 sm:max-w-3xl sm:gap-2 sm:px-2"
+	class="mx-auto mb-8 flex max-w-3xl flex-row items-center justify-center gap-1 px-1 sm:gap-2 sm:px-2"
 	style="height: 180px;"
 >
-	<div
-		class="flex h-full w-full max-w-xs skew-x-[-18deg] justify-center gap-1 sm:max-w-3xl sm:gap-2"
-	>
+	<div class="flex h-full w-full skew-x-[-18deg] justify-center gap-1 sm:gap-2">
 		{#each tubeGradients as colors, i}
 			<!-- Tapered tube heights: middle is longest, sides are shortest -->
 			<div

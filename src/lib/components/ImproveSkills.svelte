@@ -68,6 +68,7 @@
 <div class="relative flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<Bubbles />
 	<section
+		id="improvements"
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
