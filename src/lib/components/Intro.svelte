@@ -1,6 +1,16 @@
 <script lang="ts">
 	import gsap from 'gsap';
 	import Aurora from './Aurora.svelte';
+	import { MoveRight } from 'lucide-svelte';
+
+	let arrowRef: HTMLElement;
+
+	function animateArrowIn() {
+		gsap.to(arrowRef, { x: 12, opacity: 1, duration: 0.4, ease: 'power2.out' });
+	}
+	function animateArrowOut() {
+		gsap.to(arrowRef, { x: 0, opacity: 0, duration: 0.3, ease: 'power2.in' });
+	}
 
 	$effect(() => {
 		// Create a timeline for sequence animation
@@ -69,7 +79,9 @@
 		>
 			<Aurora />
 			<div class="p-8 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
-				<h1 class="mb-4 text-5xl font-black tracking-tight text-gray-800 sm:text-7xl">Welcome!</h1>
+				<h1 class="heading mb-4 text-5xl font-black tracking-tight text-gray-800 sm:text-7xl">
+					Welcome!
+				</h1>
 				<p class="max-w-2xl text-base leading-relaxed sm:text-lg">
 					My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
 					modern, performant apps with SvelteKit. I enjoy solving real-world problems with code,
@@ -77,9 +89,17 @@
 				</p>
 				<p class="mt-8 font-light italic">-Rowdy</p>
 				<button
-					class="contact-button mt-8 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
+					class="contact-button mt-8 flex items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
+					onmouseenter={animateArrowIn}
+					onmouseleave={animateArrowOut}
 				>
 					Contact Me
+					<span
+						bind:this={arrowRef}
+						style="opacity:0; transform:translateX(0); display:inline-flex; align-items:center;"
+					>
+						<MoveRight size={22} />
+					</span>
 				</button>
 			</div>
 			<div class="flex items-end justify-center rounded-full lg:w-2/5 lg:pt-8">
@@ -88,3 +108,9 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.heading {
+		font-family: 'GT Walsheim Pro';
+	}
+</style>

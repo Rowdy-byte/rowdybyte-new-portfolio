@@ -45,7 +45,7 @@
 	});
 </script>
 
-<div class="flex min-h-screen flex-col items-center justify-center py-8">
+<div class="mx-2 flex min-h-screen flex-col items-center justify-center py-8">
 	<section
 		id="contact"
 		bind:this={sectionRef}
@@ -69,7 +69,7 @@
 					type="text"
 					id="name"
 					bind:value={name}
-					class="rounded-lg bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all"
+					class="rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none focus:outline-none"
 					placeholder="Your name"
 					required
 				/>
@@ -80,7 +80,7 @@
 					type="email"
 					id="email"
 					bind:value={email}
-					class="rounded-lg bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all"
+					class="rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none"
 					placeholder="you@email.com"
 					required
 				/>
@@ -90,7 +90,7 @@
 				<textarea
 					id="message"
 					bind:value={message}
-					class="min-h-[120px] rounded-lg bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all"
+					class="min-h-[120px] rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none"
 					placeholder="How can I help you?"
 					required
 				></textarea>

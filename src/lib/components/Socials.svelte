@@ -1,5 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import Circuit from './Circuit.svelte';
 
 	const socials = [
 		{
@@ -52,6 +53,7 @@
 	});
 </script>
 
+<!-- <Circuit /> -->
 <main
 	bind:this={sectionRef}
 	class="flex min-h-screen w-full flex-col items-center justify-center gap-6 py-8 sm:gap-8"

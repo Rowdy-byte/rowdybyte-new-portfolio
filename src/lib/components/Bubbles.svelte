@@ -24,7 +24,7 @@
 	];
 </script>
 
-<div class="pointer-events-none absolute inset-0 z-0">
+<div class="pointer-events-none absolute inset-0 z-0 mx-auto max-w-3xl">
 	{#each bubbles as bubble, i}
 		<div
 			class={`animate-bubble absolute rounded-full bg-gradient-to-br opacity-60 blur-lg ${bubble.gradient[0]} ${bubble.gradient[1]}`}
