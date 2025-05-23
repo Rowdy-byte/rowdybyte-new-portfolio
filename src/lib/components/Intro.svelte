@@ -63,16 +63,14 @@
 </script>
 
 <section id="intro" class="flex h-screen w-full">
-	<div
-		class="card-inner transform-style-3d relative min-h-[800px] w-full transition-transform duration-800"
-	>
+	<div class="card-inner relative w-full">
 		<div
 			class="intro-container card-front absolute h-full w-full overflow-hidden bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
 		>
 			<Aurora />
-			<div class="p-6 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
-				<h1 class="mb-4 text-4xl font-bold tracking-tight sm:text-7xl">Welcome!</h1>
-				<p class="text-base leading-relaxed sm:text-lg">
+			<div class="p-8 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
+				<h1 class="mb-4 text-5xl font-black tracking-tight text-gray-800 sm:text-7xl">Welcome!</h1>
+				<p class="max-w-2xl text-base leading-relaxed sm:text-lg">
 					My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
 					modern, performant apps with SvelteKit. I enjoy solving real-world problems with code,
 					data visualization, always learning, always improving, and aiming to work remotely.

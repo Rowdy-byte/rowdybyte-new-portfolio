@@ -1,20 +1,16 @@
 <script lang="ts">
-	import { NotebookPen, Globe, Laptop, Brain, TrendingUp, Folder, Mail } from 'lucide-svelte';
-	import { onMount, tick } from 'svelte';
+	import { NotebookPen, BookOpenText } from 'lucide-svelte';
+	import { onMount, tick, afterUpdate } from 'svelte';
 	import gsap from 'gsap';
 
 	const navLinks = [
 		{ label: 'Blog', href: '/blog', icon: NotebookPen },
-		{ label: 'Socials', href: '#socials', icon: Globe },
-		{ label: 'Hard Skills', href: '#hardskills', icon: Laptop },
-		{ label: 'Soft Skills', href: '#softskills', icon: Brain },
-		{ label: 'Improvements', href: '#improvements', icon: TrendingUp },
-		{ label: 'Projects', href: '#projects', icon: Folder },
-		{ label: 'Contact', href: '#contact', icon: Mail }
+		{ label: 'Documentation', href: '/docs', icon: BookOpenText }
 	];
 
 	let open = false;
 	let navRef: HTMLElement;
+	let linkRefs: HTMLElement[] = [];
 
 	function scrollToSection(e: MouseEvent, href: string) {
 		e.preventDefault();
@@ -65,6 +61,18 @@
 			});
 		}
 	}
+
+	$: if (open && navRef) {
+		// Animate nav links in
+		gsap.fromTo(
+			linkRefs.filter(Boolean),
+			{ opacity: 0, y: 30 },
+			{ opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out', overwrite: true }
+		);
+	} else if (!open && navRef) {
+		// Instantly hide links on close
+		gsap.set(linkRefs.filter(Boolean), { opacity: 0, y: 30 });
+	}
 </script>
 
 <!-- Hamburger button (center left) -->
@@ -107,12 +115,13 @@
 		</svg>
 	</button>
 
-	{#each navLinks as link}
+	{#each navLinks as link, i}
 		<a
 			href={link.href}
 			on:click={(e) => scrollToSection(e, link.href)}
-			class="flex items-center justify-center rounded-xl px-3 py-2 text-white/80 transition-all duration-200 hover:bg-gray-200 hover:text-[#1d232a]"
+			class="flex items-center rounded-xl px-3 py-2 text-white/80 transition-all duration-200 hover:text-purple-500"
 			title={link.label}
+			bind:this={linkRefs[i]}
 		>
 			<svelte:component this={link.icon} size={30} class="mb-1" aria-hidden="true" />
 			<span class="text-md pl-2 font-semibold tracking-wide">{link.label}</span>
