@@ -149,7 +149,8 @@
 
 			<button
 				type="submit"
-				class="mt-4 w-full rounded-full bg-[#f59e0b] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:scale-105"
+				class="mt-4 w-full rounded-full bg-[#f59e0b] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:cursor-pointer hover:shadow-lg active:scale-95"
+				disabled={submitted}
 			>
 				Send
 			</button>

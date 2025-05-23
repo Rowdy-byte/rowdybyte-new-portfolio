@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { NotebookPen, BookOpenText } from 'lucide-svelte';
-	import { onMount, tick, afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
 	const navLinks = [
@@ -11,16 +11,6 @@
 	let open = false;
 	let navRef: HTMLElement;
 	let linkRefs: HTMLElement[] = [];
-
-	function scrollToSection(e: MouseEvent, href: string) {
-		e.preventDefault();
-		const id = href.replace('#', '');
-		const el = document.getElementById(id);
-		if (el) {
-			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		}
-		open = false;
-	}
 
 	function openNav() {
 		open = true;
@@ -118,10 +108,10 @@
 	{#each navLinks as link, i}
 		<a
 			href={link.href}
-			on:click={(e) => scrollToSection(e, link.href)}
 			class="flex items-center rounded-xl px-3 py-2 text-white/80 transition-all duration-200 hover:text-purple-500"
 			title={link.label}
 			bind:this={linkRefs[i]}
+			on:click={closeNav}
 		>
 			<svelte:component this={link.icon} size={30} class="mb-1" aria-hidden="true" />
 			<span class="text-md pl-2 font-semibold tracking-wide">{link.label}</span>

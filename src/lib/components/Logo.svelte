@@ -2,11 +2,11 @@
 </script>
 
 <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-500/40">
-	<p class="flex items-center justify-center text-4xl font-black">y</p>
+	<a href="/" class="flex items-center justify-center text-4xl font-black">y</a>
 </div>
 
 <style>
-	p {
+	a {
 		font-family: 'Bentham';
 		display: flex;
 		align-items: center;
