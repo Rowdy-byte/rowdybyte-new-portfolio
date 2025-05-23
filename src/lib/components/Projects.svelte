@@ -82,7 +82,7 @@
 	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
 		<h2 bind:this={card1} class="mb-14 text-center text-4xl font-bold sm:text-7xl">Projects</h2>
 
-		<div class="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+		<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
 			<a
 				bind:this={card2}
 				href="https://serialmapper-prisma.vercel.app/"
