@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/state';
 
 	import { enhance } from '$app/forms';
 	import { Heart, Share2 } from 'lucide-svelte';
@@ -27,7 +28,7 @@
 	}
 
 	$effect(() => {
-		slug = $page.params.slug;
+		slug = page.params.slug;
 		const matchingFile = filenames.find(
 			(file) => file.split('/').pop()?.split('.').shift() === slug
 		);
