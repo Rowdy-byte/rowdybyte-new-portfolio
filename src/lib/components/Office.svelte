@@ -5,7 +5,7 @@
 
 	const images = [
 		'/office/office1.jpg',
-		'/office/office2.jpg',
+
 		'/notes/notes1.jpg',
 		'/notes/notes2.jpg',
 		'/notes/notes3.jpg',

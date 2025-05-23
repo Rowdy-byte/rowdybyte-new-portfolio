@@ -11,3 +11,6 @@
 <main class="relative">
 	{@render children()}
 </main>
+
+<style>
+</style>

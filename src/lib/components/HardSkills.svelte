@@ -136,7 +136,7 @@
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
 		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Hard Skills</h2>
-		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
+		<div class="flex w-full flex-wrap items-center justify-center gap-1 sm:gap-4">
 			{#each hardSkillTags as skill, i}
 				<span
 					use:setBadgeRef={i}

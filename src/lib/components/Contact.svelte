@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { enhance } from '$app/forms';
 	import gsap from 'gsap';
 
@@ -11,6 +11,7 @@
 
 	let sectionRef: HTMLElement;
 	let formRef: HTMLFormElement;
+	let messageRef: HTMLElement;
 
 	// Function for enhance
 	const enhanceForm = () => {
@@ -29,6 +30,25 @@
 				submitted = true;
 				errors = {};
 				formRef.reset();
+				await tick();
+				if (messageRef) {
+					gsap.fromTo(
+						messageRef,
+						{ opacity: 0, y: 20 },
+						{ opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+					);
+					setTimeout(() => {
+						gsap.to(messageRef, {
+							opacity: 0,
+							y: -20,
+							duration: 0.5,
+							ease: 'power2.in',
+							onComplete: () => {
+								submitted = false;
+							}
+						});
+					}, 5000);
+				}
 			}
 		};
 	};
@@ -129,10 +149,15 @@
 
 			<button
 				type="submit"
-				class="z-50 mt-4 w-full rounded-full bg-[#1d232a] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:scale-105"
+				class="mt-4 w-full rounded-full bg-[#f59e0b] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:scale-105"
 			>
 				Send
 			</button>
+			{#if submitted}
+				<p bind:this={messageRef} class="mt-6 text-center text-lg font-semibold text-green-400">
+					Thank you! Your message has been sent successfully.
+				</p>
+			{/if}
 		</form>
 	</section>
 </div>

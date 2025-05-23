@@ -4,16 +4,16 @@ import { z } from 'zod';
 export const contactSchema = z.object({
     name: z
         .string()
-        .min(1, { message: 'Vul je naam in' })
-        .max(100, { message: 'Naam mag maximaal 100 tekens bevatten' }),
+        .min(2, { message: 'Enter name' })
+        .max(20, { message: 'Name can be max 20 characters' }),
     email: z
         .string()
-        .min(1, { message: 'Vul je e-mail in' })
-        .email({ message: 'Ongeldig e-mailformaat' }),
+        .min(5, { message: 'Enter e-mail' })
+        .email({ message: 'Invalid e-mail format' }),
     message: z
         .string()
-        .min(1, { message: 'Vul een bericht in' })
-        .max(1000, { message: 'Bericht mag niet langer zijn dan 1000 tekens' }),
+        .min(10, { message: 'Enter a message' })
+        .max(100, { message: 'Messag can be max 100 charcters' }),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
