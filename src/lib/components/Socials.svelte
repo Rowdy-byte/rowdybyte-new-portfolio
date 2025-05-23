@@ -52,13 +52,13 @@
 	});
 </script>
 
-<div
+<main
 	bind:this={sectionRef}
 	class="flex min-h-screen w-full flex-col items-center justify-center gap-6 py-8 sm:gap-8"
 	style="min-height: 100vh;"
 >
-	<h1 id="socials" class="mb-14 text-center text-4xl font-bold sm:text-7xl">Socials</h1>
-	<div class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
+	<h1 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Socials</h1>
+	<div id="socials" class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
 		{#each socials as social, i}
 			<a
 				bind:this={cardRefs[i]}
@@ -76,4 +76,4 @@
 			</a>
 		{/each}
 	</div>
-</div>
+</main>

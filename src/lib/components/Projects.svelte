@@ -102,7 +102,7 @@
 					<p class=" text-center text-2xl font-bold italic">
 						SN<span class="text-md text-orange-500">mapper</span>
 					</p>
-					<p class="mt-4 text-center text-base">
+					<p class="mt-4 text-center text-base tracking-wider">
 						SerialMapper is a SvelteKit-based app that streamlines bulk product intake by importing
 						Excel serials, validating data, and visualizing efficiency gains—perfect for warehouses
 						and logistics teams handling high-volume entries.
@@ -127,7 +127,7 @@
 			>
 				<div bind:this={card3Content} class="transition-transform duration-300">
 					<p class="swaentje text-center text-3xl font-bold">'t Swaentje</p>
-					<p class="mt-4 text-center text-base">
+					<p class="mt-4 text-center text-base tracking-wider">
 						't Swaentje is a simple yet effective flyer to reach more customers.
 					</p>
 				</div>
@@ -150,7 +150,7 @@
 			>
 				<div bind:this={card4Content} class="transition-transform duration-300">
 					<p class="font-inter text-center text-3xl font-bold text-[#bef227]">Fancy Counter</p>
-					<p class="mt-4 text-center text-base">
+					<p class="mt-4 text-center text-base tracking-wider">
 						Fancy Counter is a React-based interactive counter application with smooth animations,
 						featuring increment/decrement functionality and visual feedback. This project was built
 						to practice React fundamentals including state management, component structure, and UI
@@ -178,7 +178,7 @@
 					<p class="word-analytics text-center text-3xl font-bold">
 						WORD<span class="word-analytics-span font-thin">ANALYTICS</span>
 					</p>
-					<p class="mt-4 text-center text-base">
+					<p class="mt-4 text-center text-base tracking-wider">
 						Word Analytics is a web application that provides insights into word usage and frequency
 						analysis. Users can input text, and the app will generate statistics on word count,
 						unique words, and more. This project was built to practice React fundamentals including

@@ -77,7 +77,7 @@
 
 <!-- Hamburger button (center left) -->
 <button
-	class=" z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-gray-500/40 shadow-lg backdrop-blur-md transition-all hover:bg-gray-500/60 focus:outline-none"
+	class=" z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-gray-500/40 shadow-lg backdrop-blur-md transition-all hover:cursor-pointer hover:bg-gray-500/60 focus:outline-none"
 	aria-label="Open navigation"
 	on:click={openNav}
 	style:display={open ? 'none' : 'flex'}

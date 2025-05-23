@@ -53,9 +53,9 @@
 	>
 		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Contact</h2>
 		<p class="mb-14 max-w-2xl text-lg">
-			<span class="text-2xl font-bold text-[#f59e0b]">Let's get in touch!</span> Have a question, an
-			idea, or want to collaborate on a project? Send me a message using the form. I'll get back to you
-			as soon as possible!
+			<span class=" font-bold text-[#f59e0b]">Let's get in touch!</span> Have a question, an idea, or
+			want to collaborate on a project? Send me a message using the form. I'll get back to you as soon
+			as possible!
 		</p>
 		<form
 			bind:this={formRef}
