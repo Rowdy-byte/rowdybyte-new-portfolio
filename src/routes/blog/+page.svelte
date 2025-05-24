@@ -13,19 +13,10 @@
 </script>
 
 <main
-	transition:fade={{ delay: 250, duration: 300 }}
 	class="font-walsheim absolute top-1/2 left-1/2 max-w-[600px] -translate-x-1/2 -translate-y-1/2 transform gap-4"
 >
 	<section>
 		<h1
-			transition:fly={{
-				delay: 250,
-				duration: 1000,
-				x: 0,
-				y: -1000,
-				opacity: 0.5,
-				easing: quintInOut
-			}}
 			class="font-walsheim mx-auto mb-14 max-w-fit px-5 text-center text-4xl font-bold md:text-6xl"
 		>
 			Rowdy's Blog

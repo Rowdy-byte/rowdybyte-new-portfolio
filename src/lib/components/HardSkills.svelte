@@ -112,11 +112,32 @@
 		}
 	}
 
+	// Utility to split heading into spans
+	function splitHeading(heading: string) {
+		return heading.split('').map((char, i) => ({ char, i }));
+	}
+	const headingText = 'Hard Skills';
+	let headingSpans: HTMLElement[] = [];
+
+	function setHeadingRef(node: HTMLElement, index: number) {
+		headingSpans[index] = node;
+		return {};
+	}
+
+	function animateHeading() {
+		gsap.fromTo(
+			headingSpans.filter(Boolean),
+			{ opacity: 0, y: 40 },
+			{ opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'back.out(2)' }
+		);
+	}
+
 	$effect(() => {
 		if (!sectionRef) return;
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (entries[0].isIntersecting) {
+					animateHeading();
 					animateBadges();
 				}
 			},
@@ -128,12 +149,14 @@
 </script>
 
 <main class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
-	<section
-		id="hardskills"
-		bind:this={sectionRef}
-		class="flex w-full max-w-3xl flex-col items-center justify-center"
-	>
-		<h2 class="heading mb-18 text-center text-7xl font-bold md:text-8xl">Hard Skills</h2>
+	<section bind:this={sectionRef} id="hardskills">
+		<h2 class="heading mb-18 text-center text-7xl font-bold md:text-8xl">
+			{#each splitHeading(headingText) as { char, i } (i)}
+				<span use:setHeadingRef={i} style="display: inline-block"
+					>{char === ' ' ? '\u00A0' : char}</span
+				>
+			{/each}
+		</h2>
 		<div class="flex w-full flex-wrap items-center justify-center gap-1 sm:gap-4">
 			{#each hardSkillTags as skill, i}
 				<span

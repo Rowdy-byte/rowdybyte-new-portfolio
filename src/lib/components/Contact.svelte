@@ -129,7 +129,7 @@
 					type="email"
 					bind:value={email}
 					class="rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none"
-					placeholder="you@email.com"
+					placeholder="your@email.com"
 				/>
 				{#if errors.email}
 					<p class="text-sm text-red-500">{errors.email[0]}</p>
@@ -142,7 +142,7 @@
 					name="message"
 					bind:value={message}
 					class="min-h-[120px] rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none"
-					placeholder="How can I help you?"
+					placeholder="Message"
 				></textarea>
 				{#if errors.message}
 					<p class="text-sm text-red-500">{errors.message[0]}</p>
