@@ -1,16 +1,12 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import { page } from '$app/state';
-
+	import { Heart, Share2, Sun, Moon } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
-	import { Heart, Share2 } from 'lucide-svelte';
+	import { onMount } from 'svelte';
 
 	let Content: ConstructorOfATypedSvelteComponent | undefined = $state();
 
 	let { data } = $props();
-
-	const paths = import.meta.glob('../*.md', { eager: true });
-	const filenames = Object.keys(paths);
 
 	let slug = $state();
 	let title = $state();
@@ -18,27 +14,42 @@
 	let hasLiked = $state(false);
 	let linkTitle = $state('');
 	let url = $state('');
+	let isDark = $state(false);
 
-	function parseTitle(fileName: string): string {
-		return fileName
-			.replace(/.*\/\d+-|\.md/g, '')
-			.split('-')
-			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-			.join(' ');
+	function toggleTheme() {
+		isDark = !isDark;
+		if (isDark) {
+			document.documentElement.classList.add('dark');
+			localStorage.setItem('theme', 'dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+			localStorage.setItem('theme', 'light');
+		}
 	}
+
+	onMount(() => {
+		const saved = localStorage.getItem('theme');
+		if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			isDark = true;
+			document.documentElement.classList.add('dark');
+		} else {
+			isDark = false;
+			document.documentElement.classList.remove('dark');
+		}
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+			if (!localStorage.getItem('theme')) {
+				isDark = e.matches;
+				if (isDark) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			}
+		});
+	});
 
 	$effect(() => {
 		slug = page.params.slug;
-		const matchingFile = filenames.find(
-			(file) => file.split('/').pop()?.split('.').shift() === slug
-		);
-
-		if (matchingFile) {
-			title = parseTitle(matchingFile);
-		} else {
-			title = 'Not Found';
-		}
-
 		if (data.content) {
 			Content = data.content;
 		}
@@ -75,13 +86,10 @@
 				console.error('Delen mislukt', err);
 			}
 		} else {
-			// fallback: kopieer naar klembord
 			await navigator.clipboard.writeText(url);
 			alert('Link gekopieerd naar klembord 📋');
 		}
 	};
-
-	console.log('data', data);
 </script>
 
 <svelte:head>
@@ -92,90 +100,85 @@
 </svelte:head>
 
 <main
-	transition:fade={{ delay: 250, duration: 300 }}
-	class="font-walsheim mx-auto flex max-w-[650px] flex-col gap-4 px-6 pt-40 pb-20"
+	class="font-walsheim flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 px-2 py-12 dark:from-[#181a20] dark:to-[#23262f]"
 >
-	<div class="w-full">
+	<div
+		class="mx-auto w-full max-w-2xl rounded-2xl bg-white p-6 shadow-xl transition-colors duration-300 md:p-10 dark:bg-[#23262f] dark:text-gray-100"
+	>
+		<div class="mb-2 flex justify-end">
+			<button
+				class="rounded-full bg-gray-200 p-2 transition-colors hover:bg-purple-500 hover:text-white dark:bg-[#181a20] dark:hover:bg-purple-500 dark:hover:text-white"
+				onclick={toggleTheme}
+				aria-label="Toggle theme"
+			>
+				{#if isDark}
+					<Sun size={20} />
+				{:else}
+					<Moon size={20} />
+				{/if}
+			</button>
+		</div>
 		{#if data.meta.coverImage}
 			<img
 				src={data.meta.coverImage}
 				alt={data.meta.title}
-				class="mb-4 h-[200px] w-full object-cover shadow-lg"
+				class="mb-6 h-64 w-full rounded-xl object-cover shadow"
 			/>
 		{/if}
-	</div>
-
-	<h1 class="text-2xl">{data.meta.title}</h1>
-	<h1>{data.meta.description}</h1>
-	<p class="text-sm text-gray-500">{data.meta.date}</p>
-
-	<div class="mb-4 flex flex-wrap gap-2">
-		{#each data.meta.tags ?? [] as tag}
-			<span class=" bg-gray-200 px-2 py-1 text-xs font-medium text-[#1b1e28] hover:bg-purple-500">
-				#{tag}
-			</span>
-		{/each}
-	</div>
-
-	<div></div>
-	<div class="flex gap-4">
-		<form method="POST" action="?/like" use:enhance>
-			<button
-				type="submit"
-				name="like"
-				class="flex items-center gap-2 transition-all hover:text-purple-500"
-				onclick={() => {
-					if (!hasLiked) {
-						likes++;
-						hasLiked = true;
-					}
-				}}
-			>
-				<Heart size={16} /> <span class="text-xs">{likes}</span>
-			</button>
-		</form>
-		<button
-			onclick={share}
-			class=" border-neutral-300 text-sm transition-all hover:text-purple-500"
+		<h1 class="mb-2 text-3xl font-bold text-[#1b1e28] md:text-4xl dark:text-white">
+			{data.meta.title}
+		</h1>
+		<p class="mb-2 text-sm text-gray-500 dark:text-gray-400">{data.meta.date}</p>
+		<div class="mb-4 flex flex-wrap gap-2">
+			{#each data.meta.tags ?? [] as tag}
+				<span
+					class="rounded bg-gray-200 px-2 py-1 text-xs font-medium text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white dark:bg-[#181a20] dark:text-gray-200 dark:hover:bg-purple-500 dark:hover:text-white"
+					>#{tag}</span
+				>
+			{/each}
+		</div>
+		<div
+			class="prose prose-neutral dark:prose-invert max-w-none text-lg text-gray-800 dark:text-gray-100"
 		>
-			<Share2 size={16} />
-		</button>
-	</div>
-	<section class="mt-6">
-		<h1 class="mb-2 text-lg font-bold">Laat een reactie achter</h1>
-		<form
-			method="POST"
-			action="?/postComment"
-			use:enhance
-			class="flex flex-col gap-3 p-3 shadow-md"
-		>
-			<input
-				name="name"
-				placeholder="Naam"
-				required
-				class=" bg-[#1b1e28] p-3 text-sm font-normal focus:outline-none"
-			/>
-			<textarea
-				name="body"
-				placeholder="Wat vond je van dit artikel?"
-				required
-				class=" bg-[#1b1e28] p-3 text-sm font-normal focus:outline-none"
-			></textarea>
+			{#if Content}
+				<Content />
+			{/if}
+		</div>
+		<div class="mt-8 flex gap-4">
+			<form method="POST" action="?/like" use:enhance>
+				<button
+					type="submit"
+					name="like"
+					class="flex items-center gap-2 rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white dark:bg-[#181a20] dark:text-gray-100 dark:hover:bg-purple-500 dark:hover:text-white"
+					onclick={() => {
+						if (!hasLiked) {
+							likes++;
+							hasLiked = true;
+						}
+					}}
+				>
+					<Heart size={16} /> <span class="text-xs">{likes}</span>
+				</button>
+			</form>
 			<button
-				class="ml-3 w-fit bg-gray-200 px-4 py-2 text-sm font-bold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-gray-200"
+				onclick={share}
+				class="flex items-center gap-2 rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white dark:bg-[#181a20] dark:text-gray-100 dark:hover:bg-purple-500 dark:hover:text-white"
 			>
-				Reageren
+				<Share2 size={16} />
+				<span>Delen</span>
 			</button>
-		</form>
-
+		</div>
+		<!-- Comments section -->
 		{#if data.data.comments && data.data.comments.length > 0}
-			<div class="mt-6 space-y-4">
+			<div class="mt-10 space-y-4">
 				<h3 class="text-md font-semibold">Reacties</h3>
 				{#each data.data.comments as comment}
-					<div class=" p-3 px-6 shadow-md">
-						<p class="text-xs text-neutral-400">{comment.name} zei:</p>
-						<p class="mt-2 mb-2">{comment.body}</p>
-						<p class="text-xs text-neutral-400">
+					<div class="rounded bg-gray-50 p-3 px-6 shadow dark:bg-[#181a20]">
+						<p class="text-xs font-semibold text-[#1b1e28] dark:text-gray-200">
+							{comment.name} zei:
+						</p>
+						<p class="mt-2 mb-2 text-base text-[#222] dark:text-gray-100">{comment.body}</p>
+						<p class="text-xs text-gray-500 dark:text-gray-400">
 							{new Date(comment.createdAt).toLocaleString('nl-NL', {
 								hour12: false,
 								day: '2-digit',
@@ -189,5 +192,34 @@
 				{/each}
 			</div>
 		{/if}
-	</section>
+		<!-- Comment form -->
+		<section class="mt-10">
+			<h2 class="mb-2 text-lg font-bold">Laat een reactie achter</h2>
+			<form
+				method="POST"
+				action="?/postComment"
+				use:enhance
+				class="flex flex-col gap-3 rounded bg-gray-50 p-3 shadow dark:bg-[#181a20]"
+			>
+				<input
+					name="name"
+					placeholder="Naam"
+					required
+					class="rounded bg-white p-3 text-sm font-normal focus:outline-none dark:bg-[#23262f] dark:text-gray-100"
+				/>
+				<textarea
+					name="body"
+					placeholder="Wat vond je van dit artikel?"
+					required
+					class="rounded bg-white p-3 text-sm font-normal focus:outline-none dark:bg-[#23262f] dark:text-gray-100"
+				></textarea>
+				<button
+					type="submit"
+					class="ml-3 w-fit rounded bg-gray-200 px-4 py-2 text-sm font-bold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white dark:bg-[#181a20] dark:text-gray-100 dark:hover:bg-purple-500 dark:hover:text-white"
+				>
+					Reageren
+				</button>
+			</form>
+		</section>
+	</div>
 </main>

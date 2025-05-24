@@ -10,7 +10,7 @@ function createHash(algorithm: string) {
     return {
         update: (data: string) => {
             return {
-                digest: (encoding: string) => cryptoCreateHash(algorithm).update(data).digest(encoding as any)
+                digest: (encoding: 'hex' | 'base64' | 'base64url') => cryptoCreateHash(algorithm).update(data).digest(encoding)
             };
         }
     };
