@@ -127,7 +127,7 @@
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
 		<!-- <Bubbles /> -->
-		<h2 class="heading mb-14 text-center text-7xl font-bold sm:text-8xl">Improve Skills</h2>
+		<h2 class="heading mb-18 text-center text-7xl font-bold md:text-8xl">Improve Skills</h2>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
 			{#each improveSkillTags as skill, i}
 				<span

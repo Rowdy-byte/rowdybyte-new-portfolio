@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
 	import { enhance } from '$app/forms';
 	import gsap from 'gsap';
+	import Pipes from './Pipes.svelte';
 
 	let name = $state<string>('');
 	let email = $state<string>('');
@@ -87,6 +88,7 @@
 </script>
 
 <div class="mx-2 flex min-h-screen flex-col items-center justify-center py-8">
+	<Pipes />
 	<section
 		id="contact"
 		bind:this={sectionRef}
