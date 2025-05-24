@@ -148,7 +148,7 @@
 	});
 </script>
 
-<main class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
+<main class="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-2 py-8">
 	<section bind:this={sectionRef} id="hardskills">
 		<h2 class="heading mb-18 text-center text-7xl font-bold md:text-8xl">
 			{#each splitHeading(headingText) as { char, i } (i)}

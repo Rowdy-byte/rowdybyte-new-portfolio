@@ -118,7 +118,9 @@
 					placeholder="Your name"
 				/>
 				{#if errors.name}
-					<p class="text-sm text-red-500">{errors.name[0]}</p>
+					{#each errors.name as err}
+						<p class="text-sm text-red-500">{err}</p>
+					{/each}
 				{/if}
 			</div>
 
@@ -132,7 +134,9 @@
 					placeholder="your@email.com"
 				/>
 				{#if errors.email}
-					<p class="text-sm text-red-500">{errors.email[0]}</p>
+					{#each errors.email as err}
+						<p class="text-sm text-red-500">{err}</p>
+					{/each}
 				{/if}
 			</div>
 
@@ -142,10 +146,12 @@
 					name="message"
 					bind:value={message}
 					class="min-h-[120px] rounded-lg border-none bg-[#1d232a] px-4 py-3 text-white placeholder-gray-400 transition-all outline-none"
-					placeholder="Message"
+					placeholder="How can I help you?"
 				></textarea>
 				{#if errors.message}
-					<p class="text-sm text-red-500">{errors.message[0]}</p>
+					{#each errors.message as err}
+						<p class="text-sm text-red-500">{err}</p>
+					{/each}
 				{/if}
 			</div>
 			<div class="flex gap-2">

@@ -4,7 +4,7 @@ import { z } from 'zod';
 export const contactSchema = z.object({
     name: z
         .string()
-        .min(2, { message: 'Enter name' })
+        .min(2, { message: 'Name must be atleast 2 characters' })
         .max(20, { message: 'Name can be max 20 characters' }),
     email: z
         .string()
@@ -13,7 +13,7 @@ export const contactSchema = z.object({
     message: z
         .string()
         .min(10, { message: 'Enter a message' })
-        .max(100, { message: 'Messag can be max 100 charcters' }),
+        .max(100, { message: 'Message can be max 100 characters' }),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
