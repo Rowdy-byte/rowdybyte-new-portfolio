@@ -64,7 +64,7 @@
 				href={social.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gray-500/20 p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
+				class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-[#2c333c] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
 			>
 				<div class="flex h-full w-full flex-col items-center justify-center rounded-full">
 					<span class="mb-2" aria-label={social.name}>

@@ -60,7 +60,7 @@
 	});
 </script>
 
-<div class="relative mx-auto flex h-screen max-w-4xl items-center justify-center">
+<div class=" mx-auto flex h-screen max-w-4xl items-center justify-center">
 	<Pipes />
 	<div class="relative flex aspect-[16/9] w-full overflow-hidden">
 		{#each images as img, i}

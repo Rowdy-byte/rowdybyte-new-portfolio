@@ -53,14 +53,13 @@
 				{
 					borderColor: 'rgba(255,255,255,0.18)',
 					color: '#fff',
-					backgroundColor: 'rgba(166,172,205,0.13)',
-					boxShadow: 'none',
-					opacity: 1
+					backgroundColor: '#2c333c',
+					boxShadow: 'none'
 				},
 				{
 					borderColor: color,
 					color: color,
-					backgroundColor: 'rgba(166,172,205,0.13)',
+					backgroundColor: '#2c333c)',
 					boxShadow: `0 0 0 2px ${color}44`,
 					duration: 0.7,
 					ease: 'power1.inOut',
@@ -88,10 +87,9 @@
 			hasAnimated = true;
 			gsap.fromTo(
 				badgeRefs,
-				{ y: 40, opacity: 0, scale: 0.8 },
+				{ y: 40, scale: 0.8 }, // removed opacity
 				{
 					y: 0,
-					opacity: 1,
 					scale: 1,
 					stagger: 0.07,
 					duration: 0.6,
@@ -140,7 +138,7 @@
 			{#each hardSkillTags as skill, i}
 				<span
 					use:setBadgeRef={i}
-					class="rounded-full bg-gray-500/20 px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3"
+					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3"
 				>
 					{skill}
 				</span>

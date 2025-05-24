@@ -88,7 +88,7 @@
 			<a
 				bind:this={card2}
 				href="https://serialmapper-prisma.vercel.app/"
-				class="rounded-2xl bg-gray-500/20 p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
 				target="_blank"
 				rel="noopener noreferrer"
 				onmouseenter={() => {
@@ -115,7 +115,7 @@
 			<a
 				bind:this={card3}
 				href="https://swaentje.vercel.app/"
-				class="rounded-2xl bg-gray-500/20 p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
 				target="_blank"
 				rel="noopener noreferrer"
 				onmouseenter={() => {
@@ -138,7 +138,7 @@
 			<a
 				bind:this={card4}
 				href="https://fancy-counter-three-murex.vercel.app/"
-				class="rounded-2xl bg-gray-500/20 p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
 				target="_blank"
 				rel="noopener noreferrer"
 				onmouseenter={() => {
@@ -166,7 +166,7 @@
 			<a
 				bind:this={card5}
 				href="https://word-analytics-nu.vercel.app/"
-				class="rounded-2xl bg-gray-500/20 p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
 				target="_blank"
 				rel="noopener noreferrer"
 				onmouseenter={() => {

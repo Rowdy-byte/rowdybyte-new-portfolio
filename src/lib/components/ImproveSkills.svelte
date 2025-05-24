@@ -55,13 +55,13 @@
 				{
 					borderColor: color,
 					color: color,
-					backgroundColor: 'rgba(166,172,205,0.13)',
+					backgroundColor: '#2c333c',
 					boxShadow: `0 0 0 2px ${color}44`,
 					duration: 0.7,
 					ease: 'power1.inOut',
 					onComplete: () => {
 						gsap.to(tag, {
-							borderColor: 'rgba(255,255,255,0.18)',
+							borderColor: '#2c333c',
 							color: '#fff',
 							boxShadow: 'none',
 							duration: 1.2,
@@ -126,13 +126,13 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
-		<Bubbles />
+		<!-- <Bubbles /> -->
 		<h2 class="heading mb-14 text-center text-7xl font-bold sm:text-8xl">Improve Skills</h2>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
 			{#each improveSkillTags as skill, i}
 				<span
 					bind:this={badgeRefs[i]}
-					class="rounded-full bg-gray-500/20 px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>

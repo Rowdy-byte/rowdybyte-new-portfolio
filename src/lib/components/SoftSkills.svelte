@@ -55,13 +55,13 @@
 				{
 					borderColor: color,
 					color: color,
-					backgroundColor: 'rgba(166,172,205,0.13)',
+					backgroundColor: '#2c333c',
 					boxShadow: `0 0 0 2px ${color}44`,
 					duration: 0.7,
 					ease: 'power1.inOut',
 					onComplete: () => {
 						gsap.to(tag, {
-							borderColor: 'rgba(255,255,255,0.18)',
+							borderColor: '#2c333c',
 							color: '#fff',
 							boxShadow: 'none',
 							duration: 1.2,
@@ -120,7 +120,7 @@
 	});
 </script>
 
-<Tubes />
+<!-- <Tubes /> -->
 
 <main class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section
@@ -133,7 +133,7 @@
 			{#each softSkillTags as skill, i}
 				<span
 					bind:this={badgeRefs[i]}
-					class="rounded-full bg-gray-500/20 px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>
