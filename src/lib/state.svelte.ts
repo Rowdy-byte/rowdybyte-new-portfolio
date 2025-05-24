@@ -13,7 +13,7 @@ export function getNavIsOpen() {
 
 }
 
-let sidebarIsOpen = $state(true);
+let sidebarIsOpen = $state(false);
 
 export function getSidebarIsOpen() {
     function toggle() {

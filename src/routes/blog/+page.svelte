@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { Mail } from 'lucide-svelte';
-	import { quintInOut } from 'svelte/easing';
-	import { fade, fly } from 'svelte/transition';
 
 	let { form } = $props();
 

@@ -1,12 +1,10 @@
-import type { Actions, PageServerLoad } from './$types';
+import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
 import { contactSchema, type ContactInput } from '$lib/validators/contact';
 import { Resend } from 'resend';
 import { RESEND_API_KEY } from '$env/static/private';
 
 const resend = new Resend(RESEND_API_KEY);
-
-export const load: PageServerLoad = async () => ({});
 
 export const actions: Actions = {
     default: async ({ request }) => {
