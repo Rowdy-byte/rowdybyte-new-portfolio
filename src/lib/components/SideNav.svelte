@@ -83,7 +83,7 @@
 
 <nav
 	bind:this={navRef}
-	class="fixed top-1/2 left-4 z-50 flex -translate-y-1/2 flex-col gap-4 rounded-2xl border border-gray-400/20 bg-gray-500/30 bg-clip-padding p-4 shadow-xl backdrop-blur-md backdrop-saturate-150"
+	class="fixed top-1/2 left-4 z-50 flex -translate-y-1/2 flex-col gap-4 rounded-2xl border-2 border-gray-400/20 bg-[#2c333c] bg-clip-padding p-4 shadow-xl backdrop-blur-md backdrop-saturate-150"
 	style="display: flex;"
 >
 	<!-- Close button -->

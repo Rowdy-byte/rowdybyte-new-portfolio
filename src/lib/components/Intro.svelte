@@ -75,7 +75,7 @@
 <section id="intro" class="intro flex h-screen w-full">
 	<div class="card-inner relative w-full">
 		<div
-			class="intro-container card-front absolute h-full w-full overflow-hidden bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
+			class="intro-container card-front absolute h-full w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto"
 		>
 			<Aurora />
 			<div class="p-8 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
