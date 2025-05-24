@@ -80,7 +80,9 @@
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
-		<h2 bind:this={card1} class="mb-14 text-center text-4xl font-bold sm:text-7xl">Projects</h2>
+		<h2 bind:this={card1} class="heading mb-18 text-center text-7xl font-bold md:text-8xl">
+			Projects
+		</h2>
 
 		<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
 			<a
@@ -102,7 +104,7 @@
 					<p class=" text-center text-2xl font-bold italic">
 						SN<span class="text-md text-orange-500">mapper</span>
 					</p>
-					<p class="mt-4 text-center text-base tracking-wider">
+					<p class="serialmapper-paragraph mt-4 text-center text-base tracking-wider">
 						SerialMapper is a SvelteKit-based app that streamlines bulk product intake by importing
 						Excel serials, validating data, and visualizing efficiency gains—perfect for warehouses
 						and logistics teams handling high-volume entries.
@@ -126,8 +128,8 @@
 				}}
 			>
 				<div bind:this={card3Content} class="transition-transform duration-300">
-					<p class="swaentje text-center text-3xl font-bold">'t Swaentje</p>
-					<p class="mt-4 text-center text-base tracking-wider">
+					<p class="swaentje-heading text-center text-3xl font-bold">'t Swaentje</p>
+					<p class="swaentje-paragraph mt-4 text-center tracking-wider">
 						't Swaentje is a simple yet effective flyer to reach more customers.
 					</p>
 				</div>
@@ -149,8 +151,10 @@
 				}}
 			>
 				<div bind:this={card4Content} class="transition-transform duration-300">
-					<p class="font-inter text-center text-3xl font-bold text-[#bef227]">Fancy Counter</p>
-					<p class="mt-4 text-center text-base tracking-wider">
+					<p class="fancy-counter-heading text-center text-3xl font-bold text-[#bef227]">
+						Fancy Counter
+					</p>
+					<p class="fancy-counter-paragraph mt-4 text-center text-base tracking-wider">
 						Fancy Counter is a React-based interactive counter application with smooth animations,
 						featuring increment/decrement functionality and visual feedback. This project was built
 						to practice React fundamentals including state management, component structure, and UI
@@ -174,11 +178,13 @@
 					animateCardContentOut(card5Content);
 				}}
 			>
-				<div bind:this={card5Content} class="transition-transform duration-300">
-					<p class="word-analytics text-center text-3xl font-bold">
-						WORD<span class="word-analytics-span font-thin">ANALYTICS</span>
+				<div bind:this={card5Content} class=" transition-transform duration-300">
+					<p class="word-analytics-heading text-center text-3xl font-bold">
+						<span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+							>WORD<span class="word-analytics-span font-thin">ANALYTICS</span></span
+						>
 					</p>
-					<p class="mt-4 text-center text-base tracking-wider">
+					<p class="word-analytics-paragraph mt-4 text-center tracking-wider">
 						Word Analytics is a web application that provides insights into word usage and frequency
 						analysis. Users can input text, and the app will generate statistics on word count,
 						unique words, and more. This project was built to practice React fundamentals including
@@ -191,11 +197,33 @@
 </div>
 
 <style>
-	.word-analytics {
+	.heading {
+		font-family: 'GT Walsheim Pro', sans-serif;
+	}
+
+	.serialmapper-paragraph {
+		font-family: 'Inter';
+	}
+	.word-analytics-heading {
 		font-family: 'Inter';
 	}
 
-	.swaentje {
+	.word-analytics-paragraph {
+		font-family: 'Inter';
+	}
+
+	.fancy-counter-heading {
+		font-family: 'Inter';
+	}
+	.fancy-counter-paragraph {
+		font-family: 'Inter';
+	}
+
+	.swaentje-heading {
 		font-family: 'Rouge Script';
+	}
+
+	.swaentje-paragraph {
+		font-family: 'Inter';
 	}
 </style>

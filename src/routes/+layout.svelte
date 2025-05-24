@@ -13,4 +13,7 @@
 </main>
 
 <style>
+	/* main {
+		font-family: 'GT Walsheim Pro Regular';
+	} */
 </style>

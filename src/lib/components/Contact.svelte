@@ -3,15 +3,15 @@
 	import { enhance } from '$app/forms';
 	import gsap from 'gsap';
 
-	let name = '';
-	let email = '';
-	let message = '';
-	let submitted = false;
-	let errors: Record<string, string[]> = {};
+	let name = $state<string>('');
+	let email = $state<string>('');
+	let message = $state<string>('');
+	let submitted = $state<boolean>(false);
+	let errors: Record<string, string[]> = $state<Record<string, string[]>>({});
 
 	let sectionRef: HTMLElement;
 	let formRef: HTMLFormElement;
-	let messageRef: HTMLElement;
+	let messageRef = $state<HTMLElement | null>(null);
 
 	// Function for enhance
 	const enhanceForm = () => {
@@ -53,7 +53,7 @@
 		};
 	};
 
-	onMount(() => {
+	$effect(() => {
 		const tl = gsap.timeline({ paused: true });
 		tl.from(sectionRef, { opacity: 0, y: 60, duration: 0.7, ease: 'power2.out' });
 		tl.from(
@@ -92,8 +92,8 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-4xl flex-col items-center justify-center"
 	>
-		<h2 class="mb-14 text-center text-4xl font-bold sm:text-7xl">Contact</h2>
-		<p class="mb-14 max-w-2xl text-lg">
+		<h2 class="mb-18 text-center text-7xl font-bold md:text-8xl">Contact</h2>
+		<p class="mb-18 max-w-2xl text-lg">
 			<span class=" font-bold text-[#f59e0b]">Let's get in touch!</span> Have a question, an idea, or
 			want to collaborate on a project? Send me a message using the form. I'll get back to you as soon
 			as possible!
@@ -102,7 +102,7 @@
 		<form
 			bind:this={formRef}
 			use:enhance={enhanceForm}
-			class="flex w-full max-w-4xl flex-col gap-6 rounded-2xl bg-gray-500/20 p-8 shadow-lg"
+			class="flex w-full max-w-4xl flex-col gap-6 rounded-2xl bg-gray-500/20 p-4 shadow-lg md:p-8"
 			method="POST"
 			autocomplete="off"
 		>
@@ -146,19 +146,20 @@
 					<p class="text-sm text-red-500">{errors.message[0]}</p>
 				{/if}
 			</div>
-
-			<button
-				type="submit"
-				class="mt-4 w-full rounded-full bg-[#1d232a] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:cursor-pointer hover:shadow-lg active:scale-95"
-				disabled={submitted}
-			>
-				Send
-			</button>
-			{#if submitted}
-				<p bind:this={messageRef} class="mt-6 text-center text-lg font-semibold text-green-400">
-					Thank you! Your message has been sent successfully.
-				</p>
-			{/if}
+			<div class="flex gap-2">
+				<button
+					type="submit"
+					class="mt-4 w-1/2 rounded-full bg-[#1d232a] px-8 py-3 text-lg font-semibold text-white shadow transition-all hover:cursor-pointer hover:shadow-lg active:scale-95"
+					disabled={submitted}
+				>
+					Send
+				</button>
+				{#if submitted}
+					<p bind:this={messageRef} class=" text-center text-lg font-semibold text-green-400">
+						Thank you! Your message has been sent successfully.
+					</p>
+				{/if}
+			</div>
 		</form>
 	</section>
 </div>

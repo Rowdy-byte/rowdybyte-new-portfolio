@@ -1,8 +1,6 @@
 <script lang="ts">
-	// No props needed for now
 </script>
 
-<!-- Aurora effect: animated, blurred, gradient ribbons using absolutely positioned divs -->
 <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 	<div class="aurora-shape aurora1"></div>
 	<div class="aurora-shape aurora2"></div>

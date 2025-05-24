@@ -72,7 +72,7 @@
 	});
 </script>
 
-<section id="intro" class="flex h-screen w-full">
+<section id="intro" class="intro flex h-screen w-full">
 	<div class="card-inner relative w-full">
 		<div
 			class="intro-container card-front absolute h-full w-full overflow-hidden bg-gray-500/20 shadow-lg lg:flex lg:h-auto"
@@ -110,6 +110,10 @@
 </section>
 
 <style>
+	.intro {
+		font-family: 'GT Walsheim Pro Regular';
+	}
+
 	.heading {
 		font-family: 'GT Walsheim Pro';
 	}

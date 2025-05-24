@@ -1,5 +1,4 @@
 <script lang="ts">
-	// 20 bubbles with different gradients, sizes, and positions
 	const bubbles = [
 		{ size: 48, x: '3%', y: '10%', gradient: ['from-pink-400', 'to-yellow-300'] },
 		{ size: 36, x: '18%', y: '5%', gradient: ['from-blue-400', 'to-cyan-300'] },
