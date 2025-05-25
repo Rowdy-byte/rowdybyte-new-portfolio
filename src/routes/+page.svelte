@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Contact from '$lib/components/Contact.svelte';
+
 	import HardSkills from '$lib/components/HardSkills.svelte';
 	import ImproveSkills from '$lib/components/ImproveSkills.svelte';
 	import Intro from '$lib/components/Intro.svelte';
