@@ -1,17 +1,8 @@
 <script lang="ts">
-	import Blognav from '$lib/components/blog/Blognav.svelte';
-	import type { PageData } from '../$types';
-	import type { Snippet } from 'svelte';
-
-	let { children, data } = $props();
-
-	console.log('data', data);
+	let { children } = $props();
 </script>
 
 <main class="relative h-screen">
-	<nav>
-		<Blognav {data} />
-	</nav>
 	{@render children()}
 </main>
 

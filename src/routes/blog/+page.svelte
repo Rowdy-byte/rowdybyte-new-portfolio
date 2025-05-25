@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { Mail } from 'lucide-svelte';
+	import gsap from 'gsap';
+	import { tick } from 'svelte';
 
 	let { data, form } = $props();
 
@@ -14,6 +17,51 @@
 
 	// Type assertion to inform TypeScript about the actual structure
 	const posts = data.headers as Post[];
+	let totalPages = $state(0);
+
+	let currentPage = $state(1);
+	const postsPerPage = $state(4);
+
+	$effect(() => {
+		totalPages = Math.ceil(posts.length / postsPerPage);
+	});
+
+	function setPage(page: number) {
+		if (page >= 1 && page <= totalPages) {
+			currentPage = page;
+		}
+	}
+
+	let successMsgRef: HTMLElement | undefined = $state();
+	let showSuccess = $state(false);
+
+	$effect(() => {
+		if (form?.success) {
+			showSuccess = true;
+			tick().then(() => {
+				if (successMsgRef) {
+					gsap.fromTo(
+						successMsgRef,
+						{ opacity: 0, y: 20 },
+						{ opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+					);
+					setTimeout(() => {
+						if (successMsgRef) {
+							gsap.to(successMsgRef, {
+								opacity: 0,
+								y: -20,
+								duration: 0.5,
+								ease: 'power2.in',
+								onComplete: () => {
+									showSuccess = false;
+								}
+							});
+						}
+					}, 5000);
+				}
+			});
+		}
+	});
 </script>
 
 <main
@@ -23,7 +71,7 @@
 	<p class="mb-8 max-w-2xl text-center text-2xl tracking-wide">Black & White non-tech Blog!</p>
 
 	<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-		{#each posts as post}
+		{#each posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage) as post}
 			<a
 				href={`/blog/${post.slug.replace(/ /g, '-').trim()}`}
 				class="group flex flex-col overflow-hidden rounded-2xl bg-gray-100 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl"
@@ -49,8 +97,39 @@
 		{/each}
 	</div>
 
+	<!-- Pagination controls -->
+	{#if totalPages > 1}
+		<div class="mt-8 flex items-center justify-center gap-2">
+			<button
+				disabled={currentPage === 1}
+				class="rounded bg-gray-200 px-3 py-1 font-bold text-[#1b1e28] disabled:opacity-50"
+				onclick={() => setPage(currentPage - 1)}
+			>
+				Vorige
+			</button>
+			{#each Array(totalPages) as _, i}
+				<button
+					class="rounded border border-gray-200 bg-gray-100 px-3 py-1 font-bold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white {currentPage ===
+					i + 1
+						? 'bg-purple-500 text-white'
+						: ''}"
+					onclick={() => setPage(i + 1)}
+				>
+					{i + 1}
+				</button>
+			{/each}
+			<button
+				disabled={currentPage === totalPages}
+				class="rounded bg-gray-200 px-3 py-1 font-bold text-[#1b1e28] disabled:opacity-50"
+				onclick={() => setPage(currentPage + 1)}
+			>
+				Volgende
+			</button>
+		</div>
+	{/if}
+
 	<section class="mt-16 w-full max-w-lg">
-		<form method="POST" action="?/subscribe" class="flex flex-col items-center">
+		<form method="POST" action="?/subscribe" class="flex flex-col items-center" use:enhance>
 			<h2 class="mb-2 text-center text-lg font-semibold">Schrijf je in voor nieuwe blogposts:</h2>
 			<div class="relative my-2 flex w-full items-center">
 				<div class="absolute left-2 flex items-center justify-center">
@@ -63,21 +142,21 @@
 					autocomplete="off"
 					required
 					placeholder="jouw@email.nl"
-					class="w-full border border-gray-200 bg-gray-200 p-2 pl-10 font-normal text-gray-500 outline-none"
+					class="w-full border border-gray-200 bg-gray-200 p-2 px-4 py-3 pl-10 font-normal text-gray-500 outline-none"
 				/>
 			</div>
 			<button
 				type="submit"
-				class="rounded bg-[#1b1e28] px-4 py-2 font-bold text-white hover:text-purple-500"
+				class="rounded-full bg-[#2c333c] px-4 py-3 font-bold text-white hover:text-purple-500"
 				>Inschrijven</button
 			>
-			{#if form?.success}
-				<p class="mt-2 text-center text-xs text-green-600">
-					Je bent ingeschreven! Check your spam folder!
+			{#if showSuccess}
+				<p bind:this={successMsgRef} class="mt-2 text-center text-xs text-green-600">
+					Je bent ingeschreven! Check je spamfolder!
 				</p>
 			{:else if form?.error}
 				<p class="mt-2 text-center text-xs text-red-600">
-					Je bent al ingeschreven! Check your spam folder!
+					Je bent al ingeschreven! Check je spamfolder!
 				</p>
 			{/if}
 		</form>

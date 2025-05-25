@@ -16,18 +16,20 @@
 	}
 </script>
 
-<main class="mx-auto flex max-w-[650px] flex-col px-4 pb-20 pt-40 font-walsheim">
-	<section class="mb-10 flex flex-col gap-4">
-		{#if data?.user}
-			<div>
-				<h1 class="text-2xl">Hi, {data.user.username}!</h1>
-				<p class="text-xs">Your user ID: {data.user.id}.</p>
-			</div>
-			<form method="post" action="?/logout" use:enhance>
-				<button class="mb-6 bg-gray-500 p-4 py-2 text-white hover:bg-gray-700">Sign out</button>
-			</form>
-		{:else}
-			<p>Not logged in</p>
-		{/if}
-	</section>
+<main class="flex min-h-screen w-full items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 px-4 py-16 font-walsheim">
+	<div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
+		<section class="flex flex-col gap-6">
+			{#if data?.user}
+				<div class="mb-4">
+					<h1 class="mb-1 text-2xl font-bold text-[#1b1e28]">Hi, {data.user.username}!</h1>
+					<p class="text-xs text-gray-500">Your user ID: {data.user.id}.</p>
+				</div>
+				<form method="post" action="?/logout" use:enhance>
+					<button class="w-full rounded bg-[#2c333c] px-4 py-3 font-bold text-white transition-all hover:bg-purple-500">Sign out</button>
+				</form>
+			{:else}
+				<p class="text-center text-gray-500">Not logged in</p>
+			{/if}
+		</section>
+	</div>
 </main>

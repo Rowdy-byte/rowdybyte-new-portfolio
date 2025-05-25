@@ -9,7 +9,7 @@
 	const navLinks = [
 		{ label: 'Blog', href: '/blog', icon: NotebookPen },
 		{ label: 'Documentation', href: '/docs', icon: BookOpenText },
-		{ label: 'Admin', href: '/admin', icon: LockKeyhole }
+		{ label: 'Admin', href: '/auth/lucia', icon: LockKeyhole }
 	];
 
 	let open = $state(false);
