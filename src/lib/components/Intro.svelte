@@ -92,11 +92,7 @@
 				<p class="mt-8 font-light italic">-Rowdy</p>
 				<a
 					href="#contact"
-<<<<<<< HEAD
-					class="contact-button mt-8 flex max-w-2/5 items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
-=======
 					class="contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
->>>>>>> development
 					onmouseenter={animateArrowIn}
 					onmouseleave={animateArrowOut}
 				>
