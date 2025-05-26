@@ -78,8 +78,10 @@
 			class="intro-container card-front absolute h-full w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto"
 		>
 			<Aurora />
-			<div class="p-8 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8">
-				<h1 class="heading mb-4 text-5xl font-black tracking-tight text-gray-800 sm:text-7xl">
+			<div
+				class="flex flex-col items-center justify-center p-8 lg:flex lg:w-3/5 lg:flex-col lg:items-center lg:justify-center lg:p-8"
+			>
+				<h1 class="heading mb-4 text-5xl font-black tracking-tight text-[#1d232a] sm:text-7xl">
 					Welcome!
 				</h1>
 				<p class="max-w-2xl text-base leading-relaxed sm:text-lg">
@@ -90,7 +92,7 @@
 				<p class="mt-8 font-light italic">-Rowdy</p>
 				<a
 					href="#contact"
-					class="contact-button mt-8 flex items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
+					class="contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
 					onmouseenter={animateArrowIn}
 					onmouseleave={animateArrowOut}
 				>

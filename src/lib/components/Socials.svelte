@@ -56,7 +56,7 @@
 	bind:this={sectionRef}
 	class="flex min-h-screen w-full flex-col items-center justify-center gap-6 py-8 sm:gap-8"
 >
-	<h1 class="mb-18 text-center text-7xl font-bold md:text-8xl">Socials</h1>
+	<h1 class="mb-18 text-center text-6xl font-bold md:text-8xl">Socials</h1>
 	<div id="socials" class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
 		{#each socials as social, i}
 			<a
