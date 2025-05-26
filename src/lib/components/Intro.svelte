@@ -88,7 +88,8 @@
 					data visualization, always learning, always improving, and aiming to work remotely.
 				</p>
 				<p class="mt-8 font-light italic">-Rowdy</p>
-				<button
+				<a
+					href="#contact"
 					class="contact-button mt-8 flex items-center gap-2 rounded-full bg-[#1d232a] px-12 py-4 text-white hover:scale-105 hover:cursor-pointer"
 					onmouseenter={animateArrowIn}
 					onmouseleave={animateArrowOut}
@@ -100,7 +101,7 @@
 					>
 						<MoveRight size={22} />
 					</span>
-				</button>
+				</a>
 			</div>
 			<div class="flex items-end justify-center rounded-full lg:w-2/5 lg:pt-8">
 				<img class="profile-image max-w-sm" src="/rowdy-bg-rm-six.png" alt="Rowdy's profile" />
