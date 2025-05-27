@@ -29,10 +29,18 @@ export const actions: Actions = {
                 to: 'rowdy.verbeek@outlook.com',
                 subject: `Nieuw contactbericht van ${name}`,
                 html: `
-          <h2>Nieuw bericht via contactformulier</h2>
-          <p><strong>Naam:</strong> ${name}</p>
-          <p><strong>E-mail:</strong> ${email}</p>
-          <p><strong>Bericht:</strong><br/>${message.replace(/\n/g, '<br/>')}</p>
+          <div style="max-width:480px;margin:2rem auto;padding:0;background:#fff;border-radius:18px;box-shadow:0 4px 24px 0 #2221;overflow:hidden;font-family:'GT Walsheim Pro',Arial,sans-serif;">
+            <img src='https://rowdybyte.xyz/contact.png' alt='Rowdy' style="width:100%;height:120px;object-fit:cover;object-position:center;background:#2c333c;" />
+            <div style="padding:2rem 2rem 1.5rem 2rem;">
+              <h2 style="margin:0 0 1.5rem 0;font-size:1.5rem;font-weight:700;color:#2c333c;">Nieuw bericht via contactformulier</h2>
+              <p style="margin:0 0 0.5rem 0;font-size:1rem;"><strong>Naam:</strong> <span style="color:#7c3aed">${name}</span></p>
+              <p style="margin:0 0 0.5rem 0;font-size:1rem;"><strong>E-mail:</strong> <span style="color:#7c3aed">${email}</span></p>
+              <div style="margin:1.5rem 0 0 0;padding:1rem;background:#f6f6f7;border-radius:10px;border:1px solid #ececec;">
+                <p style="margin:0 0 0.5rem 0;font-size:1rem;"><strong>Bericht:</strong></p>
+                <p style="margin:0;font-size:1rem;line-height:1.6;color:#222;">${message.replace(/\n/g, '<br/>')}</p>
+              </div>
+            </div>
+          </div>
         `
             });
         } catch (err) {
