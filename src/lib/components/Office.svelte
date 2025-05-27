@@ -64,7 +64,7 @@
 	<!-- <Pipes /> -->
 	<div class="relative flex aspect-[16/9] w-full overflow-hidden">
 		{#each images as img, i}
-			<enhanced:img
+			<img
 				use:setImgRef={i}
 				src={img}
 				alt=""
