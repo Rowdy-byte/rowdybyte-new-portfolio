@@ -6,7 +6,7 @@
 
 <main
 	transition:fade={{ delay: 250, duration: 300 }}
-	class="absolute top-1/2 left-1/2 max-w-[600px] -translate-x-1/2 -translate-y-1/2 transform"
+	class="absolute top-1/2 left-1/2 max-w-3xl -translate-x-1/2 -translate-y-1/2 transform"
 >
 	<h1
 		transition:fly={{

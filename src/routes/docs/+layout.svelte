@@ -44,7 +44,7 @@
 	});
 </script>
 
-<main class="relative h-screen">
+<main class=" h-screen">
 	<nav>
 		<Sidebar {data} />
 	</nav>

@@ -49,7 +49,7 @@ body {
 }
 
 .poimandres {
-	max-width: 650px;
+	max-width: 768px;
 	font-size: 14px;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -79,9 +79,8 @@ p>code {
 }
 
 .pre-header {
-	max-width: 650px;
+	max-width: 768px;
 	position: relative;
-	/* background-color: #c336e5; */
 }
 
 .copy-button {
