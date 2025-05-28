@@ -9,7 +9,7 @@
 <button
 	aria-label="side-menu-button"
 	onclick={toggleSidebarOpen}
-	class="fixed top-1/2 -left-2 z-10 h-5 rounded p-1 text-slate-100"
+	class="fixed top-1/2 left-4 z-50 flex h-5 -translate-y-1/2 rounded p-1 text-slate-100"
 >
 	<svg
 		class="z-50 flex justify-center"

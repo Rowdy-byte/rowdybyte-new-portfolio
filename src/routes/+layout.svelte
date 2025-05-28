@@ -45,8 +45,6 @@
 
 <NavBar />
 <SideNav />
-<main class="m-h-screen relative p-4 sm:p-0">
-	<div bind:this={pageContainer} style="min-height: 100vh;">
-		{@render children()}
-	</div>
+<main bind:this={pageContainer} class="relative min-h-screen p-4 sm:p-0">
+	{@render children()}
 </main>
