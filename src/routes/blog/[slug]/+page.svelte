@@ -141,7 +141,7 @@
 		{/if}
 		<!-- Comment form -->
 		<section class="mt-10">
-			<h2 class="mb-4 text-xl font-bold text-[#1b1e28]">Laat een reactie achter</h2>
+			<h1 class="mb-4 text-xl font-bold text-[#1b1e28]">Laat een reactie achter</h1>
 			<form
 				method="POST"
 				action="?/postComment"
