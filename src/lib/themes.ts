@@ -1,0 +1,1 @@
+export const themes = ['poimandres', 'material-theme-palenight', 'andromeeda', 'aurora-x', 'catppuccin-frappe', 'catppuccin-latte', 'catppuccin-macchiato', 'catppuccin-mocha', 'houston', 'night-owl']

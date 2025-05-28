@@ -80,9 +80,9 @@
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
-		<h2 bind:this={card1} class="heading mb-18 text-center text-6xl font-bold md:text-8xl">
+		<h1 bind:this={card1} class="heading mb-18 text-center text-6xl font-bold md:text-8xl">
 			Projects
-		</h2>
+		</h1>
 
 		<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
 			<a

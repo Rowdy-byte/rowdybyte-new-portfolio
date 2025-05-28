@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { NotebookPen, BookOpenText, LockKeyhole } from 'lucide-svelte';
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { page } from '$app/state';
 
@@ -22,6 +21,12 @@
 
 	function closeNav() {
 		open = false;
+	}
+
+	function handleClickOutside(event: MouseEvent) {
+		if (open && navRef && !navRef.contains(event.target as Node)) {
+			closeNav();
+		}
 	}
 
 	$effect(() => {
@@ -75,7 +80,16 @@
 	$effect(() => {
 		pathname = page.url.pathname;
 	});
+
+	// $effect(() => {
+	// 	window.addEventListener('mousedown', handleClickOutside);
+	// });
+	// onDestroy(() => {
+	// 	window.removeEventListener('mousedown', handleClickOutside);
+	// });
 </script>
+
+<svelte:window on:mousedown={open ? handleClickOutside : null} />
 
 <!-- Hamburger button (center left) -->
 <button
@@ -131,3 +145,9 @@
 		</a>
 	{/each}
 </nav>
+
+<style>
+	nav {
+		font-family: 'GT Walsheim Pro';
+	}
+</style>

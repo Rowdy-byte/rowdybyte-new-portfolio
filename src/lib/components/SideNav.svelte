@@ -125,3 +125,9 @@
 		</a>
 	{/each}
 </nav>
+
+<style>
+	nav {
+		font-family: GT Walsheim Pro Regular;
+	}
+</style>
