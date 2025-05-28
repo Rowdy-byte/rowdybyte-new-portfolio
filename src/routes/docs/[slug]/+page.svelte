@@ -43,7 +43,7 @@
 
 <main
 	transition:fade={{ delay: 250, duration: 300 }}
-	class="mx-auto flex max-w-[650px] flex-col px-6 pb-20 pt-40"
+	class="mx-auto flex max-w-3xl flex-col px-6 pt-40 pb-20"
 >
 	<h1
 		transition:fly={{
@@ -54,7 +54,7 @@
 			opacity: 0.5,
 			easing: quintInOut
 		}}
-		class="mx-auto mb-14 max-w-fit bg-gradient-to-r from-purple-500 to-[#5de4c7] bg-clip-text px-5 text-center font-walsheim text-4xl font-bold text-transparent md:text-6xl"
+		class="font-walsheim mx-auto mb-14 max-w-fit bg-gradient-to-r from-purple-500 to-[#5de4c7] bg-clip-text px-5 text-center text-4xl font-bold text-transparent md:text-6xl"
 	>
 		{title}
 	</h1>
@@ -67,3 +67,9 @@
 		<span class="h-screen w-full text-center">loading...</span>
 	{/if}
 </main>
+
+<style>
+	h1 {
+		font-family: 'GT Walsheim Pro';
+	}
+</style>

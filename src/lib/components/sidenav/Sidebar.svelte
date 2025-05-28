@@ -40,14 +40,14 @@
 	{#if getSidebarIsOpen().sidebarIsOpen}
 		<section
 			use:animate={openSidebarAnimation}
-			class="sidebar fixed left-8 top-[55%] z-40 mr-2 -translate-y-1/2 transform overflow-hidden rounded-md bg-[#1b1e28] font-walsheim opacity-0 shadow-custom-sidebar 2xl:left-20 fullscreen:left-40"
+			class="sidebar shadow-custom-sidebar fullscreen:left-40 fixed top-[55%] left-8 z-40 mr-2 -translate-y-1/2 transform overflow-hidden rounded-md bg-[#1b1e28] opacity-0 2xl:left-20"
 		>
 			<SidebarHeader title="Table of Contents" />
 			<section class="rounded-md rounded-l-none px-4 py-4">
 				{#each data.headers as { slug, headers }}
 					<div class="flex justify-between">
 						<a
-							class="flex items-center font-walsheim"
+							class="links flex items-center font-bold"
 							href={`/docs/${slug.replace(/ /g, '-').trim()}`}
 						>
 							<h3 class="font-walsheim text-[#5de4c7]">
@@ -97,3 +97,9 @@
 		</section>
 	{/if}
 </aside>
+
+<style>
+	.sidebar {
+		font-family: 'GT Walsheim Pro Regular';
+	}
+</style>
