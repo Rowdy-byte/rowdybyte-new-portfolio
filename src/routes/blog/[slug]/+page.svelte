@@ -65,7 +65,7 @@
 </svelte:head>
 
 <main
-	class=" mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 px-4 py-16"
+	class=" mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 py-16"
 >
 	<div class="mx-auto w-full max-w-2xl rounded-2xl bg-white p-6 shadow-lg md:p-10">
 		{#if data.meta.coverImage}
@@ -103,7 +103,7 @@
 						}
 					}}
 				>
-					<Heart size={16} /> <span class="text-xs">{likes}</span>
+					<Heart size={16} /> <span>{likes}</span>
 				</button>
 			</form>
 			<button
