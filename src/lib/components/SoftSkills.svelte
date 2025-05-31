@@ -10,7 +10,6 @@
 		'creativity',
 		'adaptability',
 		'critical thinking',
-		'leadership',
 		'work ethic',
 		'curiosity',
 		'empathy',
@@ -133,7 +132,7 @@
 			{#each softSkillTags as skill, i}
 				<span
 					bind:this={badgeRefs[i]}
-					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-lg bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>

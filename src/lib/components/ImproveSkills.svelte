@@ -4,9 +4,6 @@
 	import Bubbles from './Bubbles.svelte';
 
 	const improveSkillTags = [
-		'animation',
-		'accessibility',
-		'advanced testing',
 		'web performance',
 		'web security',
 		'architecture',
@@ -15,13 +12,17 @@
 		'AI integration',
 		'cloud',
 		'public speaking',
-		'blogging'
+		'blogging',
+		'receiving feedback',
+		'giving feedback',
+		'teamwork',
+		'being more consistent',
+		'professional experience'
 	];
 
 	let badgeRefs: HTMLElement[] = [];
 	let sectionRef: HTMLElement;
 
-	// Color palette for tag highlights
 	const highlightColors = [
 		'#f59e0b', // amber-500
 		'#38bdf8', // sky-400
@@ -132,7 +133,7 @@
 			{#each improveSkillTags as skill, i}
 				<span
 					bind:this={badgeRefs[i]}
-					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-lg bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>
