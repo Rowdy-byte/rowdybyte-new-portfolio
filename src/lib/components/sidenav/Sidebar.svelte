@@ -34,7 +34,7 @@
 	};
 </script>
 
-<aside>
+<aside class="">
 	<SidebarDots />
 
 	{#if getSidebarIsOpen().sidebarIsOpen}
