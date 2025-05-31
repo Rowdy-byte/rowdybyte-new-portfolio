@@ -4,19 +4,19 @@
 	const socials = [
 		{
 			name: 'LinkedIn',
-			url: 'https://www.linkedin.com/in/your-profile',
+			url: 'https://www.linkedin.com/in/rowdy-byte/',
 			icon: 'linkedin',
 			gradient: 'from-gray-600 to-gray-600'
 		},
 		{
 			name: 'X',
-			url: 'https://x.com/your-profile',
+			url: 'https://x.com/RowdyByte',
 			icon: 'x',
 			gradient: 'from-gray-500 to-gray-600'
 		},
 		{
 			name: 'GitHub',
-			url: 'https://github.com/your-profile',
+			url: 'https://github.com/Rowdy-byte',
 			icon: 'github',
 			gradient: 'from-gray-500 to-gray-600'
 		}

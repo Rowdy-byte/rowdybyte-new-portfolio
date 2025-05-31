@@ -10,7 +10,6 @@
 		'creativity',
 		'adaptability',
 		'critical thinking',
-		'leadership',
 		'work ethic',
 		'curiosity',
 		'empathy',
@@ -128,12 +127,12 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
-		<h2 class="heading mb-18 text-center text-6xl font-bold md:text-8xl">Soft Skills</h2>
+		<h1 class="heading mb-18 text-center text-6xl font-bold md:text-8xl">Soft Skills</h1>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
 			{#each softSkillTags as skill, i}
 				<span
 					bind:this={badgeRefs[i]}
-					class="rounded-full bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+					class="rounded-lg bg-[#2c333c] px-4 py-2 text-center text-lg font-medium tracking-wider break-words text-white lowercase shadow transition-all duration-200 hover:-translate-y-1 hover:transform hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
 				>
 					{skill}
 				</span>
