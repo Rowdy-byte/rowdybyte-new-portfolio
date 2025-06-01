@@ -1,8 +1,10 @@
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { fail } from '@sveltejs/kit';
 import { contactSchema, type ContactInput } from '$lib/validators/contact';
 import { Resend } from 'resend';
 import { RESEND_API_KEY } from '$env/static/private';
+import { db } from '$lib/server/db';
+import { posts } from '$lib/server/db/schema';
 
 const resend = new Resend(RESEND_API_KEY);
 
@@ -52,5 +54,32 @@ export const actions: Actions = {
         }
 
         return { success: true };
+    }
+};
+
+type Article = {
+    slug: string;
+
+};
+
+export const load: PageServerLoad = async () => {
+    const allPosts = await db.select().from(posts);
+    const headers: { slug: string }[] = [];
+
+    const path = import.meta.glob('./docs/*.md', { eager: true });
+
+    for (const header in path) {
+        const file = path[header] as object;
+        const slug = header.split('/').at(-1)?.replace(/[.-]/g, ' ').replace('md', '').trim();
+
+        if (file && typeof file === 'object' && 'metadata' in file && slug) {
+            const metadata = file.metadata as Omit<Article, 'slug'>;
+            const article: Article = { ...metadata, slug };
+            headers.push(article);
+        }
+    }
+    return {
+        posts: allPosts,
+        headers: headers
     }
 };
