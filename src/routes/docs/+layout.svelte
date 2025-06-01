@@ -9,9 +9,6 @@
 
 	let { children, data } = $props<{ children: Snippet; data: PageData }>();
 
-	let articleCount = getArticleCount().increaseCount(data.headers.length);
-	// let topicCount = getArticleCount().increaseCount(data.headers.map());
-
 	let paths;
 	let svgElement;
 
@@ -44,7 +41,7 @@
 	});
 </script>
 
-<main class="relative h-screen">
+<main class="h-screen">
 	<nav>
 		<Sidebar {data} />
 	</nav>

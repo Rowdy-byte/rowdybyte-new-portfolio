@@ -10,7 +10,7 @@
 	let { children } = $props();
 	let pageContainer: HTMLElement;
 
-	onMount(() => {
+	$effect(() => {
 		// Animate in on first load
 		gsap.fromTo(
 			pageContainer,
@@ -45,6 +45,6 @@
 
 <NavBar />
 <SideNav />
-<main bind:this={pageContainer} class="relative min-h-screen p-4 sm:p-0">
+<main bind:this={pageContainer} class="min-h-screen">
 	{@render children()}
 </main>
