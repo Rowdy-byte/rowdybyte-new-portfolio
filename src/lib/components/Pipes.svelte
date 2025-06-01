@@ -19,7 +19,7 @@
 			y2="1080"
 			gradientUnits="userSpaceOnUse"
 		>
-			<stop stop-color="#f59e0b" />
+			<stop stop-color="#a21caf" />
 			<stop offset="0.5" stop-color="#38bdf8" />
 			<stop offset="1" stop-color="#a21caf" />
 		</linearGradient>

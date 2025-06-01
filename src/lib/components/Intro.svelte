@@ -76,7 +76,7 @@
 	});
 </script>
 
-<section id="intro" class="intro flex h-screen w-full">
+<section id="intro" class="intro z-50 flex h-screen w-full">
 	<div class="card-inner w-full">
 		<div class="intro-container w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto">
 			<Aurora />
