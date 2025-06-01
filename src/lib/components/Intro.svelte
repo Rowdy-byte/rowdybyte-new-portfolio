@@ -75,15 +75,13 @@
 
 <section id="intro" class="intro flex h-screen w-full">
 	<div class="card-inner relative w-full">
-		<div
-			class="intro-container card-front absolute h-full w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto"
-		>
+		<div class="intro-container w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto">
 			<Aurora />
 			<div
 				class="flex flex-col gap-4 p-8 lg:flex lg:w-3/5 lg:flex-col lg:justify-center lg:p-8 lg:pl-20 xl:pl-24"
 			>
 				<h1
-					class="heading mb-4 text-5xl font-black tracking-tight sm:text-7xl lg:items-center lg:justify-center"
+					class="heading mt-8 mb-4 text-5xl font-black tracking-tight sm:text-7xl lg:items-center lg:justify-center"
 				>
 					Welcome!
 				</h1>
@@ -93,9 +91,7 @@
 					data visualization, always learning, always improving, and aiming to work remotely.
 				</p>
 				<!-- <p class="mt-8 font-light italic">-Rowdy</p> -->
-				<div
-					class="flex flex-col items-center justify-center md:flex-row md:gap-8 lg:items-start lg:justify-start"
-				>
+				<div class="flex flex-col md:flex-row md:gap-8">
 					<a
 						href="#contact"
 						class="contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
@@ -111,12 +107,12 @@
 						</span>
 					</a>
 					<div class="flex gap-8">
-						<Stat header="blogposts" paragraph="13" />
-						<Stat header="documents" paragraph="5" />
+						<Stat header="Blogposts" paragraph="13" />
+						<Stat header="Documents" paragraph="5" />
 					</div>
 				</div>
 			</div>
-			<div class="flex items-end justify-center rounded-full lg:w-2/5 lg:pt-8">
+			<div class="flex items-end justify-center lg:w-2/5 lg:pt-8">
 				<img class="profile-image max-w-sm" src="/rowdy-bg-rm-six.png" alt="Rowdy's profile" />
 			</div>
 		</div>
