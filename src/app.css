@@ -41,7 +41,7 @@
 body {
 	scroll-behavior: smooth;
 
-	position: relative;
+	/* position: relative; */
 	transition: all 3s ease-in-out;
 
 	line-height: 2;

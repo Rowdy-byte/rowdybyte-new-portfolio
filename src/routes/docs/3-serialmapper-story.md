@@ -23,9 +23,9 @@ to be continued...
 <br>
 
 <div class="flex justify-between">
-   <figure><img class="rounded-xl p-1 flex-1" src="/pallets2.webp" alt="pallets-2" /></figure>
+   <figure><img class="rounded-xl p-1 flex-1" src="/docs/serialmapper/pallets2.webp" alt="pallets-2" /></figure>
    
-   <figure><img class="rounded-xl p-1 flex-1" src="/serials1.webp" alt="serials-1" /></figure>
+   <figure><img class="rounded-xl p-1 flex-1" src="/docs/serialmapper/serials1.webp" alt="serials-1" /></figure>
 </div>
 
 <br>
