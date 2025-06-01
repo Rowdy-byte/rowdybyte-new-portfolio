@@ -7,9 +7,12 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Socials from '$lib/components/Socials.svelte';
 	import SoftSkills from '$lib/components/SoftSkills.svelte';
+
+	let { data } = $props();
+	console.log('Page data:', data);
 </script>
 
-<Intro />
+<Intro blogPostsCount={data.posts.length} docsCount={data.headers.length} />
 <Socials />
 <HardSkills />
 <SoftSkills />

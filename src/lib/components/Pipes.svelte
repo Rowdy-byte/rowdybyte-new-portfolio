@@ -19,7 +19,7 @@
 			y2="1080"
 			gradientUnits="userSpaceOnUse"
 		>
-			<stop stop-color="#f59e0b" />
+			<stop stop-color="#a21caf" />
 			<stop offset="0.5" stop-color="#38bdf8" />
 			<stop offset="1" stop-color="#a21caf" />
 		</linearGradient>
@@ -35,7 +35,7 @@
 	<polyline
 		points="100,100 900,100 900,300 1800,300"
 		stroke="url(#pipe-gradient)"
-		stroke-width="16"
+		stroke-width="8"
 		fill="none"
 		filter="url(#glow)"
 		opacity="0.7"
@@ -43,7 +43,7 @@
 	<polyline
 		points="200,200 1200,200 1200,500 1700,500"
 		stroke="url(#pipe-gradient)"
-		stroke-width="14"
+		stroke-width="6"
 		fill="none"
 		filter="url(#glow)"
 		opacity="0.6"
@@ -51,7 +51,7 @@
 	<polyline
 		points="300,300 300,700 1000,700 1000,900 1800,900"
 		stroke="url(#pipe-gradient)"
-		stroke-width="12"
+		stroke-width="4"
 		fill="none"
 		filter="url(#glow)"
 		opacity="0.5"
@@ -59,7 +59,7 @@
 	<polyline
 		points="400,400 400,800 1500,800"
 		stroke="url(#pipe-gradient)"
-		stroke-width="10"
+		stroke-width="2"
 		fill="none"
 		filter="url(#glow)"
 		opacity="0.5"
@@ -67,7 +67,7 @@
 	<polyline
 		points="500,500 500,950 1700,950"
 		stroke="url(#pipe-gradient)"
-		stroke-width="10"
+		stroke-width="1"
 		fill="none"
 		filter="url(#glow)"
 		opacity="0.4"

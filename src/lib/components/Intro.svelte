@@ -3,6 +3,9 @@
 	import Aurora from './Aurora.svelte';
 	import { MoveRight } from 'lucide-svelte';
 	import Stat from './Stat.svelte';
+	import Stars from './Stars.svelte';
+
+	let { blogPostsCount, docsCount } = $props();
 
 	let arrowRef: HTMLElement;
 
@@ -73,28 +76,28 @@
 	});
 </script>
 
-<section id="intro" class="intro flex h-screen w-full">
-	<div class="card-inner relative w-full">
+<section id="intro" class="intro z-50 flex h-screen w-full">
+	<div class="card-inner w-full">
 		<div class="intro-container w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto">
 			<Aurora />
 			<div
 				class="flex flex-col gap-4 p-8 lg:flex lg:w-3/5 lg:flex-col lg:justify-center lg:p-8 lg:pl-20 xl:pl-24"
 			>
 				<h1
-					class="heading mt-8 mb-4 text-5xl font-black tracking-tight sm:text-7xl lg:items-center lg:justify-center"
+					class="heading mt-8 mb-4 text-5xl font-black tracking-wide sm:text-7xl lg:items-center lg:justify-center"
 				>
 					Welcome!
 				</h1>
-				<p class="max-w-2xl text-base leading-relaxed sm:text-lg">
+				<div class=" max-w-2xl text-base sm:text-lg">
 					My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
 					modern, performant apps with SvelteKit. I enjoy solving real-world problems with code,
 					data visualization, always learning, always improving, and aiming to work remotely.
-				</p>
+				</div>
 				<!-- <p class="mt-8 font-light italic">-Rowdy</p> -->
-				<div class="flex flex-col md:flex-row md:gap-8">
+				<div class=" flex flex-col md:flex-row md:gap-8">
 					<a
 						href="#contact"
-						class="contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
+						class="contact contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
 						onmouseenter={animateArrowIn}
 						onmouseleave={animateArrowOut}
 					>
@@ -107,8 +110,11 @@
 						</span>
 					</a>
 					<div class="flex gap-8">
-						<Stat header="Blogposts" paragraph="13" />
-						<Stat header="Documents" paragraph="5" />
+						<Stat header="Blogposts" paragraph={blogPostsCount} />
+						<Stat header="Documents" paragraph={docsCount} />
+					</div>
+					<div>
+						<Stars />
 					</div>
 				</div>
 			</div>
@@ -126,5 +132,9 @@
 
 	.heading {
 		font-family: 'GT Walsheim Pro';
+	}
+
+	.contact {
+		font-family: 'Workbench';
 	}
 </style>
