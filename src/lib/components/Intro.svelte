@@ -3,6 +3,7 @@
 	import Aurora from './Aurora.svelte';
 	import { MoveRight } from 'lucide-svelte';
 	import Stat from './Stat.svelte';
+	import Stars from './Stars.svelte';
 
 	let { blogPostsCount, docsCount } = $props();
 
@@ -93,10 +94,10 @@
 					data visualization, always learning, always improving, and aiming to work remotely.
 				</div>
 				<!-- <p class="mt-8 font-light italic">-Rowdy</p> -->
-				<div class="flex flex-col md:flex-row md:gap-8">
+				<div class=" flex flex-col md:flex-row md:gap-8">
 					<a
 						href="#contact"
-						class="contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
+						class="contact contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
 						onmouseenter={animateArrowIn}
 						onmouseleave={animateArrowOut}
 					>
@@ -111,6 +112,9 @@
 					<div class="flex gap-8">
 						<Stat header="Blogposts" paragraph={blogPostsCount} />
 						<Stat header="Documents" paragraph={docsCount} />
+					</div>
+					<div>
+						<Stars />
 					</div>
 				</div>
 			</div>
@@ -128,5 +132,9 @@
 
 	.heading {
 		font-family: 'GT Walsheim Pro';
+	}
+
+	.contact {
+		font-family: 'Workbench';
 	}
 </style>
