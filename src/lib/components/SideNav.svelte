@@ -1,8 +1,18 @@
 <script lang="ts">
-	import { Home, Globe, Laptop, Brain, TrendingUp, Folder, Mail } from 'lucide-svelte';
+	import {
+		Home,
+		Globe,
+		Laptop,
+		Brain,
+		TrendingUp,
+		FlaskConical,
+		Folder,
+		Mail
+	} from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { page } from '$app/state';
+	import SkillBadges from './SkillBadges.svelte';
 
 	const navLinks = [
 		{ label: 'Intro', href: '#intro', icon: Home },
@@ -11,6 +21,7 @@
 		{ label: 'Soft Skills', href: '#softskills', icon: Brain },
 		{ label: 'Improvements', href: '#improvements', icon: TrendingUp },
 		{ label: 'Projects', href: '#projects', icon: Folder },
+		// { label: 'Skill Badges', href: '#SkillBadges', icon: FlaskConical },
 		{ label: 'Contact', href: '#contact', icon: Mail }
 	];
 
