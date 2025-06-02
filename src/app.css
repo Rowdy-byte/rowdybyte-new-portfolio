@@ -28,6 +28,15 @@
 }
 
 @font-face {
+	font-family: ABC Ginto Nord;
+	src:
+		local('ABC Ginto Nord'),
+		url('/fonts/ABCGintoNord.woff') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: '0xProto';
 	src: url('/fonts/0xProto-Regular.ttf') format('truetype');
 }
