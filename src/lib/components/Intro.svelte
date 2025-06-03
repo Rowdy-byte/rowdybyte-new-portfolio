@@ -101,7 +101,7 @@
 						onmouseenter={animateArrowIn}
 						onmouseleave={animateArrowOut}
 					>
-						Contact Me
+						Contact
 						<span
 							bind:this={arrowRef}
 							style="opacity:0; transform:translateX(0); display:inline-flex; align-items:center;"
@@ -135,6 +135,7 @@
 	}
 
 	.contact {
-		font-family: 'Workbench';
+		/* font-family: 'Workbench'; */
+		font-family: 'ABC Ginto Nord';
 	}
 </style>
