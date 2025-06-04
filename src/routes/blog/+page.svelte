@@ -68,7 +68,6 @@
 	class="font-walsheim mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 px-4 py-16"
 >
 	<h1 class="mb-10 text-center text-5xl font-bold sm:text-7xl">Rowdy's Blog</h1>
-	<p class="mb-8 max-w-2xl text-center text-2xl tracking-wide">Black & White non-tech Blog!</p>
 
 	<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 		{#each posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage) as post}
@@ -128,7 +127,7 @@
 		</div>
 	{/if}
 
-	<section class="mt-16 w-full max-w-lg">
+	<section class="mt-12 w-full max-w-lg">
 		<form method="POST" action="?/subscribe" class="flex flex-col items-center" use:enhance>
 			<h2 class="mb-2 text-center text-lg font-semibold">Schrijf je in voor nieuwe blogposts:</h2>
 			<div class="relative my-2 flex w-full items-center">
@@ -142,7 +141,7 @@
 					autocomplete="off"
 					required
 					placeholder="jouw@email.nl"
-					class="w-full border border-gray-200 bg-gray-200 p-2 px-4 py-3 pl-10 font-normal text-gray-500 outline-none"
+					class="w-full rounded-full border border-gray-200 bg-gray-200 p-2 px-4 py-3 pl-10 font-normal text-gray-500 outline-none"
 				/>
 			</div>
 			<button

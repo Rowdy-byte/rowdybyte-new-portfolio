@@ -87,7 +87,7 @@
 	});
 </script>
 
-<main class="mx-2 flex min-h-screen flex-col items-center justify-center py-8">
+<main class=" flex min-h-screen flex-col items-center justify-center py-8">
 	<Pipes />
 	<section
 		id="contact"

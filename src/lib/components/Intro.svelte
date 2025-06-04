@@ -129,7 +129,7 @@
 		>
 			<Aurora />
 			<div
-				class="flex flex-col gap-4 p-8 lg:flex lg:w-3/5 lg:flex-col lg:justify-center lg:p-8 lg:pl-20 xl:pl-24"
+				class="flex flex-col gap-4 p-8 md:justify-center lg:flex lg:w-3/5 lg:flex-col lg:p-8 lg:pl-20 xl:pl-24"
 			>
 				{@render heading()}
 				{@render description()}
