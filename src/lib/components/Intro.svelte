@@ -124,7 +124,9 @@
 
 <section id="intro" class="intro z-50 flex h-screen w-full">
 	<div class="card-inner w-full">
-		<div class="intro-container w-full overflow-hidden bg-[#2c333c] shadow-lg lg:flex lg:h-auto">
+		<div
+			class="intro-container w-full overflow-hidden rounded-lg bg-[#2c333c] shadow-lg md:flex lg:h-auto"
+		>
 			<Aurora />
 			<div
 				class="flex flex-col gap-4 p-8 lg:flex lg:w-3/5 lg:flex-col lg:justify-center lg:p-8 lg:pl-20 xl:pl-24"

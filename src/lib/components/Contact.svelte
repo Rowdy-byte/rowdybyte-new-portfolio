@@ -104,7 +104,7 @@
 		<form
 			bind:this={formRef}
 			use:enhance={enhanceForm}
-			class="flex w-full max-w-4xl flex-col gap-6 rounded-2xl bg-[#2c333c] p-4 shadow-lg md:p-8"
+			class="flex w-full max-w-4xl flex-col gap-6 rounded-lg bg-[#2c333c] p-4 shadow-lg md:p-8"
 			method="POST"
 			autocomplete="off"
 		>
