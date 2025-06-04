@@ -1,16 +1,67 @@
 <script lang="ts">
 	import gsap from 'gsap';
 
-	let card1: HTMLElement;
-	let card2: HTMLElement;
-	let card3: HTMLElement;
-	let card4: HTMLElement;
-	let card5: HTMLElement;
+	interface Project {
+		id: string;
+		url: string;
+		title: string;
+		titleAccent?: string;
+		titleAccentColor?: string;
+		titleAccentClass?: string;
+		titleColor?: string;
+		titleGradient?: string;
+		description: string;
+		headingClass: string;
+		paragraphClass: string;
+	}
 
-	let card2Content: HTMLElement;
-	let card3Content: HTMLElement;
-	let card4Content: HTMLElement;
-	let card5Content: HTMLElement;
+	let card1: HTMLElement;
+	let cardRefs: HTMLElement[] = [];
+	let contentRefs: HTMLElement[] = [];
+
+	const projects: Project[] = [
+		{
+			id: 'serialmapper',
+			url: 'https://serialmapper-prisma.vercel.app/',
+			title: 'SN',
+			titleAccent: 'mapper',
+			titleAccentColor: 'text-orange-500',
+			description:
+				'SerialMapper is a SvelteKit-based app that streamlines bulk product intake by importing Excel serials, validating data, and visualizing efficiency gains—perfect for warehouses and logistics teams handling high-volume entries.',
+			headingClass: 'serialmapper-heading',
+			paragraphClass: 'serialmapper-paragraph'
+		},
+		{
+			id: 'swaentje',
+			url: 'https://swaentje.vercel.app/',
+			title: "'t Swaentje",
+			description: "'t Swaentje is a simple yet effective flyer to reach more customers.",
+			headingClass: 'swaentje-heading',
+			paragraphClass: 'swaentje-paragraph'
+		},
+		{
+			id: 'fancy-counter',
+			url: 'https://fancy-counter-three-murex.vercel.app/',
+			title: 'Fancy Counter',
+			titleColor: 'text-[#bef227]',
+			description:
+				'Fancy Counter is a React-based interactive counter application with smooth animations, featuring increment/decrement functionality and visual feedback. This project was built to practice React fundamentals including state management, component structure, and UI interactions.',
+			headingClass: 'fancy-counter-heading',
+			paragraphClass: 'fancy-counter-paragraph'
+		},
+		{
+			id: 'word-analytics',
+			url: 'https://word-analytics-nu.vercel.app/',
+			title: 'WORD',
+			titleAccent: 'ANALYTICS',
+			titleAccentClass: 'word-analytics-span font-thin',
+			titleGradient: 'bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent',
+			description:
+				'Word Analytics is a web application that provides insights into word usage and frequency analysis. Users can input text, and the app will generate statistics on word count, unique words, and more. This project was built to practice React fundamentals including state management, component structure, and UI interactions.',
+			headingClass: 'word-analytics-heading',
+			paragraphClass: 'word-analytics-paragraph'
+		}
+	];
 
 	function animateCardIn(card: HTMLElement) {
 		gsap.to(card, {
@@ -20,6 +71,7 @@
 			ease: 'power2.out'
 		});
 	}
+
 	function animateCardOut(card: HTMLElement) {
 		gsap.to(card, {
 			scale: 1,
@@ -37,6 +89,7 @@
 			ease: 'power2.out'
 		});
 	}
+
 	function animateCardContentOut(content: HTMLElement) {
 		gsap.to(content, {
 			scale: 1,
@@ -47,7 +100,7 @@
 	}
 
 	$effect(() => {
-		const cardRefs = [card1, card2, card3, card4, card5];
+		const allCardRefs = [card1, ...cardRefs];
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -72,11 +125,51 @@
 			{ threshold: 0.15 }
 		);
 
-		cardRefs.forEach((el) => {
+		allCardRefs.forEach((el) => {
 			if (el) observer.observe(el);
 		});
 	});
 </script>
+
+{#snippet projectCard(project: Project, index: number)}
+	<a
+		bind:this={cardRefs[index]}
+		href={project.url}
+		class="rounded-lg bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+		target="_blank"
+		rel="noopener noreferrer"
+		onmouseenter={() => {
+			animateCardIn(cardRefs[index]);
+			animateCardContentIn(contentRefs[index]);
+		}}
+		onmouseleave={() => {
+			animateCardOut(cardRefs[index]);
+			animateCardContentOut(contentRefs[index]);
+		}}
+	>
+		<div bind:this={contentRefs[index]} class="transition-transform duration-300">
+			<p
+				class="{project.headingClass} text-center text-3xl font-bold {project.titleColor ||
+					''} {project.titleGradient || ''}"
+			>
+				{#if project.titleGradient}
+					<span class={project.titleGradient}>
+						{project.title}{#if project.titleAccent}<span class={project.titleAccentClass}
+								>{project.titleAccent}</span
+							>{/if}
+					</span>
+				{:else}
+					{project.title}{#if project.titleAccent}<span class={project.titleAccentColor || ''}
+							>{project.titleAccent}</span
+						>{/if}
+				{/if}
+			</p>
+			<p class="{project.paragraphClass} mt-4 text-center text-base tracking-wider">
+				{project.description}
+			</p>
+		</div>
+	</a>
+{/snippet}
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
@@ -85,113 +178,9 @@
 		</h1>
 
 		<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
-			<a
-				bind:this={card2}
-				href="https://serialmapper-prisma.vercel.app/"
-				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
-				target="_blank"
-				rel="noopener noreferrer"
-				onmouseenter={() => {
-					animateCardIn(card2);
-					animateCardContentIn(card2Content);
-				}}
-				onmouseleave={() => {
-					animateCardOut(card2);
-					animateCardContentOut(card2Content);
-				}}
-			>
-				<div bind:this={card2Content} class="transition-transform duration-300">
-					<p class=" text-center text-2xl font-bold italic">
-						SN<span class="text-md text-orange-500">mapper</span>
-					</p>
-					<p class="serialmapper-paragraph mt-4 text-center text-base tracking-wider">
-						SerialMapper is a SvelteKit-based app that streamlines bulk product intake by importing
-						Excel serials, validating data, and visualizing efficiency gains—perfect for warehouses
-						and logistics teams handling high-volume entries.
-					</p>
-				</div>
-			</a>
-
-			<a
-				bind:this={card3}
-				href="https://swaentje.vercel.app/"
-				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
-				target="_blank"
-				rel="noopener noreferrer"
-				onmouseenter={() => {
-					animateCardIn(card3);
-					animateCardContentIn(card3Content);
-				}}
-				onmouseleave={() => {
-					animateCardOut(card3);
-					animateCardContentOut(card3Content);
-				}}
-			>
-				<div bind:this={card3Content} class="transition-transform duration-300">
-					<p class="swaentje-heading text-center text-3xl font-bold">'t Swaentje</p>
-					<p class="swaentje-paragraph mt-4 text-center tracking-wider">
-						't Swaentje is a simple yet effective flyer to reach more customers.
-					</p>
-				</div>
-			</a>
-
-			<a
-				bind:this={card4}
-				href="https://fancy-counter-three-murex.vercel.app/"
-				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
-				target="_blank"
-				rel="noopener noreferrer"
-				onmouseenter={() => {
-					animateCardIn(card4);
-					animateCardContentIn(card4Content);
-				}}
-				onmouseleave={() => {
-					animateCardOut(card4);
-					animateCardContentOut(card4Content);
-				}}
-			>
-				<div bind:this={card4Content} class="transition-transform duration-300">
-					<p class="fancy-counter-heading text-center text-3xl font-bold text-[#bef227]">
-						Fancy Counter
-					</p>
-					<p class="fancy-counter-paragraph mt-4 text-center text-base tracking-wider">
-						Fancy Counter is a React-based interactive counter application with smooth animations,
-						featuring increment/decrement functionality and visual feedback. This project was built
-						to practice React fundamentals including state management, component structure, and UI
-						interactions.
-					</p>
-				</div>
-			</a>
-
-			<a
-				bind:this={card5}
-				href="https://word-analytics-nu.vercel.app/"
-				class="rounded-2xl bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
-				target="_blank"
-				rel="noopener noreferrer"
-				onmouseenter={() => {
-					animateCardIn(card5);
-					animateCardContentIn(card5Content);
-				}}
-				onmouseleave={() => {
-					animateCardOut(card5);
-					animateCardContentOut(card5Content);
-				}}
-			>
-				<div bind:this={card5Content} class=" transition-transform duration-300">
-					<p class="word-analytics-heading text-center text-3xl font-bold">
-						<span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-							>WORD<span class="word-analytics-span font-thin">ANALYTICS</span></span
-						>
-					</p>
-					<p class="word-analytics-paragraph mt-4 text-center tracking-wider">
-						Word Analytics is a web application that provides insights into word usage and frequency
-						analysis. Users can input text, and the app will generate statistics on word count,
-						unique words, and more. This project was built to practice React fundamentals including
-						state management, component structure, and UI interactions.
-					</p>
-				</div>
-			</a>
+			{#each projects as project, index}
+				{@render projectCard(project, index)}
+			{/each}
 		</div>
 	</section>
 </div>
