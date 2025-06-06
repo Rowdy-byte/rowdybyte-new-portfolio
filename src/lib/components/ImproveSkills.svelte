@@ -161,7 +161,7 @@
 
 <main
 	bind:this={sectionRef}
-	class="mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center justify-center gap-12 rounded-lg py-8"
+	class="mx-auto flex min-h-[150vh] w-full max-w-5xl flex-col items-center justify-center gap-12 rounded-lg py-8"
 >
 	<div class="text-center">
 		<h1
