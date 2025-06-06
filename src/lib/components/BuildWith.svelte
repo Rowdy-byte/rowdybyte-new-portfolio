@@ -162,7 +162,7 @@
 </main>
 
 <style>
-	main {
+	/* main {
 		background: linear-gradient(135deg, #1e252b 0%, #2c333c 100%);
-	}
+	} */
 </style>
