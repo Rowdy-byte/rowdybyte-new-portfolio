@@ -109,12 +109,12 @@
 	</a>
 {/snippet}
 
-{#snippet stats()}
+<!-- {#snippet stats()}
 	<div class="flex gap-8">
 		<Stat header="Blogposts" paragraph={blogPostsCount} />
 		<Stat header="Documents" paragraph={docsCount} />
 	</div>
-{/snippet}
+{/snippet} -->
 
 {#snippet profileImage()}
 	<div class="flex items-end justify-center lg:w-2/5 lg:pt-8">
@@ -135,7 +135,7 @@
 				{@render description()}
 				<div class=" flex flex-col md:flex-row md:gap-8">
 					{@render contactButton()}
-					{@render stats()}
+					<!-- {@render stats()} -->
 					<div>
 						<Stars />
 					</div>
@@ -152,7 +152,7 @@
 	}
 
 	.heading {
-		font-family: 'GT Walsheim Pro';
+		font-family: 'ABC Ginto Nord';
 	}
 
 	.contact {

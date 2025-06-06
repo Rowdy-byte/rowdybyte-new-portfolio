@@ -3,7 +3,7 @@
 	import Logo from './Logo.svelte';
 </script>
 
-<nav class="flex w-full items-center justify-between p-4">
+<nav class="relative flex w-full items-center justify-between p-4">
 	<Logo />
 	<Hamburger />
 </nav>

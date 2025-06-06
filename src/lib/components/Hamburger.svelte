@@ -111,8 +111,7 @@
 
 <nav
 	bind:this={navRef}
-	class="fixed top-0 left-0 z-[70] flex flex-col gap-4 border-b border-gray-400/20 bg-[#1d232a] p-4 shadow-xl"
-	style="display: flex; width: 100vw; left: 0;"
+	class="fixed top-0 right-0 z-[70] flex flex-col gap-4 border-b-2 border-gray-400/20 bg-[#1d232a] bg-clip-padding p-4 shadow-xl"
 >
 	<!-- Close button -->
 	<button
