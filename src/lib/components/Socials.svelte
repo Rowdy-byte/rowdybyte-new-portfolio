@@ -56,7 +56,9 @@
 	bind:this={sectionRef}
 	class="flex min-h-screen w-full flex-col items-center justify-center gap-6 py-8 sm:gap-8"
 >
-	<h1 class="mb-18 text-center text-6xl font-bold md:text-8xl">Socials</h1>
+	<h1 class="font-ginto mb-4 text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl">
+		Socials
+	</h1>
 	<div id="socials" class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
 		{#each socials as social, i}
 			<a
@@ -64,7 +66,7 @@
 				href={social.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group flex h-32 w-32 flex-col items-center justify-center rounded-full bg-[#2c333c] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
+				class="group hover:shadow-custom-sidebar flex h-32 w-32 flex-col items-center justify-center rounded-full bg-[#2c333c] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
 			>
 				<div class="flex h-full w-full flex-col items-center justify-center rounded-full">
 					<span class="mb-2" aria-label={social.name}>

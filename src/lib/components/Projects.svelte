@@ -173,7 +173,10 @@
 
 <div class="flex min-h-screen w-full flex-col items-center justify-center px-2 py-8">
 	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
-		<h1 bind:this={card1} class="heading mb-18 text-center text-6xl font-bold md:text-8xl">
+		<h1
+			bind:this={card1}
+			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+		>
 			Projects
 		</h1>
 
@@ -190,29 +193,15 @@
 		font-family: 'GT Walsheim Pro', sans-serif;
 	}
 
-	.serialmapper-paragraph {
-		font-family: 'Inter';
-	}
 	.word-analytics-heading {
-		font-family: 'Inter';
-	}
-
-	.word-analytics-paragraph {
 		font-family: 'Inter';
 	}
 
 	.fancy-counter-heading {
 		font-family: 'Inter';
 	}
-	.fancy-counter-paragraph {
-		font-family: 'Inter';
-	}
 
 	.swaentje-heading {
 		font-family: 'Rouge Script';
-	}
-
-	.swaentje-paragraph {
-		font-family: 'Inter';
 	}
 </style>

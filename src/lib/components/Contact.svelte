@@ -94,7 +94,11 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-4xl flex-col items-center justify-center"
 	>
-		<h1 class="mb-18 text-center text-6xl font-bold md:text-8xl">Contact</h1>
+		<h1
+			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+		>
+			Contact
+		</h1>
 		<p class="mb-18 max-w-2xl text-lg">
 			<span class=" font-bold text-[#f59e0b]">Let's get in touch!</span> Have a question, an idea, or
 			want to collaborate on a project? Send me a message using the form. I'll get back to you as soon

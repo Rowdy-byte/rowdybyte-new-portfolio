@@ -150,7 +150,9 @@
 
 <main class="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-2 py-8">
 	<section bind:this={sectionRef} id="hardskills">
-		<h1 class="heading mb-18 text-center text-6xl font-bold md:text-8xl">
+		<h1
+			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+		>
 			{#each splitHeading(headingText) as { char, i } (i)}
 				<span use:setHeadingRef={i} style="display: inline-block"
 					>{char === ' ' ? '\u00A0' : char}</span
@@ -173,9 +175,5 @@
 <style>
 	main {
 		font-family: 'GT Walsheim Pro Regular', sans-serif;
-	}
-
-	.heading {
-		font-family: 'GT Walsheim Pro', sans-serif;
 	}
 </style>

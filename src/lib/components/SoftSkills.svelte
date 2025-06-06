@@ -127,7 +127,11 @@
 		bind:this={sectionRef}
 		class="flex w-full max-w-3xl flex-col items-center justify-center"
 	>
-		<h1 class="heading mb-18 text-center text-6xl font-bold md:text-8xl">Soft Skills</h1>
+		<h1
+			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+		>
+			Soft Skills
+		</h1>
 		<div class="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-4">
 			{#each softSkillTags as skill, i}
 				<span
@@ -144,9 +148,5 @@
 <style>
 	main {
 		font-family: 'GT Walsheim Pro Regular', sans-serif;
-	}
-
-	.heading {
-		font-family: 'GT Walsheim Pro', sans-serif;
 	}
 </style>
