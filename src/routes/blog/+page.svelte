@@ -131,7 +131,7 @@
 		<form method="POST" action="?/subscribe" class="flex flex-col items-center" use:enhance>
 			<h2 class="mb-2 text-center text-lg font-semibold">Schrijf je in voor nieuwe blogposts:</h2>
 			<div class="relative my-2 flex w-full items-center">
-				<div class="absolute left-2 flex items-center justify-center">
+				<div class="absolute left-4 flex items-center justify-center">
 					<Mail color={'#6b7280'} />
 				</div>
 				<input
@@ -141,7 +141,7 @@
 					autocomplete="off"
 					required
 					placeholder="jouw@email.nl"
-					class="w-full rounded-full border border-gray-200 bg-gray-200 p-2 px-4 py-3 pl-10 font-normal text-gray-500 outline-none"
+					class="w-full rounded-full border border-gray-200 bg-gray-200 p-2 px-4 py-3 pl-12 font-normal text-gray-500 outline-none"
 				/>
 			</div>
 			<button
