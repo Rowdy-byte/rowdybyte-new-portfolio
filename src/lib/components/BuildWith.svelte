@@ -118,7 +118,7 @@
 <main
 	id="builtwith"
 	bind:this={sectionRef}
-	class="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center rounded-lg bg-[#2c333c00]"
+	class="mx-auto flex min-h-[150vh] max-w-4xl flex-col items-center justify-center rounded-lg bg-[#2c333c00]"
 >
 	<div class="text-center">
 		<h1
