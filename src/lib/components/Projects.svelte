@@ -135,7 +135,7 @@
 	<a
 		bind:this={cardRefs[index]}
 		href={project.url}
-		class="rounded-lg bg-[#2c333c] p-8 opacity-0 shadow-lg transition-all hover:-translate-y-1"
+		class=" rounded-lg bg-[#2c333c] p-8 opacity-0 transition-all hover:-translate-y-1"
 		target="_blank"
 		rel="noopener noreferrer"
 		onmouseenter={() => {
@@ -147,7 +147,7 @@
 			animateCardContentOut(contentRefs[index]);
 		}}
 	>
-		<div bind:this={contentRefs[index]} class="transition-transform duration-300">
+		<div bind:this={contentRefs[index]} class=" transition-transform duration-300">
 			<p
 				class="{project.headingClass} text-center text-3xl font-bold {project.titleColor ||
 					''} {project.titleGradient || ''}"
