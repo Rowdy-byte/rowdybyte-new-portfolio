@@ -7,6 +7,7 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Socials from '$lib/components/Socials.svelte';
 	import SoftSkills from '$lib/components/SoftSkills.svelte';
+	import Lightning2 from '$lib/components/Lightning2.svelte';
 
 	let { data } = $props();
 	console.log('Page data:', data);

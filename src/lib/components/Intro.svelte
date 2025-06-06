@@ -4,6 +4,7 @@
 	import { MoveRight } from 'lucide-svelte';
 	import Stat from './Stat.svelte';
 	import Stars from './Stars.svelte';
+	import Lighting from './Lighting.svelte';
 
 	let { blogPostsCount, docsCount } = $props();
 
@@ -128,6 +129,7 @@
 			class="intro-container w-full overflow-hidden rounded-lg bg-[#2c333c] shadow-lg md:flex lg:h-auto"
 		>
 			<Aurora />
+
 			<div
 				class="flex flex-col gap-4 p-8 md:justify-center lg:flex lg:w-3/5 lg:flex-col lg:p-8 lg:pl-20 xl:pl-24"
 			>
