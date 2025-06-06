@@ -135,7 +135,7 @@
 	<a
 		bind:this={cardRefs[index]}
 		href={project.url}
-		class=" rounded-lg bg-[#2c333c] p-8 opacity-0 transition-all hover:-translate-y-1"
+		class=" rounded-lg bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-8 opacity-0 transition-all hover:-translate-y-1"
 		target="_blank"
 		rel="noopener noreferrer"
 		onmouseenter={() => {

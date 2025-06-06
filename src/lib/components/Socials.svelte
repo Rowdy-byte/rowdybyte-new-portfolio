@@ -140,8 +140,4 @@
 	main {
 		font-family: 'GT Walsheim Pro', sans-serif;
 	}
-
-	.char {
-		display: inline-block;
-	}
 </style>
