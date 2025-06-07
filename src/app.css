@@ -7,6 +7,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
 
+@theme {
+	/* Custom font families */
+	--font-walsheim: 'GT Walsheim Pro', sans-serif;
+	--font-walsheim-regular: 'GT Walsheim Pro Regular', sans-serif;
+	--font-ginto: 'ABC Ginto Nord', sans-serif;
+	--font-proto: '0xProto', monospace;
+	--font-inter: 'Inter', sans-serif;
+	--font-lora: 'Lora', serif;
+
+	/* Custom colors if needed */
+	--color-primary: hsl(262, 83%, 58%);
+	--color-secondary: hsl(220, 14%, 26%);
+
+	/* Custom box shadows */
+	--shadow-custom-sidebar:
+		inset 0 0 0px 0px #a855f7,
+		inset 0 0 0px #a855f7,
+		inset 0 0 0px #a855f7,
+		inset 0 0 0px #0ff,
+		5px 0 500px #a855f7,
+		-50px 0 500px #10b981;
+}
+
+
+@import 'tailwindcss';
+@tailwind utilities;
+
+/* @plugin '@tailwindcss/forms'; */
+/* @plugin '@tailwindcss/typography'; */
+@plugin "daisyui" {
+	themes: nord --default, dark --prefersdark, nord;
+}
+
 @font-face {
 	font-family: GT Walsheim Pro Regular;
 	src:
@@ -41,13 +74,7 @@
 	src: url('/fonts/0xProto-Regular.ttf') format('truetype');
 }
 
-@import 'tailwindcss';
-/* @plugin '@tailwindcss/forms'; */
-/* @plugin '@tailwindcss/typography'; */
 
-@plugin "daisyui" {
-	themes: nord --default, dark --prefersdark, nord;
-}
 
 body {
 	scroll-behavior: smooth;

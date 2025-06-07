@@ -7,12 +7,12 @@
 		TrendingUp,
 		FlaskConical,
 		Folder,
-		Mail
+		Mail,
+		Wrench // Nieuw icoon voor Built With
 	} from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { page } from '$app/state';
-	import SkillBadges from './SkillBadges.svelte';
 
 	const navLinks = [
 		{ label: 'Intro', href: '#intro', icon: Home },
@@ -21,12 +21,13 @@
 		{ label: 'Soft Skills', href: '#softskills', icon: Brain },
 		{ label: 'Improvements', href: '#improvements', icon: TrendingUp },
 		{ label: 'Projects', href: '#projects', icon: Folder },
-		// { label: 'Skill Badges', href: '#SkillBadges', icon: FlaskConical },
+		{ label: 'Built With', href: '#builtwith', icon: Wrench }, // Nieuwe entry
 		{ label: 'Contact', href: '#contact', icon: Mail }
 	];
 
 	let open = $state(false);
 	let navRef: HTMLElement;
+	let triggerButtonRef = $state<HTMLElement>();
 	let pathname = $state();
 
 	function scrollToSection(e: MouseEvent, href: string) {
@@ -45,6 +46,15 @@
 
 	function closeNav() {
 		open = false;
+	}
+
+	function handleClickOutside(event: MouseEvent) {
+		if (open && navRef && triggerButtonRef) {
+			const target = event.target as Node;
+			if (!navRef.contains(target) && !triggerButtonRef.contains(target)) {
+				closeNav();
+			}
+		}
 	}
 
 	$effect(() => {
@@ -82,8 +92,11 @@
 	});
 </script>
 
+<svelte:window on:mousedown={handleClickOutside} />
+
 {#if pathname === '/'}
 	<button
+		bind:this={triggerButtonRef}
 		class="fixed top-1/2 left-4 z-[60] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gray-500/40 shadow-lg backdrop-blur-md transition-all hover:cursor-pointer hover:bg-gray-500/60 focus:outline-none"
 		aria-label="Open navigation"
 		onclick={openNav}
@@ -100,9 +113,11 @@
 		</svg>
 	</button>
 {/if}
+
 <nav
 	bind:this={navRef}
-	class="fixed top-1/2 left-8 z-50 flex -translate-y-1/2 flex-col gap-4 rounded-2xl border-2 border-gray-400/20 bg-[#1d232a] bg-clip-padding p-4 shadow-xl backdrop-blur-md backdrop-saturate-150"
+	class="fixed top-1/2 left-4 z-50 flex -translate-y-1/2 flex-col gap-4 rounded-2xl border-2 border-gray-400/20 bg-[#1d232a] bg-clip-padding p-4 shadow-xl backdrop-blur-md backdrop-saturate-150"
+	style="display: flex;"
 >
 	<!-- Close button -->
 	<button

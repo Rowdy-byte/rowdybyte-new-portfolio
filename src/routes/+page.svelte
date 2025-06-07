@@ -7,6 +7,8 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Socials from '$lib/components/Socials.svelte';
 	import SoftSkills from '$lib/components/SoftSkills.svelte';
+	import Lightning2 from '$lib/components/Lightning2.svelte';
+	import BuildWith from '$lib/components/BuildWith.svelte';
 
 	let { data } = $props();
 	console.log('Page data:', data);
@@ -19,4 +21,5 @@
 <ImproveSkills />
 <Projects />
 <Carousel />
+<BuildWith />
 <Contact />

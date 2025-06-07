@@ -4,6 +4,7 @@
 	import { MoveRight } from 'lucide-svelte';
 	import Stat from './Stat.svelte';
 	import Stars from './Stars.svelte';
+	import Lighting from './Lighting.svelte';
 
 	let { blogPostsCount, docsCount } = $props();
 
@@ -78,14 +79,14 @@
 
 {#snippet heading()}
 	<h1
-		class="heading mt-8 mb-4 text-5xl font-black tracking-wide sm:text-7xl lg:items-center lg:justify-center"
+		class="font-ginto mt-8 mb-4 text-5xl font-black tracking-wide sm:text-7xl lg:items-center lg:justify-center"
 	>
 		Welcome!
 	</h1>
 {/snippet}
 
 {#snippet description()}
-	<div class=" max-w-2xl text-base sm:text-lg">
+	<div class="font-walsheim-regular max-w-2xl text-base sm:text-lg">
 		My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
 		modern, performant apps with SvelteKit. I enjoy solving real-world problems with code, data
 		visualization, always learning, always improving, and aiming to work remotely.
@@ -95,7 +96,7 @@
 {#snippet contactButton()}
 	<a
 		href="#contact"
-		class="contact contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
+		class="contact font-ginto contact-button mt-8 flex max-w-60 items-center gap-2 rounded-full bg-[#1d232a] px-14 py-3 text-white hover:scale-105 hover:cursor-pointer"
 		onmouseenter={animateArrowIn}
 		onmouseleave={animateArrowOut}
 	>
@@ -128,14 +129,15 @@
 			class="intro-container w-full overflow-hidden rounded-lg bg-[#2c333c] shadow-lg md:flex lg:h-auto"
 		>
 			<Aurora />
+
 			<div
 				class="flex flex-col gap-4 p-8 md:justify-center lg:flex lg:w-3/5 lg:flex-col lg:p-8 lg:pl-20 xl:pl-24"
 			>
 				{@render heading()}
 				{@render description()}
-				<div class=" flex flex-col md:flex-row md:gap-8">
+				<div class="font flex flex-col md:flex-row md:gap-8">
 					{@render contactButton()}
-					<!-- {@render stats()} -->
+
 					<div>
 						<Stars />
 					</div>
@@ -145,18 +147,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.intro {
-		font-family: 'GT Walsheim Pro Regular';
-	}
-
-	.heading {
-		font-family: 'ABC Ginto Nord';
-	}
-
-	.contact {
-		/* font-family: 'Workbench'; */
-		font-family: 'ABC Ginto Nord';
-	}
-</style>
