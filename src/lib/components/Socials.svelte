@@ -118,7 +118,7 @@
 				href={social.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group hover:shadow-custom-sidebar flex h-32 w-32 flex-col items-center justify-center rounded-full bg-[#2c333c] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
+				class="group hover:shadow-custom-sidebar flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
 				aria-label={`Visit ${social.name} profile`}
 			>
 				<div class="flex flex-col items-center justify-center space-y-1 text-white sm:space-y-2">
