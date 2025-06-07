@@ -138,6 +138,7 @@
 	<div class="text-center">
 		<h1
 			bind:this={headingRef}
+			id="softskills"
 			class="font-ginto mb-4 text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
 		>
 			Soft Skills
@@ -147,7 +148,7 @@
 		</p>
 	</div>
 
-	<div id="softskills" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
 		{#each softSkills as skill, i}
 			<div
 				bind:this={cardRefs[i]}

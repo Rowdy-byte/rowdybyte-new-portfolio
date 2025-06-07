@@ -172,9 +172,10 @@
 {/snippet}
 
 <div class="flex min-h-[150vh] w-full flex-col items-center justify-center px-2 py-8">
-	<section id="projects" class="flex w-full max-w-4xl flex-col items-center justify-center">
+	<section class="flex w-full max-w-4xl flex-col items-center justify-center">
 		<h1
 			bind:this={card1}
+			id="projects"
 			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
 		>
 			Projects
