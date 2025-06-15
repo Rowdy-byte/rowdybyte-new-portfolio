@@ -79,10 +79,13 @@
 
 {#snippet heading()}
 	<h1
+		id="main-heading"
 		class="font-ginto mt-8 mb-4 text-5xl font-black tracking-wide sm:text-7xl lg:items-center lg:justify-center"
+		role="banner"
 	>
-		Welcome!
+		Rowdy
 	</h1>
+	<p class="font-walsheim-regular mb-4 text-xl text-gray-300">Full Stack Coding Enthusiast</p>
 {/snippet}
 
 {#snippet description()}
@@ -119,7 +122,14 @@
 
 {#snippet profileImage()}
 	<div class="flex items-end justify-center lg:w-2/5 lg:pt-8">
-		<img class="profile-image max-w-sm" src="/rowdy-bg-rm-six.png" alt="Rowdy's profile" />
+		<img
+			class="profile-image max-w-sm"
+			src="/rowdy-bg-rm-six.png"
+			alt="Rowdy Byte - Full Stack Developer and UI/UX Designer from the Netherlands"
+			width="400"
+			height="600"
+			loading="eager"
+		/>
 	</div>
 {/snippet}
 
