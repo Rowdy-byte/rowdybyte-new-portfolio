@@ -83,9 +83,8 @@
 		class="font-ginto mt-8 mb-4 text-5xl font-black tracking-wide sm:text-7xl lg:items-center lg:justify-center"
 		role="banner"
 	>
-		Rowdy
+		Welcome
 	</h1>
-	<p class="font-walsheim-regular mb-4 text-xl text-gray-300">Full Stack Coding Enthusiast</p>
 {/snippet}
 
 {#snippet description()}
