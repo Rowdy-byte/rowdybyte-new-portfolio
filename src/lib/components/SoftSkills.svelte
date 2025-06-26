@@ -1,43 +1,72 @@
 <script lang="ts">
 	import gsap from 'gsap';
-	import { Brain, Users, MessageCircle, Lightbulb, Target, Zap } from 'lucide-svelte';
+	import {
+		Brain,
+		Users,
+		MessageCircle,
+		Lightbulb,
+		Target,
+		Zap,
+		Keyboard,
+		TrendingUp,
+		FileText,
+		FolderOpen
+	} from 'lucide-svelte';
 
 	const softSkills = [
 		{
-			name: 'Critical Thinking',
-			description: 'Analyzing problems from multiple angles',
-			icon: Brain,
-			color: '#3b82f6'
+			name: 'Adaptability',
+			description: 'Quickly adjusting to new technologies and changing requirements',
+			icon: Zap,
+			color: '#06b6d4'
 		},
 		{
-			name: 'Team Collaboration',
-			description: 'Working effectively with diverse teams',
-			icon: Users,
+			name: 'Touch Typing',
+			description: 'Fast and accurate typing without looking at the keyboard',
+			icon: Keyboard,
 			color: '#10b981'
 		},
 		{
-			name: 'Communication',
-			description: 'Clear and effective verbal/written communication',
-			icon: MessageCircle,
+			name: 'Perseverance',
+			description: 'Persistence in overcoming challenges and debugging complex issues',
+			icon: Target,
 			color: '#f59e0b'
 		},
 		{
 			name: 'Problem Solving',
-			description: 'Finding creative solutions to complex challenges',
+			description: 'Breaking down complex problems into manageable solutions',
 			icon: Lightbulb,
 			color: '#ef4444'
 		},
 		{
-			name: 'Goal-Oriented',
-			description: 'Focused on achieving objectives efficiently',
-			icon: Target,
+			name: 'Self Improvement',
+			description: 'Continuously learning new skills and improving existing ones',
+			icon: TrendingUp,
 			color: '#8b5cf6'
 		},
 		{
-			name: 'Adaptability',
-			description: 'Quickly adjusting to new technologies and methods',
-			icon: Zap,
-			color: '#06b6d4'
+			name: 'Curiosity',
+			description: 'Always eager to explore new technologies and methodologies',
+			icon: Brain,
+			color: '#3b82f6'
+		},
+		{
+			name: 'Documenting',
+			description: 'Creating clear documentation and maintaining code comments',
+			icon: FileText,
+			color: '#84cc16'
+		},
+		{
+			name: 'Organized',
+			description: 'Maintaining structured code, files, and project workflows',
+			icon: FolderOpen,
+			color: '#f97316'
+		},
+		{
+			name: 'Analytical',
+			description: 'Systematic approach to understanding and solving technical problems',
+			icon: Users,
+			color: '#ec4899'
 		}
 	];
 

@@ -4,45 +4,52 @@
 
 	const hardSkills = [
 		{
-			name: 'Frontend Development',
-			description: 'React, Svelte, Vue.js, TypeScript, HTML5, CSS3',
+			name: 'JavaScript',
+			description: 'Modern ES6+, async/await, modules, DOM manipulation',
 			icon: Code,
-			color: '#3b82f6',
+			color: '#f7df1e',
+			level: 95
+		},
+		{
+			name: 'TypeScript',
+			description: 'Type-safe JavaScript, interfaces, generics, strict mode',
+			icon: Code,
+			color: '#3178c6',
 			level: 90
 		},
 		{
-			name: 'Backend Development',
-			description: 'Node.js, Python, Express, FastAPI, REST APIs',
-			icon: Server,
+			name: 'HTML & CSS',
+			description: 'Semantic HTML5, modern CSS3, responsive design',
+			icon: Globe,
+			color: '#e34f26',
+			level: 95
+		},
+		{
+			name: 'SCSS & Tailwind',
+			description: 'Advanced styling, utility-first CSS, responsive design',
+			icon: Palette,
+			color: '#06b6d4',
+			level: 88
+		},
+		{
+			name: 'Svelte & SvelteKit',
+			description: 'Component framework, SSR, routing, stores, reactivity',
+			icon: Zap,
+			color: '#ff3e00',
+			level: 92
+		},
+		{
+			name: 'Zod & Prisma',
+			description: 'Schema validation, type-safe database ORM, migrations',
+			icon: Database,
 			color: '#10b981',
 			level: 85
 		},
 		{
-			name: 'Database Management',
-			description: 'PostgreSQL, MongoDB, Redis, SQL optimization',
-			icon: Database,
-			color: '#f59e0b',
-			level: 80
-		},
-		{
-			name: 'UI/UX Design',
-			description: 'Figma, Adobe XD, Responsive design, Accessibility',
-			icon: Palette,
-			color: '#ef4444',
-			level: 75
-		},
-		{
-			name: 'Web Technologies',
-			description: 'WebGL, PWA, WebAssembly, Modern browsers',
-			icon: Globe,
+			name: 'MDSvex & GitHub',
+			description: 'Markdown processing, version control, CI/CD workflows',
+			icon: Server,
 			color: '#8b5cf6',
-			level: 85
-		},
-		{
-			name: 'Performance',
-			description: 'Optimization, Bundling, Caching, Core Web Vitals',
-			icon: Zap,
-			color: '#06b6d4',
 			level: 88
 		}
 	];

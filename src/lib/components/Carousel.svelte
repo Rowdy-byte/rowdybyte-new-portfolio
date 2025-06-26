@@ -60,9 +60,22 @@
 	});
 </script>
 
-<div class=" mx-auto flex h-screen max-w-4xl items-center justify-center">
-	<!-- <Pipes /> -->
-	<div class="relative flex aspect-[16/9] w-full overflow-hidden rounded-lg">
+<div class="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-12 py-8">
+	<!-- Header section -->
+	<div class="text-center">
+		<h1
+			id="portfolio"
+			class="font-ginto mb-4 text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+		>
+			Portfolio
+		</h1>
+		<p class="font-walsheim-regular mx-auto max-w-2xl text-base text-gray-300 sm:text-lg">
+			A visual showcase of my workspace, creative process, and development environment.
+		</p>
+	</div>
+
+	<!-- Carousel section -->
+	<div class="relative flex aspect-[16/9] w-full max-w-4xl overflow-hidden rounded-lg">
 		{#each images as img, i}
 			<img
 				use:setImgRef={i}

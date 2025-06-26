@@ -4,11 +4,11 @@
 		Globe,
 		Laptop,
 		Brain,
-		TrendingUp,
 		FlaskConical,
 		Folder,
 		Mail,
-		Wrench // Nieuw icoon voor Built With
+		Wrench, // Nieuw icoon voor Built With
+		Image // For Portfolio/Carousel
 	} from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
@@ -19,9 +19,9 @@
 		{ label: 'Socials', href: '#socials', icon: Globe },
 		{ label: 'Hard Skills', href: '#hardskills', icon: Laptop },
 		{ label: 'Soft Skills', href: '#softskills', icon: Brain },
-		{ label: 'Improvements', href: '#improvements', icon: TrendingUp },
 		{ label: 'Projects', href: '#projects', icon: Folder },
-		{ label: 'Built With', href: '#builtwith', icon: Wrench }, // Nieuwe entry
+		{ label: 'Portfolio', href: '#portfolio', icon: Image },
+		{ label: 'Built With', href: '#builtwith', icon: Wrench },
 		{ label: 'Contact', href: '#contact', icon: Mail }
 	];
 
