@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Contact from '$lib/components/Contact.svelte';
 	import HardSkills from '$lib/components/HardSkills.svelte';
-	import ImproveSkills from '$lib/components/ImproveSkills.svelte';
 	import Intro from '$lib/components/Intro.svelte';
 	import Carousel from '$lib/components/Carousel.svelte';
 	import Projects from '$lib/components/Projects.svelte';
@@ -40,10 +39,6 @@
 
 	<section aria-labelledby="soft-skills-heading">
 		<SoftSkills />
-	</section>
-
-	<section aria-labelledby="improvements-heading">
-		<ImproveSkills />
 	</section>
 
 	<section aria-labelledby="projects-heading">
