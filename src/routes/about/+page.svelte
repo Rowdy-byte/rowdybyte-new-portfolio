@@ -167,12 +167,12 @@
 <style>
 	/* Additional styling for better readability and SEO */
 	strong {
-		color: theme('colors.blue.400');
+		color: #60a5fa; /* blue-400 equivalent */
 		font-weight: 600;
 	}
 
 	.prose h2 {
-		border-left: 4px solid theme('colors.blue.500');
+		border-left: 4px solid #3b82f6; /* blue-500 equivalent */
 		padding-left: 1rem;
 	}
 </style>
