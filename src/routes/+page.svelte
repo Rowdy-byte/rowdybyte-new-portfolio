@@ -10,15 +10,16 @@
 	import BuildWith from '$lib/components/BuildWith.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
+	import SEOContent from '$lib/components/SEOContent.svelte';
 
 	let { data } = $props();
 	console.log('Page data:', data);
 </script>
 
 <SEO
-	title="Full Stack Coding Enthusiast & UI/UX Designer"
-	description="Rowdy Byte - Experienced full-stack developer from the Netherlands creating modern web applications with SvelteKit, TypeScript, and cutting-edge technologies. Remote work specialist passionate about solving real-world problems with code."
-	keywords="full stack developer, web developer, SvelteKit, TypeScript, portfolio, Netherlands, remote work, freelance developer, UI/UX design"
+	title="Rowdy Verbeek (Rowdy Byte) - Full Stack Developer & UI/UX Designer"
+	description="Rowdy Verbeek, also known as Rowdy Byte, is a junior full-stack coding enthusiast from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies. Creating beautiful, performant web applications and solving real-world problems with code."
+	keywords="Rowdy Verbeek, Rowdy Byte, full stack developer, web developer, SvelteKit, TypeScript, portfolio, Netherlands, remote work, freelance developer, UI/UX design, Rowdy-byte"
 />
 
 <StructuredData />
@@ -56,4 +57,7 @@
 	<section aria-labelledby="contact-heading">
 		<Contact />
 	</section>
+
+	<!-- Hidden SEO content for better indexing -->
+	<SEOContent />
 </main>

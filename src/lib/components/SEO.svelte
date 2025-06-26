@@ -1,15 +1,18 @@
 <script lang="ts">
 	let {
-		title = 'Rowdy Byte - Full Stack Developer',
-		description = 'Experienced full-stack developer from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies. Creating beautiful, performant web applications with exceptional user experiences.',
+		title = 'Rowdy Verbeek (Rowdy Byte) - Full Stack Developer',
+		description = 'Rowdy Verbeek, also known as Rowdy Byte, is an experienced full-stack developer from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies. Creating beautiful, performant web applications with exceptional user experiences.',
 		image = 'https://rowdybyte.xyz/rowdy-bg-rm-six.png',
 		url = 'https://rowdybyte.xyz',
 		type = 'website',
-		keywords = '',
+		keywords = 'Rowdy Verbeek, Rowdy Byte, full stack developer, web developer, SvelteKit, TypeScript, Netherlands',
 		section = ''
 	} = $props();
 
-	const fullTitle = title.includes('Rowdy Byte') ? title : `${title} | Rowdy Byte`;
+	const fullTitle =
+		title.includes('Rowdy Verbeek') || title.includes('Rowdy Byte')
+			? title
+			: `${title} | Rowdy Verbeek (Rowdy Byte)`;
 	const canonicalUrl = section ? `${url}#${section}` : url;
 </script>
 
