@@ -15,9 +15,9 @@
 		paragraphClass: string;
 	}
 
-	let card1: HTMLElement;
+	let sectionRef: HTMLElement;
 	let cardRefs: HTMLElement[] = [];
-	let contentRefs: HTMLElement[] = [];
+	let headingRef: HTMLElement;
 
 	const projects: Project[] = [
 		{
@@ -63,71 +63,89 @@
 		}
 	];
 
-	function animateCardIn(card: HTMLElement) {
-		gsap.to(card, {
-			scale: 1.04,
-			boxShadow: '0 8px 32px 0 rgba(0,0,0,0.18)',
-			duration: 0.35,
-			ease: 'power2.out'
-		});
+	// Function to animate the heading letter by letter
+	function animateHeading() {
+		if (headingRef) {
+			// Split text into individual characters
+			const chars = headingRef.textContent!.split('');
+			headingRef.innerHTML = chars
+				.map((char) => `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`)
+				.join('');
+
+			// Animate each character
+			gsap.fromTo(
+				'.char',
+				{
+					opacity: 0,
+					y: 60,
+					rotation: 20,
+					scale: 0.3
+				},
+				{
+					opacity: 1,
+					y: 0,
+					rotation: 0,
+					scale: 1,
+					duration: 0.7,
+					stagger: 0.1,
+					ease: 'back.out(1.9)'
+				}
+			);
+		}
 	}
 
-	function animateCardOut(card: HTMLElement) {
-		gsap.to(card, {
-			scale: 1,
-			boxShadow: '0 4px 16px 0 rgba(0,0,0,0.12)',
-			duration: 0.3,
-			ease: 'power2.in'
-		});
-	}
-
-	function animateCardContentIn(content: HTMLElement) {
-		gsap.to(content, {
-			scale: 1.04,
-			y: -8,
-			duration: 0.35,
-			ease: 'power2.out'
-		});
-	}
-
-	function animateCardContentOut(content: HTMLElement) {
-		gsap.to(content, {
-			scale: 1,
-			y: 0,
-			duration: 0.3,
-			ease: 'power2.in'
-		});
+	// Function to animate the project cards
+	function animateCards() {
+		if (cardRefs.length > 0) {
+			const visibleCards = cardRefs.filter(Boolean);
+			gsap.fromTo(
+				visibleCards,
+				{
+					opacity: 0,
+					y: 80,
+					scale: 0.7,
+					rotation: 5
+				},
+				{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					rotation: 0,
+					duration: 0.8,
+					stagger: 0.12,
+					ease: 'back.out(1.7)',
+					onComplete: () => {
+						// Add floating animation after cards appear
+						gsap.to(visibleCards, {
+							y: '-=8',
+							repeat: -1,
+							yoyo: true,
+							duration: 2.5,
+							ease: 'sine.inOut',
+							stagger: 0.4
+						});
+					}
+				}
+			);
+		}
 	}
 
 	$effect(() => {
-		const allCardRefs = [card1, ...cardRefs];
-
-		const observer = new IntersectionObserver(
+		let hasAnimated = false;
+		const observer = new window.IntersectionObserver(
 			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const el = entry.target as HTMLElement;
-						gsap.fromTo(
-							el,
-							{ y: 60, opacity: 0, scale: 0.92 },
-							{
-								y: 0,
-								opacity: 1,
-								scale: 1,
-								duration: 0.7,
-								ease: 'back.out(1.7)'
-							}
-						);
-						observer.unobserve(el);
-					}
-				});
+				if (entries[0].isIntersecting && !hasAnimated) {
+					hasAnimated = true;
+					// First animate heading, then cards
+					animateHeading();
+					setTimeout(() => animateCards(), 900);
+					observer.disconnect();
+				}
 			},
-			{ threshold: 0.15 }
+			{ threshold: 0.2 }
 		);
-
-		allCardRefs.forEach((el) => {
-			if (el) observer.observe(el);
-		});
+		if (sectionRef) observer.observe(sectionRef);
+		return () => observer.disconnect();
 	});
 </script>
 
@@ -135,59 +153,55 @@
 	<a
 		bind:this={cardRefs[index]}
 		href={project.url}
-		class=" rounded-lg bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-8 opacity-0 transition-all hover:-translate-y-1"
+		class="group flex min-h-[280px] w-80 flex-col items-center justify-center rounded-xl bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-6 opacity-0 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
 		target="_blank"
 		rel="noopener noreferrer"
-		onmouseenter={() => {
-			animateCardIn(cardRefs[index]);
-			animateCardContentIn(contentRefs[index]);
-		}}
-		onmouseleave={() => {
-			animateCardOut(cardRefs[index]);
-			animateCardContentOut(contentRefs[index]);
-		}}
 	>
-		<div bind:this={contentRefs[index]} class=" transition-transform duration-300">
-			<p
-				class="{project.headingClass} text-center text-3xl font-bold {project.titleColor ||
-					''} {project.titleGradient || ''}"
-			>
-				{#if project.titleGradient}
-					<span class={project.titleGradient}>
-						{project.title}{#if project.titleAccent}<span class={project.titleAccentClass}
-								>{project.titleAccent}</span
-							>{/if}
-					</span>
-				{:else}
+		<h3 class="font-ginto mb-3 text-center text-xl font-semibold text-white sm:text-2xl {project.headingClass}">
+			{#if project.titleGradient}
+				<span class={project.titleGradient}>
+					{project.title}{#if project.titleAccent}<span class={project.titleAccentClass}
+							>{project.titleAccent}</span
+						>{/if}
+				</span>
+			{:else}
+				<span class={project.titleColor || 'text-white'}>
 					{project.title}{#if project.titleAccent}<span class={project.titleAccentColor || ''}
 							>{project.titleAccent}</span
 						>{/if}
-				{/if}
-			</p>
-			<p class="{project.paragraphClass} mt-4 text-center text-base tracking-wider">
-				{project.description}
-			</p>
-		</div>
+				</span>
+			{/if}
+		</h3>
+		
+		<p class="font-walsheim-regular text-center text-sm text-gray-400 group-hover:text-gray-300 {project.paragraphClass}">
+			{project.description}
+		</p>
 	</a>
 {/snippet}
 
-<div class="flex min-h-[150vh] w-full flex-col items-center justify-center px-2 py-8">
-	<section class="flex w-full max-w-4xl flex-col items-center justify-center">
+<main
+	bind:this={sectionRef}
+	class="mx-auto flex min-h-[150vh] w-full max-w-5xl flex-col items-center justify-center gap-12 rounded-lg py-8"
+>
+	<div class="text-center">
 		<h1
-			bind:this={card1}
+			bind:this={headingRef}
 			id="projects"
-			class="font-ginto mb-18 text-center text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
+			class="font-ginto mb-4 text-5xl font-black tracking-wide text-white sm:text-7xl md:text-8xl"
 		>
 			Projects
 		</h1>
+		<p class="font-walsheim-regular mx-auto max-w-2xl text-base text-gray-300 sm:text-lg">
+			A collection of web applications showcasing modern development practices and creative solutions.
+		</p>
+	</div>
 
-		<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
-			{#each projects as project, index}
-				{@render projectCard(project, index)}
-			{/each}
-		</div>
-	</section>
-</div>
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:gap-8">
+		{#each projects as project, index}
+			{@render projectCard(project, index)}
+		{/each}
+	</div>
+</main>
 
 <style>
 	.heading {
