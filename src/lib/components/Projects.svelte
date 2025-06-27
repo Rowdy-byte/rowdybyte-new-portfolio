@@ -157,23 +157,89 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<h3 class="font-ginto mb-3 text-center text-xl font-semibold text-white sm:text-2xl {project.headingClass}">
-			{#if project.titleGradient}
-				<span class={project.titleGradient}>
-					{project.title}{#if project.titleAccent}<span class={project.titleAccentClass}
-							>{project.titleAccent}</span
-						>{/if}
-				</span>
-			{:else}
-				<span class={project.titleColor || 'text-white'}>
-					{project.title}{#if project.titleAccent}<span class={project.titleAccentColor || ''}
-							>{project.titleAccent}</span
-						>{/if}
-				</span>
-			{/if}
-		</h3>
-		
-		<p class="font-walsheim-regular text-center text-sm text-gray-400 group-hover:text-gray-300 {project.paragraphClass}">
+		{#if project.id === 'serialmapper'}
+			<!-- SerialMapper Custom Logo -->
+			<div class="mb-4 flex items-center">
+				<div class="group flex items-center gap-3 rounded-xl p-2 transition-all duration-300">
+					<!-- Logo Icon -->
+					<div class="relative">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 shadow-lg ring-1 ring-blue-500/20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-blue-500/25"
+						>
+							<!-- Serial number pattern -->
+							<div class="flex flex-col gap-0.5">
+								<div class="flex gap-0.5">
+									<div class="h-1 w-1 rounded-full bg-white/90"></div>
+									<div class="h-1 w-1 rounded-full bg-white/70"></div>
+									<div class="h-1 w-1 rounded-full bg-white/90"></div>
+								</div>
+								<div class="flex gap-0.5">
+									<div class="h-1 w-1 rounded-full bg-white/70"></div>
+									<div class="h-1 w-1 rounded-full bg-white/90"></div>
+									<div class="h-1 w-1 rounded-full bg-white/70"></div>
+								</div>
+								<div class="flex gap-0.5">
+									<div class="h-1 w-1 rounded-full bg-white/90"></div>
+									<div class="h-1 w-1 rounded-full bg-white/70"></div>
+									<div class="h-1 w-1 rounded-full bg-white/90"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Pulse animation dot -->
+						<div
+							class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 ring-2 ring-gray-950"
+						>
+							<div class="h-full w-full animate-pulse rounded-full bg-green-400"></div>
+						</div>
+					</div>
+
+					<!-- Brand Text -->
+					<div>
+						<div class="flex items-baseline gap-1">
+							<span
+								class="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-lg font-bold text-transparent"
+							>
+								Serial
+							</span>
+							<span
+								class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-lg font-bold text-transparent"
+							>
+								Mapper
+							</span>
+						</div>
+						<div class="text-xs font-medium tracking-wide text-gray-400/80">
+							Inventory Management System
+						</div>
+					</div>
+				</div>
+			</div>
+		{:else}
+			<!-- Regular project title -->
+			<h3
+				class="font-ginto mb-3 text-center text-xl font-semibold text-white sm:text-2xl {project.headingClass} {project.id ===
+				'swaentje'
+					? 'text-3xl sm:text-4xl'
+					: ''}"
+			>
+				{#if project.titleGradient}
+					<span class={project.titleGradient}>
+						{project.title}{#if project.titleAccent}<span class={project.titleAccentClass}
+								>{project.titleAccent}</span
+							>{/if}
+					</span>
+				{:else}
+					<span class={project.titleColor || 'text-white'}>
+						{project.title}{#if project.titleAccent}<span class={project.titleAccentColor || ''}
+								>{project.titleAccent}</span
+							>{/if}
+					</span>
+				{/if}
+			</h3>
+		{/if}
+
+		<p
+			class="font-walsheim-regular text-center text-sm text-gray-400 group-hover:text-gray-300 {project.paragraphClass}"
+		>
 			{project.description}
 		</p>
 	</a>
@@ -192,7 +258,8 @@
 			Projects
 		</h1>
 		<p class="font-walsheim-regular mx-auto max-w-2xl text-base text-gray-300 sm:text-lg">
-			A collection of web applications showcasing modern development practices and creative solutions.
+			A collection of web applications showcasing modern development practices and creative
+			solutions.
 		</p>
 	</div>
 
