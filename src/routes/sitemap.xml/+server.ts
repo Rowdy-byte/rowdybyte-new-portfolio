@@ -20,7 +20,7 @@ export const GET: RequestHandler = async () => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	${pages.map(page => `
 	<url>
-		<loc>https://rowdybyte.xyz/${page.url}</loc>
+		<loc>https://www.rowdybyte.xyz/${page.url}</loc>
 		<changefreq>${page.changefreq}</changefreq>
 		<priority>${page.priority}</priority>
 		<lastmod>${new Date().toISOString()}</lastmod>

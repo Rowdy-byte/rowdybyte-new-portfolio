@@ -32,7 +32,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemap location
-Sitemap: https://rowdybyte.xyz/sitemap.xml
+Sitemap: https://www.rowdybyte.xyz/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1
