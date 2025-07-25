@@ -2,7 +2,7 @@
 	const personStructuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Person',
-		'@id': 'https://rowdybyte.xyz/#person',
+		'@id': 'https://www.rowdybyte.xyz/#person',
 		name: 'Rowdy Verbeek',
 		alternateName: ['Rowdy Byte', 'Rowdy-byte'],
 		givenName: 'Rowdy',
@@ -10,11 +10,11 @@
 		jobTitle: 'Full Stack Developer',
 		description:
 			'Rowdy Verbeek (Rowdy Byte) - Experienced full-stack developer from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies',
-		url: 'https://rowdybyte.xyz',
-		mainEntityOfPage: 'https://rowdybyte.xyz',
+		url: 'https://www.rowdybyte.xyz',
+		mainEntityOfPage: 'https://www.rowdybyte.xyz',
 		image: {
 			'@type': 'ImageObject',
-			url: 'https://rowdybyte.xyz/rowdy-bg-rm-six.png',
+			url: 'https://www.rowdybyte.xyz/rowdy-bg-rm-six.png',
 			width: 1200,
 			height: 630
 		},
@@ -67,37 +67,37 @@
 	const websiteStructuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'WebSite',
-		'@id': 'https://rowdybyte.xyz/#website',
+		'@id': 'https://www.rowdybyte.xyz/#website',
 		name: 'Rowdy Verbeek Portfolio - Rowdy Byte',
 		alternateName: 'Rowdy Byte Portfolio',
-		url: 'https://rowdybyte.xyz',
+		url: 'https://www.rowdybyte.xyz',
 		description:
 			"Portfolio website showcasing Rowdy Verbeek's full-stack development projects, skills, and professional experience. Specializing in SvelteKit, TypeScript, and modern web technologies.",
 		author: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person',
+			'@id': 'https://www.rowdybyte.xyz/#person',
 			name: 'Rowdy Verbeek'
 		},
 		mainEntity: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person'
+			'@id': 'https://www.rowdybyte.xyz/#person'
 		},
 		publisher: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person'
+			'@id': 'https://www.rowdybyte.xyz/#person'
 		},
 		inLanguage: 'en',
 		copyrightHolder: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person'
+			'@id': 'https://www.rowdybyte.xyz/#person'
 		},
 		creator: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person'
+			'@id': 'https://www.rowdybyte.xyz/#person'
 		},
 		potentialAction: {
 			'@type': 'SearchAction',
-			target: 'https://rowdybyte.xyz/?search={search_term_string}',
+			target: 'https://www.rowdybyte.xyz/?search={search_term_string}',
 			'query-input': 'required name=search_term_string'
 		}
 	};
@@ -154,25 +154,25 @@
 				'@type': 'ListItem',
 				position: 1,
 				name: 'Home',
-				item: 'https://rowdybyte.xyz'
+				item: 'https://www.rowdybyte.xyz'
 			},
 			{
 				'@type': 'ListItem',
 				position: 2,
 				name: 'Portfolio',
-				item: 'https://rowdybyte.xyz#projects'
+				item: 'https://www.rowdybyte.xyz#projects'
 			},
 			{
 				'@type': 'ListItem',
 				position: 3,
 				name: 'Skills',
-				item: 'https://rowdybyte.xyz#hardskills'
+				item: 'https://www.rowdybyte.xyz#hardskills'
 			},
 			{
 				'@type': 'ListItem',
 				position: 4,
 				name: 'Contact',
-				item: 'https://rowdybyte.xyz#contact'
+				item: 'https://www.rowdybyte.xyz#contact'
 			}
 		]
 	};
@@ -181,13 +181,13 @@
 	const organizationData = {
 		'@context': 'https://schema.org',
 		'@type': 'Organization',
-		'@id': 'https://rowdybyte.xyz/#organization',
+		'@id': 'https://www.rowdybyte.xyz/#organization',
 		name: 'Rowdy Byte',
 		alternateName: 'Rowdy Verbeek Development',
-		url: 'https://rowdybyte.xyz',
+		url: 'https://www.rowdybyte.xyz',
 		logo: {
 			'@type': 'ImageObject',
-			url: 'https://rowdybyte.xyz/rowdy-bg-rm-six.png'
+			url: 'https://www.rowdybyte.xyz/rowdy-bg-rm-six.png'
 		},
 		sameAs: [
 			'https://github.com/Rowdy-byte',
@@ -196,7 +196,7 @@
 		],
 		founder: {
 			'@type': 'Person',
-			'@id': 'https://rowdybyte.xyz/#person'
+			'@id': 'https://www.rowdybyte.xyz/#person'
 		},
 		description:
 			'Full-stack web development services by Rowdy Verbeek, specializing in modern web technologies and exceptional user experiences.'

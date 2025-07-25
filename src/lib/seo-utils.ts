@@ -2,18 +2,18 @@
 export const createPersonSchema = (additionalData = {}) => ({
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://rowdybyte.xyz/#rowdy-verbeek',
+    '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek',
     name: 'Rowdy Verbeek',
     alternateName: ['Rowdy Byte', 'Rowdy-byte'],
     givenName: 'Rowdy',
     familyName: 'Verbeek',
     jobTitle: 'Full Stack Developer',
     description: 'Rowdy Verbeek (Rowdy Byte) - Experienced full-stack developer from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies',
-    url: 'https://rowdybyte.xyz',
-    mainEntityOfPage: 'https://rowdybyte.xyz',
+    url: 'https://www.rowdybyte.xyz',
+    mainEntityOfPage: 'https://www.rowdybyte.xyz',
     image: {
         '@type': 'ImageObject',
-        url: 'https://rowdybyte.xyz/rowdy-bg-rm-six.png',
+        url: 'https://www.rowdybyte.xyz/rowdy-bg-rm-six.png',
         width: 1200,
         height: 630,
         caption: 'Rowdy Verbeek - Full Stack Developer Portfolio'
@@ -71,31 +71,31 @@ export const createPersonSchema = (additionalData = {}) => ({
 export const createWebsiteSchema = () => ({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://rowdybyte.xyz/#website',
+    '@id': 'https://www.rowdybyte.xyz/#website',
     name: 'Rowdy Verbeek Portfolio - Full Stack Developer',
     alternateName: ['Rowdy Byte Portfolio', 'Rowdy Verbeek Developer Portfolio'],
-    url: 'https://rowdybyte.xyz',
+    url: 'https://www.rowdybyte.xyz',
     description: 'Portfolio website showcasing Rowdy Verbeek\'s full-stack development projects, skills, and professional experience. Specializing in SvelteKit, TypeScript, and modern web technologies.',
     author: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     publisher: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     mainEntity: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     inLanguage: 'en',
     copyrightHolder: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     creator: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     keywords: 'Rowdy Verbeek, Rowdy Byte, full stack developer, web developer, SvelteKit, TypeScript, portfolio, Netherlands',
     about: {
@@ -113,7 +113,7 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[] = 
             '@type': 'ListItem',
             position: 1,
             name: 'Rowdy Verbeek',
-            item: 'https://rowdybyte.xyz'
+            item: 'https://www.rowdybyte.xyz'
         },
         ...items.map((item, index) => ({
             '@type': 'ListItem',
@@ -127,13 +127,13 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[] = 
 export const createOrganizationSchema = () => ({
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://rowdybyte.xyz/#organization',
+    '@id': 'https://www.rowdybyte.xyz/#organization',
     name: 'Rowdy Byte',
     alternateName: ['Rowdy Verbeek Development', 'Rowdy Byte Development'],
-    url: 'https://rowdybyte.xyz',
+    url: 'https://www.rowdybyte.xyz',
     logo: {
         '@type': 'ImageObject',
-        url: 'https://rowdybyte.xyz/rowdy-bg-rm-six.png',
+        url: 'https://www.rowdybyte.xyz/rowdy-bg-rm-six.png',
         width: 1200,
         height: 630
     },
@@ -144,7 +144,7 @@ export const createOrganizationSchema = () => ({
     ],
     founder: {
         '@type': 'Person',
-        '@id': 'https://rowdybyte.xyz/#rowdy-verbeek'
+        '@id': 'https://www.rowdybyte.xyz/#rowdy-verbeek'
     },
     description: 'Full-stack web development services by Rowdy Verbeek, specializing in modern web technologies and exceptional user experiences.',
     knowsAbout: [

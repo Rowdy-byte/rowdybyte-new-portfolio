@@ -2,8 +2,8 @@
 	let {
 		title = 'Rowdy Verbeek (Rowdy Byte) - Full Stack Developer',
 		description = 'Rowdy Verbeek, also known as Rowdy Byte, is an experienced full-stack developer from the Netherlands specializing in SvelteKit, TypeScript, and modern web technologies. Creating beautiful, performant web applications with exceptional user experiences.',
-		image = 'https://rowdybyte.xyz/rowdy-bg-rm-six.png',
-		url = 'https://rowdybyte.xyz',
+		image = 'https://www.rowdybyte.xyz/rowdy-bg-rm-six.png',
+		url = 'https://www.rowdybyte.xyz',
 		type = 'website',
 		keywords = 'Rowdy Verbeek, Rowdy Byte, full stack developer, web developer, SvelteKit, TypeScript, Netherlands',
 		section = ''

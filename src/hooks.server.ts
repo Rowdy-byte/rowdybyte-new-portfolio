@@ -1,7 +1,20 @@
 import type { Handle } from '@sveltejs/kit';
 import * as auth from '$lib/server/auth.js';
 
-const handleAuth: Handle = async ({ event, resolve }) => {
+export const handle: Handle = async ({ event, resolve }) => {
+	const url = event.url;
+
+	// Force redirect from non-www to www for production
+	if (url.hostname === 'rowdybyte.xyz') {
+		return new Response(null, {
+			status: 301,
+			headers: {
+				location: `https://www.rowdybyte.xyz${url.pathname}${url.search}`
+			}
+		});
+	}
+
+	// Handle auth after redirect check
 	const sessionToken = event.cookies.get(auth.sessionCookieName);
 
 	if (!sessionToken) {
@@ -22,5 +35,3 @@ const handleAuth: Handle = async ({ event, resolve }) => {
 	event.locals.session = session;
 	return resolve(event);
 };
-
-export const handle: Handle = handleAuth;
