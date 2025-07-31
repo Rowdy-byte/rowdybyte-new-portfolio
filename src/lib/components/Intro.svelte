@@ -132,7 +132,7 @@
 	</div>
 {/snippet}
 
-<section id="intro" class="intro z-50 flex h-screen w-full">
+<section id="intro" class="intro relative z-20 flex h-screen w-full overflow-hidden">
 	<div class="card-inner w-full">
 		<div
 			class="intro-container w-full overflow-hidden rounded-lg bg-[#2c333c] shadow-lg md:flex lg:h-auto"

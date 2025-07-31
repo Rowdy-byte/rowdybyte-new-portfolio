@@ -190,7 +190,7 @@
 
 <main
 	bind:this={sectionRef}
-	class="flex min-h-screen w-full flex-col items-center justify-center gap-12 py-8"
+	class="relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-12 py-8 pt-16 sm:pt-20"
 >
 	<div class="text-center">
 		<h1
@@ -206,7 +206,9 @@
 	</div>
 
 	<!-- Social Links -->
-	<div class="grid grid-cols-2 gap-4 sm:gap-6 md:flex md:flex-row md:flex-wrap md:items-center md:justify-center lg:gap-8">
+	<div
+		class="grid grid-cols-2 gap-4 sm:gap-6 md:flex md:flex-row md:flex-wrap md:items-center md:justify-center lg:gap-8"
+	>
 		{#each socials as social, i}
 			<a
 				bind:this={cardRefs[i]}
@@ -221,7 +223,7 @@
 						{@html icons[social.icon]}
 					</span>
 					<span
-						class="text-center text-xs font-medium leading-tight sm:text-sm md:text-base lg:text-lg"
+						class="text-center text-xs leading-tight font-medium sm:text-sm md:text-base lg:text-lg"
 					>
 						{social.name}
 					</span>
@@ -233,7 +235,9 @@
 	<!-- GitHub Activity Section -->
 	<div bind:this={githubSectionRef} class="w-full max-w-4xl px-4 opacity-0 sm:px-6">
 		<div class="rounded-xl bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-4 shadow-lg sm:p-6">
-			<div class="mb-4 flex flex-col items-start gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
+			<div
+				class="mb-4 flex flex-col items-start gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between"
+			>
 				<h2 class="font-ginto text-xl font-bold text-white sm:text-2xl">Recent GitHub Activity</h2>
 				<div class="flex items-center gap-2">
 					<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
@@ -259,7 +263,7 @@
 							rel="noopener noreferrer"
 							class="flex items-start justify-between rounded-lg p-3 transition-all duration-200 hover:scale-[1.02] hover:bg-gray-700/50 sm:items-center sm:p-4"
 						>
-							<div class="flex-1 min-w-0">
+							<div class="min-w-0 flex-1">
 								<p class="font-walsheim-regular mb-1 text-sm font-medium text-white sm:text-sm">
 									{commit.message}
 								</p>
