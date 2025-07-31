@@ -90,10 +90,10 @@
 	});
 
 	const icons: Record<string, string> = {
-		linkedin: `<svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg>`,
-		x: `<svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"><path d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"/></svg>`,
-		github: `<svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.02c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.57.23 2.73.12 3.02.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.7.42.36.79 1.09.79 2.2v3.26c0 .31.21.67.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>`,
-		facebook: `<svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>`
+		linkedin: `<svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg>`,
+		x: `<svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"><path d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"/></svg>`,
+		github: `<svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.02c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.57.23 2.73.12 3.02.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.7.42.36.79 1.09.79 2.2v3.26c0 .31.21.67.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>`,
+		facebook: `<svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>`
 	};
 
 	let sectionRef: HTMLElement;
@@ -206,14 +206,14 @@
 	</div>
 
 	<!-- Social Links -->
-	<div class="flex flex-row flex-wrap items-center justify-center gap-6 md:flex-row">
+	<div class="grid grid-cols-2 gap-4 sm:gap-6 md:flex md:flex-row md:flex-wrap md:items-center md:justify-center lg:gap-8">
 		{#each socials as social, i}
 			<a
 				bind:this={cardRefs[i]}
 				href={social.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group hover:shadow-custom-sidebar flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-1 opacity-0 transition-transform duration-200 hover:scale-105 sm:h-40 sm:w-40"
+				class="group hover:shadow-custom-sidebar flex aspect-square flex-col items-center justify-center rounded-xl bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-3 opacity-0 transition-all duration-200 hover:scale-105 sm:rounded-2xl sm:p-4 md:h-32 md:w-32 md:rounded-full lg:h-40 lg:w-40"
 				aria-label={`Visit ${social.name} profile`}
 			>
 				<div class="flex flex-col items-center justify-center space-y-1 text-white sm:space-y-2">
@@ -221,7 +221,7 @@
 						{@html icons[social.icon]}
 					</span>
 					<span
-						class="text-center text-xs leading-tight font-medium sm:text-sm md:text-base lg:text-lg"
+						class="text-center text-xs font-medium leading-tight sm:text-sm md:text-base lg:text-lg"
 					>
 						{social.name}
 					</span>
@@ -231,13 +231,13 @@
 	</div>
 
 	<!-- GitHub Activity Section -->
-	<div bind:this={githubSectionRef} class="w-full max-w-4xl opacity-0">
-		<div class="rounded-xl bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-6 shadow-lg">
-			<div class="mb-6 flex items-center justify-between">
-				<h2 class="font-ginto text-2xl font-bold text-white">Recent GitHub Activity</h2>
+	<div bind:this={githubSectionRef} class="w-full max-w-4xl px-4 opacity-0 sm:px-6">
+		<div class="rounded-xl bg-gradient-to-br from-[#2c333c] to-[#1e252b] p-4 shadow-lg sm:p-6">
+			<div class="mb-4 flex flex-col items-start gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
+				<h2 class="font-ginto text-xl font-bold text-white sm:text-2xl">Recent GitHub Activity</h2>
 				<div class="flex items-center gap-2">
 					<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
-					<span class="font-walsheim-regular text-sm text-gray-300">
+					<span class="font-walsheim-regular text-xs text-gray-300 sm:text-sm">
 						{commitCount} commits this month
 					</span>
 				</div>
@@ -251,24 +251,24 @@
 					<span class="font-walsheim-regular ml-3 text-gray-400">Loading activity...</span>
 				</div>
 			{:else if commits.length > 0}
-				<div class="space-y-4">
+				<div class="space-y-3 sm:space-y-4">
 					{#each commits as commit, i}
 						<a
 							href={commit.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex items-center justify-between rounded-lg p-4 transition-all duration-200 hover:scale-[1.02] hover:bg-gray-700/50"
+							class="flex items-start justify-between rounded-lg p-3 transition-all duration-200 hover:scale-[1.02] hover:bg-gray-700/50 sm:items-center sm:p-4"
 						>
-							<div class="flex-1">
-								<p class="font-walsheim-regular mb-1 text-sm font-medium text-white">
+							<div class="flex-1 min-w-0">
+								<p class="font-walsheim-regular mb-1 text-sm font-medium text-white sm:text-sm">
 									{commit.message}
 								</p>
-								<p class="font-walsheim-regular text-xs text-gray-400">
+								<p class="font-walsheim-regular text-xs text-gray-400 sm:text-xs">
 									{commit.repo} • {commit.date}
 								</p>
 							</div>
 							<svg
-								class="ml-4 h-5 w-5 flex-shrink-0 text-gray-400"
+								class="ml-3 h-4 w-4 flex-shrink-0 text-gray-400 sm:ml-4 sm:h-5 sm:w-5"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 							>
