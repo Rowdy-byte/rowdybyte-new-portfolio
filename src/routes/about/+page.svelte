@@ -28,6 +28,7 @@
 <SEO
 	title="About Rowdy Verbeek - Full Stack Developer & UI/UX Designer"
 	description="Learn about Rowdy Verbeek (Rowdy Byte), a passionate full-stack developer from the Netherlands. Discover Rowdy Verbeek's journey, expertise in SvelteKit, TypeScript, and modern web technologies."
+	url="https://www.rowdybyte.xyz/about"
 	keywords="Rowdy Verbeek, Rowdy Byte, about, biography, full stack developer, web developer, Netherlands, SvelteKit, TypeScript, UI/UX design, freelance"
 />
 
