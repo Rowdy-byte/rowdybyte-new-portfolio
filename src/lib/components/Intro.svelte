@@ -4,7 +4,6 @@
 	import { MoveRight } from 'lucide-svelte';
 	import Stat from './Stat.svelte';
 	import Stars from './Stars.svelte';
-	import Lighting from './Lighting.svelte';
 
 	let { blogPostsCount, docsCount } = $props();
 

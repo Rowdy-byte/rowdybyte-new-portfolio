@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import gsap from 'gsap';
-	import Pipes from './Pipes.svelte';
 
 	const images = [
 		'/office/office1.jpg',

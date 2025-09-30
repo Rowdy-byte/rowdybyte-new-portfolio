@@ -6,7 +6,6 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Socials from '$lib/components/Socials.svelte';
 	import SoftSkills from '$lib/components/SoftSkills.svelte';
-	import Lightning2 from '$lib/components/Lightning2.svelte';
 	import BuildWith from '$lib/components/BuildWith.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
