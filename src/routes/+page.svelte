@@ -10,6 +10,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
 	import SEOContent from '$lib/components/SEOContent.svelte';
+	import Pipes from '$lib/components/Pipes.svelte';
 
 	let { data } = $props();
 	console.log('Page data:', data);
@@ -25,7 +26,8 @@
 <StructuredData />
 
 <!-- Use semantic HTML structure -->
-<main>
+<main class="relative isolate flex flex-col">
+	<Pipes />
 	<header>
 		<Intro blogPostsCount={data.posts.length} docsCount={data.headers.length} />
 	</header>

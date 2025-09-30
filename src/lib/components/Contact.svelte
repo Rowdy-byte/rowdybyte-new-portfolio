@@ -2,7 +2,6 @@
 	import { tick } from 'svelte';
 	import { enhance } from '$app/forms';
 	import gsap from 'gsap';
-	import Pipes from './Pipes.svelte';
 
 	let name = $state<string>('');
 	let email = $state<string>('');
@@ -87,8 +86,7 @@
 	});
 </script>
 
-<main class=" flex min-h-[150vh] flex-col items-center justify-center py-8">
-	<Pipes />
+<main class="flex min-h-[120vh] w-full flex-col items-center justify-center py-16">
 	<section
 		id="contact"
 		bind:this={sectionRef}

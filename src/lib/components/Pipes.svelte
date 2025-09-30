@@ -4,7 +4,7 @@
 
 <!-- Pipes SVG background -->
 <svg
-	class="pointer-events-none absolute inset-0 -z-10 h-full w-full select-none"
+	class="pointer-events-none absolute inset-0 -z-10 h-full w-full min-h-full min-w-full select-none"
 	viewBox="0 0 1920 1080"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
