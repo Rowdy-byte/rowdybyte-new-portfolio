@@ -34,13 +34,13 @@
 	};
 </script>
 
-<aside class="">
+<aside class="fixed left-0 top-1/2 z-40 flex -translate-y-1/2 items-center gap-4 pl-2">
 	<SidebarDots />
 
 	{#if getSidebarIsOpen().sidebarIsOpen}
 		<section
 			use:animate={openSidebarAnimation}
-			class="sidebar shadow-custom-sidebar fullscreen:left-40 fixed top-[55%] left-8 z-40 mr-2 -translate-y-1/2 transform overflow-hidden rounded-md bg-[#1b1e28] opacity-0 2xl:left-20"
+			class="sidebar shadow-custom-sidebar z-40 mr-2 overflow-hidden rounded-md bg-[#1b1e28] opacity-0 transform"
 		>
 			<SidebarHeader title="Table of Contents" />
 			<section class="rounded-md rounded-l-none px-4 py-4">

@@ -19,12 +19,25 @@
 		}
 	}
 
+	const clearPageTransform = () => {
+		if (!pageContainer) return;
+		gsap.set(pageContainer, { clearProps: 'transform' });
+	};
+
 	$effect(() => {
-		// Animate in on first load
+		if (!pageContainer) return;
+		// Animate in on first load and clear residual transforms once complete
+		clearPageTransform();
 		gsap.fromTo(
 			pageContainer,
 			{ opacity: 0, y: 40 },
-			{ opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }
+			{
+				opacity: 1,
+				y: 0,
+				duration: 0.7,
+				ease: 'power2.out',
+				onComplete: clearPageTransform
+			}
 		);
 	});
 
@@ -35,7 +48,8 @@
 				opacity: 0,
 				y: -40,
 				duration: 0.4,
-				ease: 'power2.in'
+				ease: 'power2.in',
+				onComplete: clearPageTransform
 			});
 		}
 	});
@@ -43,10 +57,17 @@
 	afterNavigate(async () => {
 		await tick();
 		if (pageContainer) {
+			clearPageTransform();
 			gsap.fromTo(
 				pageContainer,
 				{ opacity: 0, y: 40 },
-				{ opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.7,
+					ease: 'power2.out',
+					onComplete: clearPageTransform
+				}
 			);
 		}
 	});
