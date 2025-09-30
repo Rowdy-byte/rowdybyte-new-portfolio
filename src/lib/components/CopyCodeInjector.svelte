@@ -122,7 +122,9 @@
 			}
 		]}
 		bind:this={toastElement}
-		class="sticky top-1/2 left-2 z-[99999999999] mx-auto mr-6 ml-6 rounded bg-purple-500 p-4 text-center text-sm font-semibold text-[#1b1e28]"
+		role="status"
+		aria-live="polite"
+		class="fixed left-1/2 top-16 z-[99999999999] -translate-x-1/2 rounded bg-purple-500 px-5 py-3 text-center text-sm font-semibold text-[#1b1e28] shadow-lg"
 	>
 		Successfully copied code!
 	</p>
