@@ -13,6 +13,6 @@ Waarom (why) de letter Griekse Y zul je wellicht denken. Ten eerst ik vind de le
 
 <br>
 
-Bij het kiezen van de namen voor mijn kinderen wilde ik perse de Griekse Y in hun naam hebben. Tazy & Navy.
+Bij het kiezen van de namen voor mijn kinderen wilde ik perse de Griekse Y in hun naam hebben. Tazy & Navy. Ik hou heel veel van Tazy en Navy.
 
 <br>
