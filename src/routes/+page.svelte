@@ -13,7 +13,6 @@
 	import Pipes from '$lib/components/Pipes.svelte';
 
 	let { data } = $props();
-	console.log('Page data:', data);
 </script>
 
 <SEO
