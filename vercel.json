@@ -1,7 +1,13 @@
 {
 	"redirects": [
 		{
-			"source": "https://rowdybyte.xyz/:path*",
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "rowdybyte.xyz"
+				}
+			],
 			"destination": "https://www.rowdybyte.xyz/:path*",
 			"permanent": true
 		}
