@@ -1,42 +1,31 @@
-# sv
+# Rowdy Byte Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Portfolio and blog for Rowdy Verbeek, built with SvelteKit, Svelte 5, TypeScript, Tailwind CSS, and Drizzle ORM.
 
-## Creating a project
+## Requirements
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Node.js 22
+- pnpm 9
+- A configured `DATABASE_URL` for database-backed features
+- A configured `RESEND_API_KEY` for the contact form
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Getting started
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm install
+pnpm dev
 ```
 
-## Building
+The development server is available at `http://localhost:5173`.
 
-To create a production version of your app:
+## Checks and build
 
 ```bash
-npm run build
+pnpm check
+pnpm lint
+pnpm build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
 ## Deployment
 
-Vercel Production tracks the `main` branch. Pushing to `main` should trigger a production deployment.
+Vercel Production tracks the `main` branch. Pushes to `main` create production deployments. Other branches can be used for preview deployments.
