@@ -1,43 +1,35 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { LockKeyhole } from 'lucide-svelte';
 	import type { ActionData } from './$types';
 
 	let { form }: { form: ActionData } = $props();
 </script>
 
-<main
-	class="font-walsheim flex min-h-screen w-full items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 px-4 py-16"
->
-	<div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
-		<h1 class="mb-8 text-center text-3xl font-bold text-[#1b1e28]">Login/Register</h1>
-		<form method="post" action="?/login" use:enhance class="flex flex-col gap-6">
-			<input
-				name="username"
-				placeholder="Gebruikersnaam"
-				class="rounded border border-gray-200 bg-gray-100 p-3 text-[#1b1e28] focus:outline-none"
-			/>
+<main class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#171B21] px-4 py-12 font-walsheim text-[#F3F5F7]">
+	<div aria-hidden="true" class="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#9B7BFF]/10 blur-3xl"></div>
+	<div class="relative w-full max-w-md rounded-3xl border border-white/10 bg-[#20262F] p-7 shadow-2xl sm:p-9">
+		<a href="/" class="mb-8 inline-flex items-center gap-3">
+			<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#9B7BFF] to-[#42D9E8] text-sm font-black text-[#171B21]">RB</span>
+			<span><span class="block text-sm font-bold tracking-wide">ROWDY BYTE</span><span class="block font-proto text-[10px] uppercase tracking-[0.18em] text-slate-500">Content studio</span></span>
+		</a>
+		<div class="mb-7">
+			<span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#9B7BFF]/10 text-[#B29BFF]"><LockKeyhole size={20} /></span>
+			<h1 class="text-2xl font-bold">Welkom terug</h1>
+			<p class="mt-2 text-sm text-slate-400">Log in om je websitecontent te beheren.</p>
+		</div>
 
-			<input
-				type="password"
-				name="password"
-				placeholder="Wachtwoord"
-				class="rounded border border-gray-200 bg-gray-100 p-3 text-[#1b1e28] focus:outline-none"
-			/>
-
-			<div class="flex gap-4">
-				<button
-					class="flex-1 rounded bg-[#2c333c] px-4 py-3 font-bold text-white transition-all hover:bg-purple-500"
-					>Login</button
-				>
-				<button
-					formaction="?/register"
-					class="flex-1 rounded border border-gray-300 bg-gray-100 px-4 py-3 font-bold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white"
-					>Register</button
-				>
-			</div>
+		<form method="post" action="?/login" use:enhance class="space-y-4">
+			<label class="block space-y-2 text-sm font-medium">
+				<span>Gebruikersnaam</span>
+				<input name="username" autocomplete="username" required placeholder="Gebruikersnaam" class="w-full rounded-xl border border-white/10 bg-[#171B21] px-4 py-3 text-white placeholder:text-slate-600 focus:border-[#9B7BFF] focus:outline-none focus:ring-2 focus:ring-[#9B7BFF]/20" />
+			</label>
+			<label class="block space-y-2 text-sm font-medium">
+				<span>Wachtwoord</span>
+				<input type="password" name="password" autocomplete="current-password" required placeholder="Wachtwoord" class="w-full rounded-xl border border-white/10 bg-[#171B21] px-4 py-3 text-white placeholder:text-slate-600 focus:border-[#9B7BFF] focus:outline-none focus:ring-2 focus:ring-[#9B7BFF]/20" />
+			</label>
+			{#if form?.message}<p role="alert" class="rounded-xl border border-red-400/20 bg-red-400/10 px-4 py-3 text-sm text-red-200">{form.message}</p>{/if}
+			<button class="w-full rounded-xl bg-[#9B7BFF] px-4 py-3 font-bold text-[#171B21] transition hover:bg-[#B29BFF]">Inloggen</button>
 		</form>
-		{#if form?.message}
-			<p class="mt-4 text-center text-sm font-semibold text-red-600">{form.message}</p>
-		{/if}
 	</div>
 </main>

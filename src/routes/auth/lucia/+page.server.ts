@@ -2,7 +2,7 @@ import * as auth from '$lib/server/auth';
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { db } from '$lib/server/db';
-import { posts } from '$lib/server/db/schema';
+import { posts, subscribers } from '$lib/server/db/schema';
 
 export const load: PageServerLoad = async (event) => {
 	if (!event.locals.user) {
@@ -10,11 +10,9 @@ export const load: PageServerLoad = async (event) => {
 	}
 
 	const allPosts = await db.select().from(posts);
+	const allSubscribers = await db.select().from(subscribers);
 
-
-
-
-	return { user: event.locals.user, allPosts };
+	return { user: event.locals.user, allPosts, subscriberCount: allSubscribers.length };
 };
 
 export const actions: Actions = {
