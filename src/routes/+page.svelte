@@ -11,8 +11,6 @@
 	import StructuredData from '$lib/components/StructuredData.svelte';
 	import SEOContent from '$lib/components/SEOContent.svelte';
 	import Pipes from '$lib/components/Pipes.svelte';
-
-	let { data } = $props();
 </script>
 
 <SEO
@@ -28,7 +26,7 @@
 <main class="relative isolate flex flex-col">
 	<Pipes />
 	<header>
-		<Intro blogPostsCount={data.posts.length} docsCount={data.headers.length} />
+		<Intro />
 	</header>
 
 	<section aria-labelledby="social-heading">

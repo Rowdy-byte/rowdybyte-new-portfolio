@@ -2,7 +2,6 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import SideNav from '$lib/components/SideNav.svelte';
 	import '../app.css';
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { tick } from 'svelte';

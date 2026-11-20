@@ -2,10 +2,7 @@
 	import gsap from 'gsap';
 	import Aurora from './Aurora.svelte';
 	import { MoveRight } from 'lucide-svelte';
-	import Stat from './Stat.svelte';
 	import Stars from './Stars.svelte';
-
-	let { blogPostsCount, docsCount } = $props();
 
 	let arrowRef: HTMLElement;
 
@@ -89,8 +86,8 @@
 {#snippet description()}
 	<div class="font-walsheim-regular max-w-2xl text-base sm:text-lg">
 		My name is Rowdy. I'm a coding enthusiast from the Netherlands, passionate about building
-		modern, performant apps with SvelteKit. I enjoy solving real-world problems with code, data
-		visualization, always learning, always improving, and aiming to work remotely.
+		modern, performant apps with SvelteKit. I enjoy solving real-world problems with code, always
+		learning, always improving.
 	</div>
 {/snippet}
 

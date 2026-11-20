@@ -5,8 +5,6 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-	let { data } = $props();
-
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 

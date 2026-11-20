@@ -70,7 +70,7 @@
 	<h1 class="mb-10 text-center text-5xl font-bold sm:text-7xl">Rowdy's Blog</h1>
 
 	<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-		{#each posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage) as post}
+		{#each posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage) as post (post.slug)}
 			<a
 				href={`/blog/${post.slug.replace(/ /g, '-').trim()}`}
 				class="group flex flex-col overflow-hidden rounded-2xl bg-gray-100 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl"
@@ -106,7 +106,7 @@
 			>
 				Vorige
 			</button>
-			{#each Array(totalPages) as _, i}
+			{#each Array(totalPages) as _, i (i)}
 				<button
 					class="rounded border border-gray-200 bg-gray-100 px-3 py-1 font-bold text-[#1b1e28] transition-all hover:bg-purple-500 hover:text-white {currentPage ===
 					i + 1
